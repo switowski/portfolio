@@ -1,0 +1,118 @@
+---
+layout: page
+permalink: /consulting/
+eleventyNavigation:
+  key: Consulting
+  order: 4
+---
+
+<div class="container">
+  <h1>Python consulting</h1>
+  <p class="mt-6 mb-12 text-xl">I help companies make the most of their technology by supporting them in Python development projects.</p>
+  <h2 class="mb-4">What can I do for you?</h2>
+  <div>
+    <p class="mb-4">I'm a software engineer with 10+ years of experience working with both scientific institutions and Fortune 500 companies. I work as a full-stack developer, help companies fix their software architecture, improve their tools and processes, and run on-site workshops.</p>
+    <p class="mb-10">Here are some things I can do for your company:</p>
+  </div>
+</div>
+
+<div class="max-w-5xl mx-auto mb-16">
+  <div class="cards">
+    <div class="card">
+      {# Web development #}
+      <div class="card__icon-wrapper">
+        {% svg "consulting_website", "card__icon"%}
+      </div>
+      <div>
+        <h3 class="card__title">Web Development</h3>
+      </div>
+      <div class="card__text">
+        <p class="mb-6">A good web application is the best value for money investment if you need an app. You don't have to make separate versions for different operating systems, and almost everyone has a smartphone!</p>
+        <p>I can help you build one from scratch or connect existing ones to external services like Stripe or ElasticSearch. I focus on backend development (Django, Flask), but I'm no stranger to frontend (Vue.js). I also have a solid understanding of security and SEO.</p>
+      </div>
+    </div>
+
+    {# Document management #}
+    <div class="card">
+      <div>
+        {% svg "consulting_documents", "card__icon"%}
+      </div>
+      <div>
+        <h3 class="card__title">Document Management</h3>
+      </div>
+      <div class="card__text">
+        <p class="mb-4">Do you need a document management tool like Google Drive or AWS WorkSpaces? But none of the existing solutions can be customized? I can help you build one that will fully meet your needs!</p>
+        <p>I have built document management platforms for financial institutions and scientific research facilities that store millions of records. I was also working on <a href="https://invenio-software.org/">Invenio</a> - the biggest Python-based open-source library to create digital repositories and library systems.</p>
+      </div>
+    </div>
+
+    {# ETRM #}
+    <div class="card">
+      <div>
+        {% svg "consulting_etrm", "card__icon"%}
+      </div>
+      <div>
+        <h3 class="card__title">ETRM Software</h3>
+      </div>
+      <div class="card__text">
+        <p class="mb-4">I have two years of experience working with the state-of-the-art ETRM platform <a href="https://www.beacon.io/">beacon.io</a>, which I used to build a portfolio management tool for Norway's biggest energy provider. We pushed the boundaries of the system by creating custom instruments and applications plugged into our risk modeling calculations.</p>
+        <p>Whether you're looking for a Beacon consultant or want to build an ETRM system from scratch, my expertise can help.</p>
+      </div>
+    </div>
+
+    {# Software architecture #}
+    <div class="card">
+      <div>
+        {% svg "consulting_architecture", "card__icon"%}
+      </div>
+      <div>
+        <h3 class="card__title">Software Architecture</h3>
+      </div>
+      <div class="card__text">
+        <p class="mb-4">Would you like to set up your next project so that it's simple and easy to start but robust enough to support thousands of users? Are you overwhelmed by the number of different frameworks and tools? Or maybe your current project is getting out of hand, and you want to put it back on track?</p>
+        <p>First, check my <a href="https://pycon.switowski.com/">free workshop</a> on this subject. And if you want to learn more, let's talk.</p>
+      </div>
+    </div>
+
+    {# Workshops #}
+    <div class="card">
+      <div>
+        {% svg "consulting_workshops", "card__icon"%}
+      </div>
+      <div>
+        <h3 class="card__title">Workshops</h3>
+      </div>
+      <div class="card__text">
+        <p class="mb-4">Are you looking for a bespoke workshop on a Python-related topic? A 1-day-long workshop on testing or deployment can save you days of trial and error.</p>
+        <p>How about a workshop from someone who is actively using those tools and techniques in his daily job? And who has experience explaining technology to people during meetups, conferences, and as a workshop mentor? Interested? Check out my <a href="/workshops">workshops offer</a>.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        {% svg "consulting_management", "card__icon"%}
+      </div>
+      <div>
+        <h3 class="card__title">Project Management</h3>
+      </div>
+      <div class="card__text">
+        <p class="mb-4">While I'm not looking for a full-time project management position, I have a PMI certification and experience from leading a team of 6 developers. I can work as a team leader for a small team or join the Project Management Team of a larger one.</p>
+        <div class="w-2/5 mx-auto">
+          <a href="https://www.youracclaim.com/badges/9e88839c-3d12-44ed-9418-48b02ae02939/linked_in_profile">
+            {% image '_assets/images/pmi.png', 'CAPM Certificate', '', '', '(min-width: 1340px) 123px, (min-width: 1040px) calc(11.43vw - 28px), (min-width: 780px) calc(20vw - 49px), calc(40vw - 33px)' %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# TODO: Add netlify "are you a robot" check #}
+{# TODO: Align colors of buttons and forms with other forms (e.g. newsletter) once I settle on the primary color theme #}
+<div class="container">
+  <h2 class="mb-4">Contact me</h2>
+  <p class="mb-6">Contacting me won't cost you anything, and I will always get back to you. If we agree that I could help you, we can schedule a chat. And if I can't be of any assistance, I know many professionals with different skill sets and could recommend someone to you.</p>
+
+  {% set form = {
+    'name': true
+  } %}
+  {% include "components/contactForm.njk" %}
+</div>

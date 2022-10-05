@@ -1,0 +1,21 @@
+---
+layout: page
+permalink: /talks/
+eleventyNavigation:
+  key: Talks
+  order: 3
+---
+
+<div class="container mb-16">
+  <h1 class="mb-4">Talks</h1>
+  <p>I spoke at 20+ Python conferences around the world. Here are my presentations.</p>
+  <p>
+    <a href="/about#contact">Get in touch</a> if you would like me to present at yours.</p>
+</div>
+
+<div class="post-list container">
+  {# asyncEach is needed because of async image tag inside talkBrief element: https://mozilla.github.io/nunjucks/templating.html#asynceach #}
+  {% asyncEach talk in talks %}
+  {% include "components/talkBrief.njk" %}
+  {% endeach %}
+</div>

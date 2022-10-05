@@ -1,0 +1,6 @@
+# www.robotstxt.org
+
+User-agent: *
+Disallow: /drafts
+
+Sitemap: https://switowski.com/sitemap.xml

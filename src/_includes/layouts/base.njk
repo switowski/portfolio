@@ -1,0 +1,40 @@
+{%- set cssBundle = "/assets/main.bundle.css" -%}
+{%- set jsBundle = "/assets/main.bundle.js" -%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>{{ title if title else site.title }}</title>
+
+    <link rel="stylesheet" href="{{cssBundle}}?v={{ cssBundle | hash | urlencode }}">
+
+    {% set inlineJS %}
+    {% include "darkMode.js" %}
+    {% endset %}
+    <script>
+      {{ inlineJS | jsmin | safe }}
+    </script>
+    {% include "meta.njk" %}
+  </head>
+  <body class="body {{ 'debug-screens' if NODE_ENV === 'development' }}">
+    {# Manually add hidden class to the SVG sprite to hide it (otherwise it keeps 300px width and breaks very small screens) #}
+    <div class="svgsprite">
+      {% svgsprite %}
+    </div>
+    <a href="#main" class="sr-only">skip to main content</a>
+
+    {% include "header.njk" %}
+
+    <main id="main" role="main" class="main">
+      {{ content | safe }}
+    </main>
+
+    {% include "footer.njk" %}
+
+    <script type="text/javascript" src="{{jsBundle}}?v={{ jsBundle | hash | urlencode }}" defer></script>
+    <script async defer data-website-id="ef8623b4-8b80-4a0f-a1c3-cf24c4302e8f" src="https://switowski-umami.netlify.app/umami.js" data-do-not-track="true"></script>
+    {# TODO: Add service worker #}
+  </body>
+</html>

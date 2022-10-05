@@ -1,0 +1,19 @@
+<div class="bg-slate-800 footer pt-10 pb-6 text-sm text-white">
+  {# Social icons #}
+  <div class="flex justify-center my-2">
+    <a class="simple-link" href="{{site.social.twitter.url}}" title="Twitter" rel="me">
+      {% svg "twitter", "footer__icon footer__icon--twitter" %}
+    </a>
+    <a class="simple-link" href="{{site.social.linkedin.url}}" title="LinkedIn" rel="me">
+      {% svg "linkedin", "footer__icon footer__icon--linkedin" %}
+    </a>
+    <a class="simple-link" href="/feed.xml" title="RSS" rel="alternate">
+      {% svg "rss", "footer__icon footer__icon--rss" %}
+    </a>
+  </div>
+  {# Text #}
+  <div>
+    <p class="leading-relaxed text-center">© 2022 Sebastian Witowski. All rights reserved.</p>
+    <p class="leading-relaxed text-center">Built with <span class="text-red-500">♥</span>, sweat, tears, <a href="https://www.11ty.dev/">11ty</a>, and <a href="/colophon">other technologies</a>.</p>
+  </div>
+</div>

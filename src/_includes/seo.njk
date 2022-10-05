@@ -1,0 +1,43 @@
+{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
+{%- set isPost = layout == 'post' -%}
+
+{# NOTE: Here we hardcode the "cover.jpg" as cover image name and "index.md" as name of the input file #}
+{% if image %}
+  {# Drop the "src" prefix and replace the "index.md" with "cover"jpg" #}
+  {%- set imageUrl -%}{{ page.inputPath | replace("./src/", "") | absoluteUrl(site.url) | replace("index.md", "cover.jpg")}}{%- endset -%}
+{%- else -%}
+  {%- set imageUrl = site.author.image | url | absoluteUrl(site.url) -%}
+{% endif %}
+
+{# General #}
+<meta name="author" content="{{ site.author.name }}">
+<link rel="canonical" href="{{ absolutePageUrl }}">
+<meta name="generator" content="{{ eleventy.generator }}">
+
+{# Page-Specific #}
+<meta name="description" content="{{ description or site.description }}">
+
+{# Open Graph / Facebook #}
+<meta property="og:url" content="{{ absolutePageUrl }}">
+<meta property="og:site_name" content="{{ site.title}}">
+<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:title" content="{{ title or site.title }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:image" content="{{ imageUrl }}">
+
+{# Twitter #}
+<meta name="twitter:card" content="{% if isPost -%}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:site" content="@{{ site.social.twitter.username }}">
+<meta name="twitter:creator" content="@{{ site.social.twitter.username }}">
+<meta name="twitter:url" content="{{ absolutePageUrl }}">
+<meta name="twitter:title" content="{{ title or site.title }}">
+<meta name="twitter:description" content="{{ description or site.description }}">
+<meta name="twitter:image" content="{{ imageUrl }}">
+
+{# Posts get additional meta tags #}
+{%- if isPost -%}
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="{{ page.date }}">
+{%- else -%}
+  <meta property="og:type" content="website">
+{%- endif -%}

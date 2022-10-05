@@ -1,0 +1,69 @@
+/* Utility classes intented to be reused in multiple places */
+
+/* Disable the box-shadow class for current link */
+.simple-link {
+  box-shadow: none;
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.hover-primary {
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+/* Make text a bit more dim */
+.dim-text {
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+/* Alternate background */
+.alternatebg {
+  @apply from-gray-100 bg-gradient-to-b;
+}
+html[data-theme='dark'] .alternatebg {
+  @apply from-dark-indigo bg-gradient-to-b;
+}
+
+/* Add spaces between paragraphs, headers, code blocks, quotes, lists, etc. (in posts, about page, etc.) */
+/* Custom "prose" class equivalent that makes blocks of text look nice by default */
+.article {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  ul,
+  ol,
+  pre,
+  div {
+    @apply mb-5;
+  }
+  ul ul,
+  ol ol {
+    /* Nested lists should not have bottom margin */
+    @apply mb-0;
+  }
+  /*
+  h2 gets more margin top because it's used to separate different main sections of the article.
+  All the other headers continue the though of the same section, so there is no need for that much visual divide.
+  */
+  h2 {
+    @apply mt-12;
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mt-8;
+  }
+  /* Add some small margin on the left and remove space between bullet and text */
+  ul,
+  ol {
+    @apply ml-6 list-outside;
+  }
+}

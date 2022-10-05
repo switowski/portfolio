@@ -1,0 +1,124 @@
+[
+  {
+    "upcoming": true,
+    "title": "Writing Faster Python 3",
+    "date": "2022-07-14",
+    "description": "A talk about source code optimization. How some common problems can be solved with different code structures, together with benchmarks and explanations why one way is usually better (and often faster) than the other.<br>This is a revised version of my very first talk that I created in 2016 - adjusted for Python 3 with new code examples.",
+    "duration": "PT45M",
+    "conferences": ["EuroPython 2022", "PyCon Italia 2022"]
+  },
+  {
+    "featured": true,
+    "url": "https://www.youtube.com/watch?v=ZF4BARKBRjc",
+    "title": "Python Versions and Dependencies Made Easy",
+    "date": "2021-09-15",
+    "description": "Presentation on using pyenv, virtual environments, and pipx to build an easy-to-manage Python development setup. Setup, where you can easily switch between different Python versions, and you don't have to worry about messing up packages in your projects.",
+    "img": "python-versions-and-dependencies",
+    "duration": "PT30M",
+    "slides": "https://www.slideshare.net/SebastianWitowski/python-versions-and-dependencies-made-easy",
+    "conferences": [
+      "EuroPython 2021",
+      "PyCon AU 2021",
+      "PyCon India 2021",
+      "PyCon Hong Kong 2021",
+      "Pykonik meetup",
+      "PyWaw meetup"
+    ]
+  },
+  {
+    "featured": true,
+    "url": "https://youtu.be/2JtDL43OqHk",
+    "title": "9 Jupyter Tricks For Your Next Advent of Code",
+    "date": "2021-07-31",
+    "description": "Every year thousands of developers try to solve the programming puzzles of the Advent of Code challenge. For many Pythonistas, their favorite tool to do that is the Jupyter notebook. Here are some cool tricks that can help you next time.",
+    "img": "9-jupyter-tricks",
+    "notebook": "https://github.com/switowski/9-tricks-for-aoc/blob/main/9%20Tricks%20for%20Advent%20of%20Code.ipynb",
+    "duration": "PT8M",
+    "conferences": ["PyOhio 2021", "PyCon 2021"]
+  },
+  {
+    "title": "Lessons learned from recording my first programming videos",
+    "date": "2020-12-31",
+    "description": "A handful of tips for people thinking about recording their first programming videos. What equipment you need, how to prepare for recording, and how to make editing much easier. And why you should consider allowing prerecorded talks at your conference.",
+    "duration": "PT15M",
+    "conferences": ["Python Pizza New Year's Party"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=GHFQ_GDSQFc",
+    "title": "Let's Write an IPython Extension (in IPython)",
+    "date": "2020-07-25",
+    "description": "IPython is a Python REPL on steroids. It has many features, but you can easily add new ones by writing an extension if they are not enough. In this 10-minute-long talk, I will show you how to write one. We will build a simple code profiler that will measure the execution time of each command. And, for an additional challenge, I will do everything without closing IPython.",
+    "img": "ipython-extension",
+    "duration": "PT9M",
+    "conferences": ["PyOhio 2020"]
+  },
+  {
+    "featured": true,
+    "url": "https://www.youtube.com/watch?v=WkUBx3g2QfQ",
+    "title": "Modern Python Developer's Toolkit workshop",
+    "date": "2020-04-29",
+    "description": "This is a tutorial for PyCon 2020 that I wish someone gave to me when I first learned Python.<br>Python is (relatively) easy and fun to learn, but there is a gap between \"knowing how to write Python code\" and \"knowing the tools and good practices when writing Python code\". This tutorial will try to bridge this gap. It's intended for beginners who know Python, but who are not sure how to write a Python project from scratch.",
+    "img": "modern-python-dev",
+    "materials": "https://pycon.switowski.com/",
+    "duration": "PT2H24M",
+    "conferences": ["PyCon 2020"]
+  },
+  {
+    "url": "https://youtu.be/8a_TEjCl8NQ?t=429",
+    "title": "It's 2019 and I'm still using Python 2!",
+    "date": "2019-09-15",
+    "description": "What will happen with Python 2 in 2020?<br>What are the risks of staying on the unsupported version?<br>What are the possible solutions (and their pros and cons)?<br>How to go through the migration process in a least painful way?",
+    "img": "python2-in-2019",
+    "slides": "https://switowski.com/blog/it-is-2019-and-i-am-still-using-python2",
+    "duration": "PT49M",
+    "conferences": ["PyCon Japan 2020"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=3i6db5zX3Rw",
+    "title": "Wait, IPython can do that?!",
+    "date": "2019-07-10",
+    "description": "A fast-paced, feature-packed overview of IPython REPL. You will learn about ?? prefix, magic functions (and how to write one), extensions, profiles, how to use it for debugging or profiling. We will install a custom kernel and run shell commands. Great fun for beginners and advanced Pythonistas!",
+    "img": "ipython",
+    "duration": "PT42M",
+    "slides": "https://switowski.com/blog/wait-ipython-can-do-that",
+    "conferences": ["PiterPy 2020", "PyCon Taiwan 2019", "EuroPython 2019"]
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=hgPH19nBlrk&t=8m20s",
+    "title": "Productivity tips for developers",
+    "date": "2018-07-25",
+    "description": "Lightning talk from EuroPython 2018 on dotfiles, swapping keys, text expanders, IPython config, and more.",
+    "img": "productivity-for-developers",
+    "slides": "https://switowski.gitlab.io/productivity-for-developers/",
+    "duration": "PT5M",
+    "conferences": ["PyCon Taiwan 2019", "EuroPython 2018"]
+  },
+  {
+    "url": "http://cds.cern.ch/record/2290762",
+    "title": "I made a website! Now what?",
+    "date": "2017-10-23",
+    "description": "Tools and services that you can use when launching your website (with an emphasis on cheap/free and reliable).",
+    "img": "i-made-a-website",
+    "duration": "PT28M",
+    "slides": "https://switowski.gitlab.io/cern-developers-forum-4/"
+  },
+  {
+    "url": "https://cds.cern.ch/record/2252604",
+    "title": "Maintainable CSS",
+    "date": "2017-02-13",
+    "description": "How can we make writing CSS easier with visual regression tests and functional CSS?",
+    "img": "maintainable-css",
+    "duration": "PT25M",
+    "slides": "https://switowski.github.io/functional-css-talk/"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=YjHsOrOOSuI",
+    "title": "Writing faster Python",
+    "date": "2016-07-19",
+    "description": "Did you know that Python preallocates integers from -5 to 257? Reusing them 1000 times, instead of allocating memory for a bigger integer, can save you a couple of milliseconds of code's execution time.<br>If you want to learn more about this kind of optimizations then, … well, probably this presentation is not for you :) Instead of going into such small details, I will talk about more \"sane\" ideas for writing faster code.",
+    "img": "europython_2016",
+    "duration": "PT25M",
+    "conferences": ["EuroPython 2016", "IT Weekend Ukraine 2016"],
+    "slides": "http://switowski.github.io/europython2016/"
+  }
+]

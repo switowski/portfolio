@@ -1,0 +1,56 @@
+---
+layout: page
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+eleventyNavigation:
+  key: Blog
+  order: 2
+pagination:
+  data: collections.posts
+  size: 10
+  reverse: true
+  alias: paginatedPosts
+---
+{# TODO: Fix pagination when I get to a LOT of posts (probably above 10 pages in the pagination menu is too much) #}
+
+<div class="container mb-16">
+  <h1 class="mb-4">Blog</h1>
+  <p>I write about Python, productivity for developers (dotfiles, CLI tools, etc.), micro-entrepreneurship (i.e. side projects that I built), and whatever else interested me at this time.</p>
+</div>
+
+<div class="post-list container">
+  {# asyncEach is needed because of async image tag inside postBrief element: https://mozilla.github.io/nunjucks/templating.html#asynceach #}
+  {% asyncEach post in paginatedPosts %}
+  {% include "components/postBrief.njk" %}
+  {% endeach %}
+</div>
+
+{# Pagination #}
+{% if pagination.pageLinks.length > 0 %}
+  <div class="container">
+    <nav class="pagination flex justify-center">
+      <ol class="inline-flex items-center -space-x-px list-none">
+        <li class="pagination__element">
+          {% if pagination.href.previous %}
+            <a href="{{pagination.href.previous}}">← Previous</a>
+          {% endif %}
+        </li>
+
+        {%- for pageEntry in pagination.pages %}
+          <li class="pagination__element">
+            {% if page.url == pagination.hrefs[loop.index0] %}
+              <span aria-current="page">{{ loop.index }}</span>
+            {% else %}
+              <a href="{{ pagination.hrefs[ loop.index0 ] }}">{{ loop.index }}</a>
+            {% endif %}
+          </li>
+        {%- endfor %}
+
+        {% if pagination.href.next %}
+          <li class="pagination__element">
+            <a href="{{pagination.href.next}}">Next →</a>
+          </li>
+        {% endif %}
+      </ol>
+    </nav>
+  </div>
+{% endif %}

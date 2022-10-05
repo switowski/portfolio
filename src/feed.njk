@@ -1,0 +1,6 @@
+---
+permalink: feed.xml
+eleventyExcludeFromCollections: true
+---
+{%- set items = collections.posts -%}
+{%- include "components/rss.njk" -%}

@@ -1,0 +1,60 @@
+/* Defaults */
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+  --font-size: 16px;
+  /* Link use primary color for shadow, unless overridden with tailwind shadow-* class */
+  --tw-shadow-color: var(--color-primary);
+}
+
+/* Screen size >768px */
+@screen md {
+  :root {
+    --font-size: 20px;
+  }
+}
+
+/* Color theme */
+:root {
+  --color-bg: #fafafa; /* Tailwind zinc-50 */
+  --color-bg-accent: #f3f4f6; /* Tailwind gray-100 */
+  --color-bg-code: rgb(229 231 235 / 60%); /* Lighter than Tailwind gray-200 */
+  --color-bg-warning: #ffedd5;
+  --color-bg-info: #e0f2fe;
+  --color-bg-success: #dcfce7;
+
+  --color-border: #e5e7eb; /* Tailwind gray-200 */
+  --color-border-warning: #f97316; /* orange-500 */
+  --color-border-info: #3b82f6; /* blue-500 */
+  --color-border-success: #22c55e; /* green-500 */
+
+  --color-text: #111827; /* Tailwind gray-900 */
+  --color-primary: #38bdf8; /* Tailwind sky-400 */
+  --color-primary-dark: #4361ee;
+  --color-text-light: #f9fafb; /* Light text independent of the color scheme Tailwind gray-50 */
+  /* --color-secondary: rgb(36 251 191 / 40%); */
+  /* --color-secondary: #0ea5e9; */
+
+  /* --color-primary: #0ea5e9; /* Tailwind sky-500 */
+  /* --color-bg-offset: {{ colors.backgroundOffset }};
+  --color-text-offset: {{ colors.textOffset }};
+  --color-border: {{ colors.border }};
+  --color-primary-offset: {{ colors.primaryOffset }};
+  --color-secondary: {{ colors.secondary }}; */
+}
+html[data-theme='dark'] {
+  /* --color-bg: #141b1f; */
+  /* --color-bg: #18181b; */
+  --color-bg: #111827; /* Tailwind gray-900 */
+  --color-bg-accent: #1f2937; /* Tailwind gray-800 */
+  --color-bg-code: #253141; /* Tailwind gray-800 with more light (HSL) */
+  --color-bg-warning: #262017;
+  --color-bg-info: #132339;
+  --color-bg-success: #0d2616;
+
+  --color-border: #374151; /* Tailwind gray-700 */
+
+  --color-primary-dark: #0ea5e9; /* Darker primary text color Tailwind blue-500 */
+
+  --color-text: #f9fafb; /* Tailwind gray-50 */
+}

@@ -1,0 +1,12 @@
+# Redirect old blog post URLs to new format
+/python/ipython/slides/2019/07/07/wait-ipython-can-do-that.html     /blog/wait-ipython-can-do-that
+/python/ipython/2019/02/15/creating-magic-functions-part3.html      /blog/creating-magic-functions-part3
+/python/ipython/2019/02/08/creating-magic-functions-part2.html      /blog/creating-magic-functions-part2
+/python/ipython/2019/02/01/creating-magic-functions-part1.html      /blog/creating-magic-functions-part1
+/python/2019/01/25/str-vs-repr.html                                 /blog/str-vs-repr
+/git/2019/01/18/7-git-functions-to-make-your-life-easier.html       /blog/7-git-functions-to-make-your-life-easier
+/git/2019/01/11/configuring-git.html                                /blog/configuring-git
+/python/ipython/2019/01/04/ipython-startup-files.html               /blog/ipython-startup-files
+
+# Redirect old workshop to new one
+/workshops/modern-python-developers-toolkit                    /workshops/modern-python-projects

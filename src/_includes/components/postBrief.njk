@@ -1,0 +1,41 @@
+<article class="post-item mb-16">
+  <div class="md:flex flex-row-reverse justify-between">
+    {# Image #}
+    {# Those empty divs have to stay to make the resizing of images work #}
+    <div>
+      {% if post.data.image %}
+        <div class="post-item__thumbnail">
+          <a class="simple-link" href="{{ post.url | url }}" rel="bookmark" aria-label="{{ post.data.title }}">
+            {% image post.filePathStem | replace("index", post.data.image) , post.title, '', '', "(max-width: 639px) calc(100vw - 32px), (max-width: 767px) 608px, 250px" %}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+
+    {# Text #}
+    <div>
+      <header class="post-item__header">
+        <div class="post-item__meta">
+          <span>{{ post.data.date | formatDate('dd LLL yyyy') }}</span>
+        </div>
+        <a href="{{ post.url | url }}" rel="bookmark">
+          <h3>{{ post.data.title }}</h3>
+        </a>
+      </header>
+
+      <div class="post-item__summary">
+        <p>
+          {{ post.data.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {% if post.data.tags %}
+    <p class="post-item__tags">
+      {% for tag in post.data.tags %}
+        <a href="/tags/{{tag | slugify}}" class="tag-badge py-1 text-xs">#{{tag}}&nbsp;</a>
+      {% endfor %}
+    </p>
+  {% endif %}
+</article>

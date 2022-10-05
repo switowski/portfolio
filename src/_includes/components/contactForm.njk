@@ -1,0 +1,29 @@
+{# The method="POST" is not in the list of attributes, but Netlify will add it automatically
+If you add method="POST" to the form manually, forms won't work on localhost #}
+<form class="form" class="form" action="/thanks" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+  {% if form.name %}
+    <div class="mb-6">
+      <label for="name" class="form__label">Name</label>
+      <input type="text" name="name" id="name" class="form__input" placeholder="Your name" required>
+    </div>
+  {% endif %}
+
+  <div class="mb-6">
+    <label for="email" class="form__label">Email</label>
+    <input type="email" name="email" id="email" class="form__input" placeholder="Your email" required>
+  </div>
+
+  <div class="mb-6">
+    <label for="message" class="form__label">Message</label>
+    <textarea type="text" rows="7" name="message" id="message" class="form__input" placeholder="Your message" required></textarea>
+  </div>
+
+  <p class="hidden">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field">
+    </label>
+  </p>
+  <div data-netlify-recaptcha="true"></div>
+
+  <input type="submit" value="Submit" class="form__button">
+</form>

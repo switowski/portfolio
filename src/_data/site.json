@@ -1,0 +1,23 @@
+{
+  "title": "Sebastian Witowski",
+  "description": "Sebastian Witowski - Python freelancer, consultant, and trainer.",
+  "lang": "en",
+  "locale": "en_US",
+  "domain": "switowski.com",
+  "url": "https://switowski.com",
+  "author": {
+    "name": "Sebastian Witowski",
+    "email": "sebastian@switowski.com",
+    "image": "/static/images/me.jpg"
+  },
+  "social": {
+    "twitter": {
+      "username": "SebaWitowski",
+      "url": "https://twitter.com/SebaWitowski"
+    },
+    "linkedin": {
+      "username": "switowski",
+      "url": "https://www.linkedin.com/in/switowski/"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{# Actually this one is not needed as I replaced it with shortcude using 11ty Image plugin #}
+{% macro image(src) %}
+  <figure>
+    {# https://jonwebb.dev/responsive-images-11ty/ #}
+    {# https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/ #}
+    {# https://stackoverflow.com/questions/12899691/use-of-picture-inside-figure-element-in-html5 #}
+    {# <picture>
+      <source type="image/webp" srcset="{{ src }}-600.webp 600w, {{ src }}-1280.webp 1280w" sizes="100vw">
+      <source type="image/jpeg" srcset="{{ src }}-600.webp 600w, {{ src }}-1280.webp 1280w" sizes="100vw">
+    </picture> #}
+    <img src="{{ src }}" alt="{{ title }}">
+  </figure>
+{% endmacro %}
+
+{# Generate ASCIInema piece of code #}
+{% macro ascii(id) %}
+  <div class="mx-auto">
+    <script id="asciicast-{{ id }}" src="https://asciinema.org/a/{{ id }}.js" async ></script>
+  </div>
+{% endmacro %}

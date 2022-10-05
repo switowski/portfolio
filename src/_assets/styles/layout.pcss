@@ -1,0 +1,88 @@
+/* Navigation, header, footer, sidebar, etc. */
+
+/* Main structures */
+.body {
+  @apply flex min-h-screen flex-col;
+}
+.main {
+  /* Flex:1 to make the pages with little content push footer to the bottom of the screen */
+  @apply flex-grow;
+}
+.container {
+  @apply mx-auto;
+
+  @screen md {
+    @apply max-w-3xl;
+  }
+}
+
+/* Navigation */
+.nav {
+  @apply w-full mx-auto py-3 mt-0 justify-between flex flex-wrap md:max-w-4xl relative z-50 text-lg;
+  background-color: var(--color-bg); /* Needed for mobile menu */
+
+  @screen md {
+    @apply text-base;
+  }
+
+  &__list {
+    @apply absolute flex-grow w-full top-full pb-4;
+    background-color: var(--color-bg); /* Needed for mobile menu */
+
+    @screen lg {
+      @apply static pb-0 flex items-center w-auto;
+    }
+
+    ul {
+      @apply justify-end flex-1 items-center;
+      @screen lg {
+        @apply flex;
+      }
+    }
+    li {
+      @apply mx-2 list-none;
+    }
+    a {
+      @apply inline-block py-2 px-4 relative;
+      border-bottom: none;
+
+      @screen lg {
+        border-bottom: 5px solid transparent;
+
+        /* Hover underline effect */
+        &:after {
+          content: '';
+          display: block;
+          height: 5px;
+          background-color: var(--color-primary);
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -5px;
+          transform: scaleX(0);
+          transform-origin: 0 50%;
+          transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
+        }
+        &:hover {
+          text-decoration: none;
+
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+
+  &__theme-switch {
+    @apply p-2 rounded-lg mx-4;
+    margin-bottom: 5px; /* Align with the menu items that have 5px border-bottom */
+    &:hover {
+      background-color: var(--color-bg-accent);
+    }
+  }
+
+  a {
+    @apply shadow-none;
+  }
+}

@@ -1,0 +1,41 @@
+TODO:
+
+-------- Next -----------
+
+
+-------- Later ----------
+* Umami is throwing 401 error when running lighthouse check. No idea why, wait for new versions of the library, so maybe it will be fixed one day?
+
+
+-------- Small ----------
+
+
+-------- Nice to have -------
+
+
+------- After deployment --------
+
+
+
+------------ Someday --------------------
+* Header link should slide from the side like Jira does:
+  * See this example: https://stackoverflow.com/questions/16989585/css-3-slide-in-from-left-transition
+* Add content to workshops page
+* If needed - add accordion support to Markdown with https://github.com/bioruebe/markdown-it-collapsible
+* Speed up build process on localhost (if 5 seconds of wait is too much):
+  * Disable caching of css/js if on localhost
+* Add map of countries I've visited:
+  * https://www.amcharts.com/visited_countries/#AT,BE,HR,CZ
+* Rethink block quotes? (they look ok for now)
+* Check different color palette (leave it as it is for now)
+  * https://coolors.co/palette/000000-14213d-fca311-e5e5e5-ffffff
+* Make logo/favicon with some AI generator
+* Add ToC to posts
+* Add criticalCSS (this needs to be benchmarked if it really helps, for now I have 4x100 lightbox score)
+
+
+ ---------------------------------- NO ----------------------------------------
+
+-------------------------------------------------------------------------------
+|                                  DONE                                       |
+-------------------------------------------------------------------------------

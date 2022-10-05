@@ -1,0 +1,164 @@
+/* Hero, CTA, post, etc. */
+
+/* SVG sprites */
+/* Set the width:0 and height:0 for svgsprite because the width:0, height:0 that comes by default doesn't work */
+.svgsprite svg {
+  width: 0;
+  height: 0;
+}
+
+/* Theme switcher */
+html[data-theme='light'] .dark-theme-switch {
+  @apply hidden;
+}
+html[data-theme='dark'] .light-theme-switch {
+  @apply hidden;
+}
+
+/* List of posts */
+.post-item {
+  &__meta {
+    @apply text-xs mb-2 mt-2 dim-text;
+
+    @screen md {
+      @apply mt-0;
+    }
+  }
+
+  &__header {
+  }
+
+  &__thumbnail {
+    @apply w-full flex items-end;
+
+    img {
+      @apply rounded-md;
+    }
+
+    @screen md {
+      @apply ml-4;
+      width: 250px;
+    }
+    /* @apply w-4/5 mx-auto; */
+
+    /* @screen md {
+      width: 300px;
+    } */
+  }
+
+  &__tags {
+    @apply text-xs mt-4;
+    color: var(--color-primary);
+  }
+}
+
+/* Full post */
+.post {
+  @apply leading-relaxed;
+
+  &__header {
+    @apply my-8;
+  }
+  &__title {
+    @apply break-normal mb-4;
+  }
+  &__meta {
+    @apply flex text-sm font-normal gap-4 flex-wrap leading-6;
+
+    /* On larger screen, decrease line-height to vertically center text and icons */
+    @screen md {
+      @apply leading-5;
+    }
+  }
+  &__content {
+    /* Center images in posts */
+    img {
+      @apply mx-auto;
+    }
+  }
+}
+
+/* Newsletter */
+.newsletter {
+  @apply shadow-lg;
+  background-color: #f0f9ff; /* Tailwind sky-50 */
+  border-color: var(--color-border);
+}
+html[data-theme='dark'] .newsletter {
+  background-color: #1f2937; /* Tailwind gray-800 */
+}
+
+/* Hero section on main page */
+.hero {
+  @apply grid grid-flow-row grid-cols-7;
+  &__image {
+    @apply col-span-2 row-span-2 mr-4;
+  }
+  &__main-text {
+    @apply col-start-3 col-end-8 row-span-1;
+  }
+  &__secondary-text {
+    @apply col-span-7 mt-4;
+    @screen sm {
+      @apply col-start-3 col-end-8 row-start-2 row-end-3;
+    }
+  }
+}
+
+/* Talk section */
+.talk {
+  &__thumbnail {
+    @apply w-full flex items-end mb-4;
+
+    @screen md {
+      @apply mr-4 mb-0;
+      width: 250px;
+    }
+
+    img {
+      @apply rounded-md;
+    }
+  }
+
+  /* Create rectangle with same aspect ratio as normal thumbnails */
+  /* See: https://css-tricks.com/aspect-ratio-boxes/ */
+  &__thumbnail--placeholder {
+    @apply relative overflow-hidden w-full text-gray-900 rounded-md;
+    height: 0;
+    padding-top: 56.25%;
+
+    &-inner {
+      @apply flex absolute justify-center text-3xl font-bold items-center top-0 left-0 w-full h-full;
+      @screen md {
+        @apply text-lg;
+      }
+    }
+  }
+  &__meta {
+    @apply dim-text flex flex-wrap gap-4 mb-2 text-sm leading-6;
+
+    @screen md {
+      @apply leading-5;
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  &__icon {
+    @apply mx-4;
+
+    width: 30px;
+    height: 30px;
+    fill: white;
+    &--twitter:hover {
+      fill: #0ea5e9;
+    }
+    &--linkedin:hover {
+      fill: #3b82f6;
+    }
+    &--rss:hover {
+      fill: #f97316;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+<article class="talk mb-16">
+  <div class="md:flex-row flex flex-col">
+    {# Image #}
+    {# Those empty divs have to stay to make the resizing of images work #}
+    <div>
+      <div class="talk__thumbnail">
+        {% if talk.img %}
+          <a class="simple-link" href="{{ talk.url | url }}" rel="bookmark">
+            {% image "_assets/images/talks/" + talk.img + ".jpg", talk.title, '', '', "(max-width: 639px) calc(100vw - 32px), (max-width: 767px) 608px, 250px" %}
+          </a>
+        {% else %}
+          {# Info box about no video #}
+          <div class="talk__thumbnail--placeholder">
+            {% if talk.upcoming %}
+              {# Video will be added later #}
+              <div class="talk__thumbnail--placeholder-inner bg-lime-100">
+                <span>Video coming soon!</span>
+              </div>
+            {% else %}
+              {# There is no video #}
+              <div class="talk__thumbnail--placeholder-inner bg-rose-100">
+                <span>No video available</span>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    {# Text #}
+    <div>
+      {# Meta #}
+      <div class="talk__meta">
+        <div class="flex">
+          <span class="mr-1">{% feather "calendar" %}</span>
+          <time datetime="{{ talk.date | dateFromISO | formatDate('yyyy-LL-dd') }}">{{ talk.date | dateFromISO | formatDate('dd LLL yyyy')}}</time>
+        </div>
+        <div class="flex">
+          <span class="mr-1">{% feather "clock" %}</span>
+          <time datetime="{{talk.duration}}">{{ talk.duration | humanizeDuration({ unitDisplay: "short" })}}</time>
+        </div>
+      </div>
+      {# Title #}
+      {% if talk.url %}
+        <a class="simple-link" href="{{talk.url | url}}">
+          <h3>{{talk.title}}</h3>
+        </a>
+      {% else %}
+        <h3>{{talk.title}}</h3>
+      {% endif %}
+      {# Description #}
+      <div>
+        <p>{{talk.description | safe}}</p>
+      </div>
+      {# Slides/notebook/material #}
+      <div class="flex">
+        {% if talk.slides %}
+          <span class="my-2 mr-2">
+            <a href="{{talk.slides}}">Slides</a>
+          </span>
+        {% endif %}
+        {% if talk.notebook %}
+          <span class="my-2 mr-2">
+            <a href="{{talk.notebook}}">Notebook</a>
+          </span>
+        {% endif %}
+        {% if talk.materials %}
+          <span class="my-2 mr-2">
+            <a href="{{talk.materials}}">Materials</a>
+          </span>
+        {% endif %}
+      </div>
+      {# Presented at #}
+      {# <div>
+                {% if talk.conferences %}
+                  <p class="my-2">
+                    <span class="font-bold">Presented at:</span>
+                    {% for conference in talk.conferences %}
+                      {{conference.name}}
+                      {%- if not loop.last %},{% endif -%}
+                    {% endfor %}
+                  </p>
+                {% endif %}
+              </div> #}
+    </div>
+  </div>
+</article>

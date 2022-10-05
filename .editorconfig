@@ -1,0 +1,33 @@
+# top-most EditorConfig file
+root = true
+
+### defaults
+[*]
+charset = utf-8
+
+# Max line length
+max_line_length = 120
+
+# 2 space indentation
+indent_size = 2
+indent_style = space
+
+# remove any whitespace characters preceding newline characters
+trim_trailing_whitespace = true
+
+# newline ending every file
+insert_final_newline = true
+
+# Denotes preferred quoting style for string literals
+quote_type = double
+
+# Don't add semicolons
+semi = false
+
+# https://prettier.io/docs/en/options.html#html-whitespace-sensitivity
+htmlWhitespaceSensitivity = ignore
+
+### custom for markdown
+[*.md]
+# do not remove any whitespace characters preceding newline characters
+trim_trailing_whitespace = false

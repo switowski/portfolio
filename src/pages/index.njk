@@ -1,0 +1,86 @@
+---
+layout: base
+permalink: /
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+
+{# Hero #}
+<div class="bg-slate-800 text-white">
+  <div class="max-w-4xl mx-auto">
+    <div class="px-4 py-8 text-lg">
+      <div class="hero">
+        {# Image #}
+        <div class="hero__image">
+          {% image '_assets/images/me.png', "Me", "", "", "(max-width: 767px) calc((100vw - 32px - 16px) * 2 / 7), (max-width: 1120px) calc((100vw - 40px - 16px) * 2 / 7), 288px" %}
+        </div>
+        <div class="hero__main-text">
+          <h1 class="md:leading-normal md:text-5xl text-3xl font-bold leading-normal">Hi, I'm Sebastian<span class="lg:inline hidden"> Witowski</span></h1>
+          <p class="md:leading-normal md:text-3xl text-2xl font-bold leading-snug">Python freelancer, consultant, and speaker.</p>
+        </div>
+        <div class="hero__secondary-text">
+          <p class="mb-4">For over 10 years, I've been building full-stack software like portfolio management platforms or document management systems for companies including <a class="shadow-purple-400" href="https://home.web.cern.ch/">CERN</a>, <a class="shadow-red-400" href="https://www.mufg.jp/english/index.html">MUFG</a>, and <a class="shadow-green-400" href="https://www.statkraft.com/">Statkraft</a>.</p>
+          <p>I also write and speak. Check out my <a href="/blog">blog</a>, <a href="/talks">talks</a>, or <a href="/about">get in touch</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  {# Recent posts #}
+  <div class="md:my-12 my-10">
+    <h2 class="mb-8">Latest posts</h2>
+    {% asyncEach post in collections.posts | reverse | limit(3) %}
+    {% include "components/postBrief.njk" %}
+    {% endeach %}
+    <div class="text-right">
+      <a class="" href="/blog">See all posts →</a>
+    </div>
+  </div>
+
+  {# Popular posts #}
+  <div class="my-8">
+    <h2>Most popular posts</h2>
+    <p class="my-4">
+      In case you haven't read them, here are my most popular posts:
+    </p>
+    <ul>
+      {%- for post in collections.featured | reverse -%}
+        <li class="md:mb-1 mb-2">
+          <a href="{{ post.url | url }}" rel="bookmark">
+            {{ post.data.title }}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{# Newsletter subscription #}
+{%- include "components/newsletter.njk" -%}
+
+<div class="alternatebg py-8">
+  <div class="container">
+    {# Talks #}
+    <div>
+      <h2>Talks</h2>
+      <p class="mt-2 mb-12">
+      I spoke at 20+ Python conferences around the world.<br>
+        <a href="/about#contact">Get in touch</a> if you would like me to present at yours.<br>
+      Here are some of my favorite talks.<br>
+      </p>
+
+      {% asyncEach talk in talks | filterAttr('featured', true) %}
+      {% include "components/talkBrief.njk" %}
+      {% endeach %}
+
+      <div class="text-right">
+        <a class="" href="/talks">See all my talks →</a>
+        {# <p>Or <a href="/about#contact">contact me</a> if you want me to talk at your conference</p> #}
+      </div>
+
+    </div>
+  </div>
+</div>

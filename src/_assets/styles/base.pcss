@@ -1,0 +1,108 @@
+/* Reset, typography, variables, mixins, etc. - NO CLASSES! */
+
+/* Override or extend anything from https://github.com/tailwindlabs/tailwindcss/blob/master/src/css/preflight.css */
+@layer base {
+  html {
+    @apply antialiased;
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+  }
+  body {
+    @apply leading-normal tracking-normal;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+}
+/* Non-tailwind properties */
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mb-2;
+  font-weight: 700;
+}
+
+h1 {
+  @apply text-4xl;
+}
+h2 {
+  @apply text-3xl;
+}
+h3 {
+  @apply text-2xl;
+}
+h4 {
+  @apply text-xl;
+}
+h5 {
+  @apply text-base;
+}
+h6 {
+  @apply text-sm;
+}
+
+/* Make nice underline sliding up for links */
+a {
+  text-decoration: none;
+  transition: all 0.25s ease-out;
+  box-shadow: inset 0 -3px 0 0 var(--tw-shadow-color);
+
+  &:hover {
+    box-shadow: inset 0 -0.4em 0 0 var(--tw-shadow-color);
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+/* Inline code. The not:class is necessary to not mess up Prism.js themes */
+code:not([class]) {
+  @apply py-0.5 px-1;
+  border-radius: 3px;
+  background: var(--color-bg-code);
+}
+
+blockquote {
+  @apply border-l-4 italic my-7 pl-4 md:pl-8;
+  border-color: rgba(14, 165, 233, 0.5);
+}
+
+ul {
+  @apply list-disc list-inside;
+
+  ul {
+    /* Nested lists should have different markers */
+    list-style: circle;
+    ul {
+      /* Nested lists should have different markers */
+      list-style: square;
+    }
+  }
+}
+
+ol {
+  @apply list-decimal list-inside;
+}
+
+table {
+  @apply table-auto min-w-full;
+}
+tr {
+  @apply border-b;
+}
+td {
+  @apply py-3 px-3;
+  @screen md {
+    @apply px-6;
+  }
+}
+
+/* This allows you to hide Alpine DOM until it's ready to go. */
+[x-cloak] {
+  @apply hidden;
+}

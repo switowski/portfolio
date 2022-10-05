@@ -1,0 +1,4 @@
+- name: Home page
+  url: http://localhost:8080
+- name: About
+  url: http://localhost:8080/about
