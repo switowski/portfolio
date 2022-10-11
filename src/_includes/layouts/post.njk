@@ -138,7 +138,10 @@ layout: base
 {# TODO: comments: plug https://github.com/giscus/giscus #}
 <div class="alternatebg">
   <div class="container">
-    <h4>Comments</h4>
-    <div class="pb-24"></div>
+    <div class="py-8" id="comments">
+      <script>
+        {% include "comments.js" %}
+      </script>
+    </div>
   </div>
 </div>
