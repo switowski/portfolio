@@ -43,7 +43,7 @@ If you are working with frameworks, there is usually a plugin that will make you
 
 ## [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 
-{% postImage "intellicode.gif", "Plugins: Intellicode", "Source: https://docs.microsoft.com/en-us/visualstudio/intellicode/intellicode-visual-studio-code" %}
+{% postImage "intellicode.gif", "Plugins: Intellicode", "", "", "Source: https://docs.microsoft.com/en-us/visualstudio/intellicode/intellicode-visual-studio-code" %}
 
 Intellicode makes the autocompletion a bit smarter. It tries to predict which term you are most likely to use in a given situation and puts that term at the top of the list (marked with a ☆ symbol).
 

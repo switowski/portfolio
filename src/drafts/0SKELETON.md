@@ -7,7 +7,7 @@ date: 2030-01-15
 
 ## TODO: todo
 
-* replace curly quotes (‘ , ’, “, ”) with straight quotes <https://typographyforlawyers.com/straight-and-curly-quotes.html> using "replace curly quotes command"
+* run ""replace curly quotes" command to fix curly quotes copied from other places (‘ , ’, “, ”)
 * capitalize title <https://capitalizemytitle.com/>
 * update title
 * update tags

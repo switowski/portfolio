@@ -73,7 +73,7 @@ BetterTouchTool (or BTT for short) lets you customize any input device for your 
 
 But none of those features are the reason why I decided to pay $10 for this app. I bought it so I can customize my Macbook's touch bar. In its original form, the touch bar was unusable for me. Buttons that change depending on which application you are using is one of the worst ideas ever. I don't want to rediscover what's on the touch bar each time I change the currently used app. And half of the buttons are useless anyway. I don't want a slider for the volume or brightness! 99% of the time, I only need to increase or decrease it by a notch. I should be able to do this with one press of a button. So, as most of the people that I know, I didn't even use the touch bar. And one day, I stumbled upon an article on HackerNews that was explaining [how to make the touch bar actually useful](http://vas3k.com/blog/touchbar/). After reading this article, I immediately bought the BTT.
 
-{% postImage "my-touchbar.jpg", "My touch bar", "This is how my touch bar looks like today" %}
+{% postImage "my-touchbar.jpg", "My touch bar", "", "This is how my touch bar looks like today" %}
 
 Now on my touch bar, there are (from left to right):
 

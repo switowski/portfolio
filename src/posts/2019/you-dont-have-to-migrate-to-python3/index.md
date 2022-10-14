@@ -37,7 +37,7 @@ You can get hacked. Well, you can get hacked on Python 3 or any other programmin
 
 Even if there won't be any security issues with your software, as time goes, it will slowly start falling apart. Each time you update part of your system (and you will update them to stay secure), there is a chance that some of the underlying dependencies won't be happy with the new software. And maybe some developers will remove their packages from PyPI, tired of seeing users opening new issues in a project that they decided to deprecated a long time ago. In the end, you will spend more and more time firefighting to keep your project alive.
 
-{% postImage "removed-package-from-pypi.jpg", "Removing packages from PyPI makes users angry", "Removing packages from PyPI makes users angry" %}
+{% postImage "removed-package-from-pypi.jpg", "Removing packages from PyPI makes users angry", "", "Removing packages from PyPI makes users angry" %}
 
 ## What can you do about Python 2 EOL?
 

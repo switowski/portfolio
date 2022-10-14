@@ -79,7 +79,7 @@ It shows:
 * How long it took the previous command to execute (if it was longer than a few milliseconds)
 * Error indicator if the last command failed
 
-{% postImage "starship2.jpg", "Starship prompt in action", "Starship prompt in action" %}
+{% postImage "starship2.jpg", "Starship prompt in action" %}
 
 And a bazillion other information. But, in a smart way! If you are not in a git repository, it hides the git info. If you are not in a Python project - there is no Python version (because there is no point in displaying it). It never overwhelms you with too much information, and the prompt stays beautiful, useful, and minimalistic.
 
@@ -105,7 +105,7 @@ I use it through the [fish fzf plugin](https://github.com/jethrokuan/fzf), so I 
 
 ### [fd](https://github.com/sharkdp/fd)
 
-{% postImage "fd.gif", "fd in action", "find (left) versus fd (right)" %}
+{% postImage "fd.gif", "fd in action", "", "find (left) versus fd (right)" %}
 
 Like the `find` command but much simpler to use, faster, and comes with good default settings.
 
@@ -117,7 +117,7 @@ The output is nicely colorized and, [according to the benchmarks](https://github
 
 ### [ripgrep](https://github.com/BurntSushi/ripgrep)
 
-{% postImage "rg.gif", "ripgrep in action", "Poor grep (on the left) was running for ages through all the node_modules before finding something useful" %}
+{% postImage "rg.gif", "ripgrep in action", "", "Poor grep (on the left) was running for ages through all the node_modules before finding something useful" %}
 
 In a similar manner to `fd` mentioned above, `ripgrep` is an alternative to the `grep` command - much faster one, with sane defaults and colorized output.
 
@@ -127,11 +127,11 @@ It skips files ignored by `.gitignore` and hidden ones, so you will probably nee
 
 The most common tool to show information about processes running on Linux or Mac is called `top`. It's the best friend of every system administrator. And, even if you are mostly doing web development like me, it's useful to see what's going on with your computer. You know, just to see if it was Docker or Chrome that ate all your RAM this time.
 
-{% postImage "htop.jpg", "htop in action", "htop is an excellent alternative for top" %}
+{% postImage "htop.jpg", "htop in action", "", "htop is an excellent alternative for top" %}
 
 `top` is quite basic, so most people switch to [htop](https://hisham.hm/htop/). `htop` is top on steroids - colorful, with plenty of options, and overall more comfortable to use.
 
-{% postImage "glances.jpg", "Glances at a glance ;)", "glances gives you a quick overview of your system" %}
+{% postImage "glances.jpg", "Glances at a glance ;)", "", "glances gives you a quick overview of your system" %}
 
 [glances](https://nicolargo.github.io/glances/) is a complementary tool to `htop`. Apart from listing all the processes with their CPU and memory usage, it also displays additional information about your system.
 
@@ -154,7 +154,7 @@ VirtualFish is virtual environment manager for the fish shell (if you are not us
 
 ### [pyenv](https://github.com/pyenv/pyenv), [nodenv](https://github.com/nodenv/nodenv), and [rbenv](https://github.com/rbenv/rbenv)
 
-{% postImage "pyenv.jpg", "pyenv in action", "pyenv makes it easy to switch Python versions" %}
+{% postImage "pyenv.jpg", "pyenv in action", "", "pyenv makes it easy to switch Python versions" %}
 
 Pyenv, nodenv, and rubyenv are tools for managing different versions of Python, Node, and Ruby on my computer.
 
@@ -182,7 +182,7 @@ It's a two-hour-long tutorial on how to set up a Python development environment,
 
 ### [ctop](https://github.com/bcicen/ctop) and [lazydocker](https://github.com/jesseduffield/lazydocker)
 
-{% postImage "ctop.gif", "ctop in action", "ctop in action (source: https://github.com/bcicen/ctop)" %}
+{% postImage "ctop.gif", "ctop in action", "", "ctop in action (source: https://github.com/bcicen/ctop)" %}
 
 Both of those tools are useful when you are working with Docker. `ctop` is a top-like interface for Docker containers. It gives you:
 
@@ -192,7 +192,7 @@ Both of those tools are useful when you are working with Docker. `ctop` is a top
 
 It's so much nicer than trying to figure out all this information from `docker ps`.
 
-{% postImage "lazydocker.gif", "lazydocker in action", "lazydocker is my favorite Docker tool (source: https://github.com/jesseduffield/lazydocker)" %}
+{% postImage "lazydocker.gif", "lazydocker in action", "", "lazydocker is my favorite Docker tool (source: https://github.com/jesseduffield/lazydocker)" %}
 
 And if you think that `ctop` was cool, wait until you try `lazydocker`! It's a full-fledged terminal UI for managing Docker with even more features. My favorite tool when it comes to Docker!
 
@@ -216,11 +216,11 @@ It's a great help for recording coding tutorials - not many things are as frustr
 
 ### [colordiff](https://www.colordiff.org/) and [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 
-{% postImage "colordiff.jpg", "Colordiff in action", "colordiff brings some colors to your diffs" %}
+{% postImage "colordiff.jpg", "Colordiff in action", "", "colordiff brings some colors to your diffs" %}
 
 I rarely do diffs (compare differences between two files) in the terminal anymore, but if you need to do one, use `colordiff` instead of the unusable `diff` command. `colordiff` colorizes the output, so it's much easier to see the changes instead of trying to follow all the "<" and ">" signs.
 
-{% postImage "diff-so-fancy.jpg", "diff-so-fancy in action", "diff-so-fancy - even better alternative to colordiff" %}
+{% postImage "diff-so-fancy.jpg", "diff-so-fancy in action", "", "diff-so-fancy - even better alternative to colordiff" %}
 
 For running `git diff` and `git show` commands, there is an even better tool called [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy). It further improves how the diff looks like by:
 
@@ -260,7 +260,7 @@ Adds syntax highlighting, git gutter marks (when applicable), automatic paging (
 
 ### [httpie](https://httpie.org/)
 
-{% postImage "httpie.gif", "httpie tool in action", "httpie in action (source: <https://httpie.org/>)" %}
+{% postImage "httpie.gif", "httpie tool in action", "", "httpie in action (source: https://httpie.org)" %}
 
 If you need to send some HTTP requests and you find `curl` unintuitive to use, try `httpie`.
 
@@ -274,7 +274,7 @@ Simplified man pages. *"man pages"* contain manuals for Linux software that expl
 
 For example, if you want to create a gzipped archive of a few files, `man tar` will overwhelm you with the possible options. `tldr tar` will instead list some common examples - the second one being exactly the thing that you want to do:
 
-{% postImage "tldr.jpg", "man page vs tldr", "man pages are great, but sometimes using tldr will be much faster to find a specific information" %}
+{% postImage "tldr.jpg", "man page vs tldr", "", "man pages are great, but sometimes using tldr will be much faster to find a specific information" %}
 
 ### [exa](https://the.exa.website/)
 

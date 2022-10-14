@@ -85,7 +85,8 @@ Everything that will end up in the `dist` folder comes from `src` folder. But th
 
 #### SEO
 
-Set images to 1200x630px ([source](https://iamturns.com/open-graph-image-size/))
+Set images to 1200x630px to make them looks the best on social media (Twitter, LinkedIn) ([source](https://iamturns.com/open-graph-image-size/)).
+For images in posts, width of 1920px sounds like a good default. Those images will be resized anyway and that resolution is easier to remember than 1840px (that's 2*920px - which is max image width in blog post).
 
 ### Ideology
 

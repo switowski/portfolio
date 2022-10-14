@@ -65,7 +65,7 @@ Memorizing the ITTO will let you answer a lot of questions correctly, but it's r
 
 What I ended up doing was to print the flashcards with all ITTOs. And I started learning them using the spaced repetition method. In the end, I didn't learn every single item from ITTOs by heart, but I've noticed a lot of patterns and I focused on memorizing the distinct elements of various processes. You can find some printable flashcards with ITTOs on the internet. Just make sure to search for the most updated version (version 6 of PMIBOK is the most recent one at the time of writing this article). Don't memorize an outdated by mistake!
 
-{% postImage "ittos-flashcards.jpg", 'ITTOs flashcards', "There are a lot of Inputs, Tools & Techniques!" %}
+{% postImage "ittos-flashcards.jpg", 'ITTOs flashcards', "", "There are a lot of Inputs, Tools & Techniques!" %}
 
 ## Things that worked well and those that didn't
 
