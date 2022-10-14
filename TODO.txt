@@ -1,7 +1,7 @@
 TODO:
 
 -------- Next -----------
-* Change automatic deployment time to 6pm
+* Write and send newsletter email
 
 -------- Later ----------
 * Umami is throwing 401 error when running lighthouse check. No idea why, wait for new versions of the library, so maybe it will be fixed one day?
