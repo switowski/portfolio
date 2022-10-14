@@ -24,6 +24,7 @@ const asyncShortcodes = require('./utils/asyncShortcodes.js');
 // Select only live posts - used for scheduling posts with a future date in production
 const now = new Date();
 const livePosts = (p) => (process.env.NODE_ENV === 'development' ? true : p.date <= now);
+
 // Select posts with "featured: true" in the front matter
 const featuredPosts = (p) => p.data.featured === true;
 

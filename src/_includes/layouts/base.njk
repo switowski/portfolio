@@ -34,7 +34,9 @@
     {% include "footer.njk" %}
 
     <script type="text/javascript" src="{{jsBundle}}?v={{ jsBundle | hash | urlencode }}" defer></script>
-    <script async defer data-website-id="ef8623b4-8b80-4a0f-a1c3-cf24c4302e8f" src="https://switowski-umami.netlify.app/umami.js" data-do-not-track="true"></script>
+    {% if NODE_ENV === 'production' %}
+      <script async defer data-website-id="ef8623b4-8b80-4a0f-a1c3-cf24c4302e8f" src="https://switowski-umami.netlify.app/umami.js" data-do-not-track="true"></script>
+    {% endif %}
     {# TODO: Add service worker #}
   </body>
 </html>
