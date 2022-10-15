@@ -5,7 +5,7 @@ tags: ['11ty']
 date: 2022-10-14
 ---
 
-There is an unwritten rule that when you get back to your old blog, you have to rewrite it. You can't just continue. You won't be happy with what you wrote a year ago. The world is a different place now, there are 12361293 new JavaScript frameworks since the last time you chose one for your project, 2and there is no way you can efficiently continue building what you started back then.
+There is an unwritten rule that when you get back to your old blog, you have to rewrite it. You can't just continue. You won't be happy with what you wrote a year ago. The world is a different place now, there are 12361293 new JavaScript frameworks since the last time you chose one for your project, and there is no way you can efficiently continue building what you started back then.
 
 Of course, a little voice in your head says: *"But people are here to read what you say. They don't care about the look of the website. It's the content that matters"*. That voice is called **reason**. But no one listens to it. When you're at work, you must listen to your boss saying, *"No, we can't rewrite this project in this new, cool framework. You have to keep working on what we have now"*. Luckily, this blog is not my work. And I can't look at something I wrote 2 years ago. The world has moved on, all the websites have a beautiful dark theme, and I'm sitting here, burning out your eyes with this handcrafted, white Frankenstein's monster - a theme I built from a couple of different ones I found in the past 2 years.
 
