@@ -230,6 +230,4 @@ Preparing those lists was also an excellent opportunity to clean up my Mac a bit
 
 If you liked this article, then check out [what CLI tools I'm using]({% postUrl "favorite-cli-tools" %}).
 
-&nbsp;
-
 Photo by Lachlan Donald on [Unsplash](https://unsplash.com/photos/YVT5aF2QM7M)

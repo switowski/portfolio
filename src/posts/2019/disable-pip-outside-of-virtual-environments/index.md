@@ -63,6 +63,4 @@ gpip() {
 
 Now I no longer have to worry about installing dependencies outside of a virtual environment!
 
-&nbsp;
-
 Photo by Tim Evans on [Unsplash](https://unsplash.com/photos/Uf-c4u1usFQ)

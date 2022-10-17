@@ -132,6 +132,6 @@ I hope you enjoyed this short tutorial and if you have questions or if you have 
 
 Stay tuned for the next parts. We still need to cover the **cell magic** functions, **line AND cell magic** functions and **Magic** classes.
 
-[^1]: It's a joke. We don't use *Polish notation* in Poland ;).
-
 Image from: [Pexels](https://www.pexels.com/photo/actor-adult-business-cards-547593/)
+
+[^1]: It's a joke. We don't use *Polish notation* in Poland ;).

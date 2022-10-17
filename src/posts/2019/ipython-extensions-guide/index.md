@@ -292,6 +292,4 @@ One thing to remember - this time we have to use the **name of the module** when
 
 Extensions are one of the most powerful features of IPython. They are very easy to create and to publish on PyPI, so if you come up with a great extension (something more useful than reversing strings), make sure you share it!
 
-&nbsp;
-
 Image from: [Unsplash](https://unsplash.com/photos/5siQcvSxCP8)

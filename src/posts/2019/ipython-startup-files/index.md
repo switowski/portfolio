@@ -33,3 +33,5 @@ Here is a short video explaining how a startup file works in IPython:
 
 {% from "macros.njk" import ascii %}
 {{ ascii("217923") }}
+
+Image from: [Pexels](https://www.pexels.com/photo/young-game-match-kids-2923/)
