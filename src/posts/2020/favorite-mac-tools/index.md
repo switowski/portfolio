@@ -1,7 +1,7 @@
 ---
 title: My Favorite Macbook Tools
 description: I'm programming on a Macbook, and I love it. Here are some of the tools that make my life easier.
-tags: ['Tools']
+tags: ['Tools', 'Productivity']
 similar:
   - favorite-cli-tools
   - plugins-for-python-in-vscode

@@ -1,7 +1,7 @@
 ---
 title: My Favorite CLI Tools
 description: 26 CLI tools that I love. And one that is OK.
-tags: ['Tools']
+tags: ['Tools', 'CLI', 'Productivity']
 similar:
   - favorite-mac-tools
   - plugins-for-python-in-vscode
