@@ -5,6 +5,15 @@ tags: ["Python", "Writing Faster Python"]
 date: 2020-08-18
 ---
 
+:::callout-warning
+
+**2022 Update**: I've started writing these articles in 2020 using Python 3.8 on a 2017 MacBook Pro with Intel CPU. In 2022, I switched to a new MacBook Pro with M1 CPU and decided to also switch to the latest Python 3.11 version as it offers some nice speed up improvements.
+
+So all the articles written after 2021 are using much faster CPython version and laptop than the initial ones.
+:::
+
+## Writing Faster Python
+
 A few years ago, I made a presentation called "[Writing Faster Python](https://www.youtube.com/watch?v=YjHsOrOOSuI)," which got quite popular (as for a technical talk). But I made it for Python 2, and even though most advice applies to Python 3, I need to update it at some point. And I will, but first, I need some examples that I can use.
 
 So, today I'm starting a series of articles where I take some common Python code structures and show how they can be improved. In many cases, simply writing idiomatic code and avoiding anti-patterns will result in better and faster code, and that's what I want to focus on. I will also show how you can significantly speed up your programs by using a different interpreter (like PyPy), just-in-time compilers like Numba and other tools. Some code examples are mere curiosities with a marginal impact on the execution time (like replacing `dict()` with `{}`), but I want to show you how they work and when I would use one over the other. Finally, there will be cases when the "improved" code is faster but less readable, and I wouldn't use it in my programs - I will clearly warn you when this happens.
@@ -18,10 +27,9 @@ I will try to publish a new article every week or two. Given that so far, I was 
 
 You can find all the articles published so far in this series [here](/tags/writing-faster-python/).
 
-
 The best way to get notifications about new articles is to subscribe to my newsletter (below), follow me on Twitter, or, if you are old fashioned like me, use the RSS (click the icon in the footer of this page).
 
-{%- include "components/newsletter.njk" -%}
+{% include "components/newsletter.njk" %}
 
 ## Assumptions
 
