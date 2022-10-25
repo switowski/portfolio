@@ -83,6 +83,20 @@ html[data-theme='dark'] .light-theme-switch {
   @apply shadow-lg;
   background-color: #f0f9ff; /* Tailwind sky-50 */
   border-color: var(--color-border);
+
+  /* Following classes have to be written like this, not like "&__header" to beat the ".article h3" specificity */
+  .newsletter__header {
+    @apply mb-4 mt-0 text-2xl font-bold;
+    @screen md {
+      @apply text-3xl;
+    }
+    @screen lg {
+      @apply mb-7;
+    }
+  }
+  .newsletter--no_mb {
+    @apply mb-0;
+  }
 }
 html[data-theme='dark'] .newsletter {
   background-color: #1f2937; /* Tailwind gray-800 */
