@@ -1,14 +1,15 @@
 [
   {
-    "upcoming": true,
+    "featured": true,
+    "url": "https://www.youtube.com/watch?v=6P68IBou_cg",
     "title": "Writing Faster Python 3",
     "date": "2022-07-14",
     "description": "A talk about source code optimization. How some common problems can be solved with different code structures, together with benchmarks and explanations why one way is usually better (and often faster) than the other.<br>This is a revised version of my very first talk that I created in 2016 - adjusted for Python 3 with new code examples.",
+    "img": "writing-faster-python3",
     "duration": "PT45M",
     "conferences": ["EuroPython 2022", "PyCon Italia 2022"]
   },
   {
-    "featured": true,
     "url": "https://www.youtube.com/watch?v=ZF4BARKBRjc",
     "title": "Python Versions and Dependencies Made Easy",
     "date": "2021-09-15",
