@@ -6,6 +6,8 @@ const { DateTime, Duration } = require('luxon');
 // https://nodejs.org/api/util.html#util_util_inspect_object_options
 const inspect = require('util').inspect;
 
+const helpers = require('./helpers.js');
+
 // Return number of similar tags (or 0 if tagsA is undefined)
 const getSimilarTags = function (tagsA, tagsB) {
   return tagsA?.filter(Set.prototype.has, new Set(tagsB)).length || 0;
@@ -62,6 +64,11 @@ module.exports = {
     const filtered = collection.filter((page) => related.includes(page.fileSlug));
     // Sort returned posts by their position in front matter
     return filtered.sort((a, b) => related.indexOf(a.fileSlug) - related.indexOf(b.fileSlug));
+  },
+
+  // Filter out posts that are not live (publication date is in the future)
+  filterLivePosts: function (collection) {
+    return collection.filter(helpers.isLivePost);
   },
 
   // Filter data collection and only pick items where attr is equal to value (e.g. to pick featured talks)

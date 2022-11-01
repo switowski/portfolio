@@ -29,8 +29,8 @@ module.exports = {
     };
 
     let metadata = await Image(srcPath, {
-      // widths: isGif(src) ? [null] : [300, 600, 920, null], // Thumbnail, medium screen, full-container and original width
-      widths: [300, 600, 920, null], // Thumbnail, medium screen, full-container and original width
+      // widths: isGif(src) ? [null] : [250, 600, 920, null], // Thumbnail, medium screen, full-container and original width
+      widths: [250, 600, 920, null], // Thumbnail, medium screen, full-container and original width
       formats: isGif(src) ? ['webp'] : ['webp', null], // WebP and original format (unless it's a GIF - then only WebP)
       outputDir: 'dist/img/',
       urlPath: '/img/',

@@ -19,11 +19,7 @@ const filters = require('./utils/filters.js');
 const asyncFilters = require('./utils/asyncFilters.js');
 const shortcodes = require('./utils/shortcodes.js');
 const asyncShortcodes = require('./utils/asyncShortcodes.js');
-
-// Helper filters
-// Select only live posts - used for scheduling posts with a future date in production
-const now = new Date();
-const livePosts = (p) => (process.env.NODE_ENV === 'development' ? true : p.date <= now);
+const helpers = require('./utils/helpers.js');
 
 // Select posts with "featured: true" in the front matter
 const featuredPosts = (p) => p.data.featured === true;
@@ -90,7 +86,7 @@ module.exports = function (config) {
 
   // Collections: Posts
   config.addCollection('posts', function (collectionApi) {
-    return collectionApi.getFilteredByGlob('src/posts/**/*.md').filter(livePosts);
+    return collectionApi.getFilteredByGlob('src/posts/**/*.md').filter(helpers.isLivePost);
   });
   // Collections: Drafts
   config.addCollection('drafts', function (collectionApi) {
@@ -99,9 +95,12 @@ module.exports = function (config) {
   // Collections: Tags
   config.addCollection('tags', function (collectionApi) {
     let tagSet = new Set();
-    collectionApi.getAll().forEach((item) => {
-      (item.data.tags || []).forEach((tag) => tagSet.add(tag));
-    });
+    collectionApi
+      .getAll()
+      .filter(helpers.isLivePost)
+      .forEach((item) => {
+        (item.data.tags || []).forEach((tag) => tagSet.add(tag));
+      });
     return [...tagSet].sort();
   });
   // Collections: Featured posts
