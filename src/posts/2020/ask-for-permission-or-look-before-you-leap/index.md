@@ -35,7 +35,7 @@ with open("path/to/file.txt") as input_file:
     return input_file.read()
 ```
 
-Depending on what you want to do, there might be quite a lot of checks to perform. And even when you think you covered everything, there is no guarantee that some unexpected problems won't prevent you from reading this file. So, instead of doing all the checks, you can "ask for forgiveness."
+Depending on what you want to do, there might be quite a lot of checks to perform. And even when you think you covered everything, there is no guarantee that some unexpected problems won't prevent you from reading this file. You might have some race conditions if the file is deleted or permissions are changed between one "if" check and the other. So, instead of doing all the checks, you can "ask for forgiveness."
 
 With "ask for forgiveness," you don't check anything. You perform whatever action you want, but you wrap it in a `try/catch` block. If an exception happens, you handle it. You don't have to think about all the things that can go wrong, your code is much simpler (no more nested ifs), and you will usually catch more errors that way. That's why the Python community, in general, prefers this approach, often called ["EAFP"](https://docs.python.org/3/glossary.html#term-eafp) - "Easier to ask for forgiveness than permission."
 
@@ -69,12 +69,12 @@ class Foo(BaseClass):
 FOO = Foo()
 
 # Look before you leap
-def test_lbyl():
+def test_permission():
     if hasattr(FOO, "hello"):
         FOO.hello
 
 # Ask for forgiveness
-def test_aff():
+def test_forgiveness():
     try:
         FOO.hello
     except AttributeError:
@@ -88,10 +88,10 @@ For benchmarking, I'm using the standard [timeit](https://docs.python.org/3/libr
 :::
 
 ```shell
-$ python -m timeit -s "from permission_vs_forgiveness import test_lbyl" "test_lbyl()"
+$ python -m timeit -s "from permission_vs_forgiveness import test_permission" "test_permission()"
 2000000 loops, best of 5: 155 nsec per loop
 
-$ python -m timeit -s "from permission_vs_forgiveness import test_aff" "test_aff()"
+$ python -m timeit -s "from permission_vs_forgiveness import test_forgiveness" "test_forgiveness()"
 2000000 loops, best of 5: 118 nsec per loop
 ```
 
@@ -113,14 +113,14 @@ class Foo(BaseClass):
 FOO = Foo()
 
 # Look before you leap
-def test_lbyl2():
+def test_permission2():
     if hasattr(FOO, "hello") and hasattr(FOO, "bar") and hasattr(FOO, "baz"):
         FOO.hello
         FOO.bar
         FOO.baz
 
 # Ask for forgiveness
-def test_aff2():
+def test_forgiveness2():
     try:
         FOO.hello
         FOO.bar
@@ -130,10 +130,10 @@ def test_aff2():
 ```
 
 ```shell
-$ python -m timeit -s "from permission_vs_forgiveness import test_lbyl2" "test_lbyl2()"
+$ python -m timeit -s "from permission_vs_forgiveness import test_permission2" "test_permission2()"
 500000 loops, best of 5: 326 nsec per loop
 
-$ python -m timeit -s "from permission_vs_forgiveness import test_aff2" "test_aff2()"
+$ python -m timeit -s "from permission_vs_forgiveness import test_forgiveness2" "test_forgiveness2()"
 2000000 loops, best of 5: 176 nsec per loop
 ```
 
@@ -155,12 +155,12 @@ class Foo(BaseClass):
 FOO = Foo()
 
 # Look before you leap
-def test_lbyl3():
+def test_permission3():
     if hasattr(FOO, "hello"):
         FOO.hello
 
 # Ask for forgiveness
-def test_aff3():
+def test_forgiveness3():
     try:
         FOO.hello
     except AttributeError:
@@ -168,10 +168,10 @@ def test_aff3():
 ```
 
 ```shell
-$ python -m timeit -s "from permission_vs_forgiveness import test_lbyl3" "test_lbyl3()"
+$ python -m timeit -s "from permission_vs_forgiveness import test_permission3" "test_permission3()"
 2000000 loops, best of 5: 135 nsec per loop
 
-$ python -m timeit -s "from permission_vs_forgiveness import test_aff3" "test_aff3()"
+$ python -m timeit -s "from permission_vs_forgiveness import test_forgiveness3" "test_forgiveness3()"
 500000 loops, best of 5: 562 nsec per loop
 ```
 
