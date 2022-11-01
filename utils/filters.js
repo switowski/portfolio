@@ -6,7 +6,7 @@ const { DateTime, Duration } = require('luxon');
 // https://nodejs.org/api/util.html#util_util_inspect_object_options
 const inspect = require('util').inspect;
 
-const helpers = require('./helpers');
+const helpers = require('./utils/helpers.js');
 
 // Return number of similar tags (or 0 if tagsA is undefined)
 const getSimilarTags = function (tagsA, tagsB) {
