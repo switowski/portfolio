@@ -9,4 +9,7 @@
 /python/ipython/2019/01/04/ipython-startup-files.html               /blog/ipython-startup-files
 
 # Redirect old workshop to new one
-/workshops/modern-python-developers-toolkit                    /workshops/modern-python-projects
+/workshops/modern-python-developers-toolkit                         /workshops/modern-python-projects
+
+# Redirect /tag to /tags
+/tag/*                                                              /tags/:splat
