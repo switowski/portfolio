@@ -111,6 +111,10 @@ $ python -m timeit -s "from filter_list import filterfalse_list" "filterfalse_li
 
 :::
 
+## Why is list comprehension faster than a for loop?
+
+But why is the list comprehension faster than a for loop? When you use a for loop, on every iteration, you have to look up the variable holding the list and then call its `append()` function. This doesn't happen in a list comprehension. Instead, there is a special bytecode instruction `LIST_APPEND` that will append the current value to the list you're constructing.
+
 ## More than one operation in the loop
 
 List comprehensions are often faster and easier to read, but they have one significant limitation. What happens if you want to execute more than one simple instruction? List comprehension can't accept multiple statements (without sacrificing readability). But in many cases, you can wrap those multiple statements in a function.
