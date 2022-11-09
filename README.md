@@ -12,7 +12,7 @@ This project is a constant work in progress, there will be unused files, unfinis
 
 ## Thank you
 
-A **huge* thank you to the following people for publicly sharing the source code of their websites:
+A **huge** thank you to the following people for publicly sharing the source code of their websites:
 
 * [Max Böck](https://mxb.dev/)
 * [Sia Karamalegos](https://sia.codes/)
