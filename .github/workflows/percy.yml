@@ -1,5 +1,5 @@
 # Run percy snapshots
-name: Run Percy 
+name: Run Percy
 
 on:
   push:
@@ -15,4 +15,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run Percy
-        run: npx @percy/cli snapshot snapshots.yml
+        run: npx @percy/cli snapshot snapshots.prod.yml

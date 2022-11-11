@@ -1,0 +1,6 @@
+- name: Home page
+  url: https://switowski.com/
+- name: About
+  url: https://switowski.com/about
+- name: Blog post
+  url: https://switowski.com/blog/str-vs-repr/
