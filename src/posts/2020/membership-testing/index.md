@@ -1,7 +1,7 @@
 ---
 title: Membership Testing
 description: Why iterating over the whole list is a bad idea, what data structure is best for membership testing, and when it makes sense to use it?
-tag: ["Python", "Writing Faster Python"]
+tags: ["Python", "Writing Faster Python"]
 date: 2020-10-08
 ---
 

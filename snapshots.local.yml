@@ -2,3 +2,5 @@
   url: http://localhost:8080
 - name: About
   url: http://localhost:8080/about
+- name: Blog post
+  url: http://localhost:8080/blog/str-vs-repr/

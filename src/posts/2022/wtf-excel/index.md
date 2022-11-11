@@ -1,7 +1,7 @@
 ---
 title: "WTF Excel?!"
 description: "Summary"
-tags: ['CLI']
+tags: ['Excel', 'Software - Y U so hard?!']
 date: 2030-01-02
 ---
 
@@ -50,3 +50,8 @@ That's another thing that is probably a bread and butter for someone using Excel
 ## Conclusions
 
 As for a platform that underlies [probably](https://starecat.com/content/wp-content/uploads/the-whole-world-financial-systems-held-by-excel.jpg) most of the financial system in the world, Excel has some incredibly weird limitations and quirks. If you also had some WTF moments working with it, let me know in the comments!
+
+## TODO:
+
+* Description
+* Proofread
