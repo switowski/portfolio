@@ -2,7 +2,7 @@
 title: Upgrade Your Python Version
 description: Can we speed up our code examples by simply upgrading the Python version? And if yes, by how much?
 tags: ['Python', 'Writing Faster Python']
-date: 2030-11-14
+date: 2022-11-14
 ---
 
 Here is an idea for a completely free[^1] speed improvement for your code - upgrade your Python version!
