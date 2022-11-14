@@ -2,14 +2,14 @@
 title: Upgrade Your Python Version
 description: Can we speed up our code examples by simply upgrading the Python version? And if yes, by how much?
 tags: ['Python', 'Writing Faster Python']
-date: 2030-01-03
+date: 2030-11-14
 ---
 
 Here is an idea for a completely free[^1] speed improvement for your code - upgrade your Python version!
 
-I started this series of articles using Python 3.8, but today we already have version 3.11. Python 3.11 is the first version of Python that brings pretty significant speed improvements thanks to the [Faster CPython project](https://github.com/faster-cpython/ideas). If you never heard about it, it's something that started as Mark Shannon's idea to improve the overall performance of CPython and now a dedicated team of developers (including Guido van Rossum) is working to bring some hefty speed improvements over the next few releases.
+I started this series of articles using Python 3.8, but today we already have version 3.11. Python 3.11 is the first version of Python that brings pretty significant speed improvements thanks to the [Faster CPython project](https://github.com/faster-cpython/ideas). If you have never heard about it, it started as Mark Shannon's idea to improve the overall performance of CPython, and now a dedicated team of developers (including Guido van Rossum) is working to bring some hefty speed improvements over the next few releases.
 
-So I decided to benchmark some Python scripts to see how much faster they can get by simply updating the Python versions. I will check out some of the examples that I described in this "Writing Faster Python" series, but also some random, computationally intensive programs.
+So I decided to benchmark some Python scripts to see how much faster they can get by simply updating the Python versions. I will check out some of the examples I described in this "Writing Faster Python" series, but also some random, computationally intensive programs.
 
 ## Setup
 
@@ -149,11 +149,11 @@ def test_set():
 
 ### Slower scripts
 
-With the examples from "Writing Faster Python" articles we have a good variety of common operations. We do attribute lookups, we handle exceptions, we test iterators, generators, loops and lists comprehensions, etc.
+With the examples from "Writing Faster Python" articles, we have a good variety of common operations. We do attribute lookups, handle exceptions, we test iterators, generators, loops and lists comprehensions, etc.
 
-But all those examples are rather fast to run, so just for a good measure let's add two more functions that are intended to be more computational-heavy and run for at least a few seconds:
+But all those examples are rather fast to run, so just for good measure, let's add two more functions that are intended to be more computational-heavy and run for at least a few seconds:
 
-**Bubble sort** - a fairly slow sorting algorithm. Let's run it on a list of 10 000 numbers in a descending order, which should take a couple of seconds on my computer:
+**Bubble sort** - a fairly slow sorting algorithm. Let's run it on a list of 10 000 numbers in descending order, which should take a couple of seconds on my computer:
 
 ```python
 # bubble_sort.py
@@ -172,9 +172,9 @@ def bubble_sort():
     return numbers
 ```
 
-**Monte Carlo estimation of the π number**. This is a simple simulation where we draw a square with side of 1 and inside we draw a circle (so it has a diameter of 1). Then we throw a bunch of darts (or generate random points in case we don't have a large pile of virtual darts) inside that square. This lets us estimate the area of both the square and the circle by simply counting the number of darts that landed inside each of them. By definition all the darts will end up inside the square, but only some of them will land in the circle. Finally, we know from school that the area of the circle divided by the area of the square is equal to π/4. So we do that division and we get the estimation of π. The more darts we throw, the better the estimation is. [Here](https://academo.org/demos/estimating-pi-monte-carlo/) is a visual explanation of this method.
+**Monte Carlo estimation of the π number**. This is a simple simulation where we draw a square with a side of 1, and inside we draw a circle (so it has a diameter of 1). Then we throw a bunch of darts (or generate random points in case we don't have a large pile of virtual darts) inside that square. This lets us estimate the area of both the square and the circle by simply counting the number of darts that landed inside each of them. By definition, all the darts will end up inside the square, but only some will land in the circle. Finally, we know from school that the circle's area divided by the square's area is equal to π/4. So we do that division, and we get the estimation of π. The more darts we throw, the better the estimation is. [Here](https://academo.org/demos/estimating-pi-monte-carlo/) is a visual explanation of this method.
 
-Again, there are more efficient algorithms to do this simulation (e.g. using numpy), but I want a slow version on purpose:
+Again, there are more efficient algorithms to do this simulation (e.g., using NumPy), but I want a slow version on purpose:
 
 ```python
 # pi_estimation.py
@@ -200,9 +200,9 @@ def estimate_pi():
 
 ## Benchmarks
 
-With 14 functions to check, we are ready to start our benchmarks. To run all of them at once, I've created a simple bash script that will run all functions under different Python versions. I use pyenv to install latest versions of Python starting from 3.7 and then I use Python executables from each of those versions. Finally, I print the results in a nice table.
+With 14 functions to check, we are ready to start our benchmarks. To run all of them at once, I've created a simple bash script to run all functions under different Python versions. I use pyenv to install the latest versions of Python, starting from 3.7, and then I use Python executables from each of those versions. Finally, I print the results in a nice table.
 
-Here is the bash script I came up with. Don't worry if you don't understand how it works, I probably won't understand it one month from now either.
+Here is the bash script I came up with. Don't worry if you don't understand how it works. I probably won't understand it one month from now, either.
 
 {% raw %}
 
@@ -266,11 +266,11 @@ printf "$OUTPUT" | column -ts,
 
 {% endraw %}
 
-I've put all the code examples together with the benchmark script and the results in [this repository](https://github.com/switowski/blog-resources/tree/master/writing-faster-python/benchmarks). The actual benchmark script has one more version in case you don't care about the table, but the raw output from the timeit functions.
+I've put all the code examples together with the benchmark script and the results in [this repository](https://github.com/switowski/blog-resources/tree/master/writing-faster-python/benchmarks). The actual benchmark script has one more version, in case you don't care about the table, but the raw output from the timeit functions.
 
 ## Results
 
-Let's see the results. The lower the number, the faster a given code example runs. In the last column we can see the comparison of how long it takes to run the code in Python 3.7 vs. Python 3.11. "1.68" means that a given example runs 68% slower in Python 3.7.
+Let's see the results. The lower the number, the faster a given code example runs. In the last column, we can see the comparison of how long it takes to run the code in Python 3.7 vs. Python 3.11. "1.68" means this example runs 68% slower in Python 3.7.
 
 I did a bit of cleanup by moving the units next to the function name (instead of next to each number as in the [original output](https://github.com/switowski/blog-resources/blob/master/writing-faster-python/benchmarks/results.txt)).
 
@@ -291,9 +291,9 @@ I did a bit of cleanup by moving the units next to the function name (instead of
 | bubble_sort()         [sec] | 8.05   | 8.24   | 8.23   | 7.89   | 4.69   | 1.72          |
 | estimate_pi()         [sec] | 17.1   | 17.9   | 18.1   | 17.4   | 14.3   | 1.21          |
 
-We can see that in most cases, as we upgrade Python version, our examples run faster. And Python 3.11 gives us the best improvements. Upgrading your Python version now makes even more sense than before if you're looking for some speed improvements.
+We can see that in most cases, our examples run faster as we upgrade the Python version. And Python 3.11 gives us the best improvements. Upgrading your Python version now makes even more sense than before if you're looking for speed improvements.
 
-But for some examples we see degradation of performance. The 0.97 for `test_sort()` and 0.91 for `test_set()` differences are so small that I assume it's the small randomness of the benchmarks results. But the `test_forgiveness3()` with around 20% decrease in performance in Python 3.11 looked interesting. I checked the release notes for Python 3.11 to find what might be causing this and I found nothing. So I decided to compared how Python handles exceptions for the most common example - division by zero:
+But for some examples, we see a degradation of performance. The 0.97 for `test_sort()` and 0.91 for `test_set()` differences are so small that I assume it's the small randomness of the benchmark results. But the `test_forgiveness3()` with around 20% decrease in performance in Python 3.11 looked interesting. I checked the release notes for Python 3.11 to find what might be causing this and found nothing. So I decided to compare how Python handles exceptions for the most common example - division by zero:
 
 ```python
 # division.py
@@ -312,11 +312,11 @@ Benchmarking the above code under different Python versions gave me the followin
 - Python 3.10.7: 141 nsec
 - Python 3.11.0: 169 nsec
 
-In Python 3.11.0 it's almost as slow as in Python 3.7 or 3.8 were. So it seems like the slowdown for my `test_forgiveness3()` was specific to this one particular example and not something we should be worried about. And while this example is slower, all the other examples of testing permission and forgiveness got much faster in the newer Python versions. In Python 3.11 the "ask for permission" gets and additional speed boost from the "zero cost" exception handling.
+In Python 3.11.0, it's almost as slow as in Python 3.7 or 3.8. So it seems like the slowdown for my `test_forgiveness3()` was specific to this one particular example and not something we should be worried about. And while this example is slower, all the other examples of testing permission and forgiveness got much faster in the newer Python versions. In Python 3.11, the "ask for permission" gets an additional speed boost from the "zero cost" exception handling.
 
 ### "Zero cost" exception handling
 
-Python 3.11 introduced something called ["zero cost" exception handling](https://bugs.python.org/issue40222). This [Hacker News submission](https://news.ycombinator.com/item?id=28771931) has some good explanation how this works in Python and other languages. The gist of this feature is that everything inside the "try" block (the "happy path" of the exception) will now be faster - almost as fast as if there was no try/except block at all.
+Python 3.11 introduced something called ["zero cost" exception handling](https://bugs.python.org/issue40222). This [Hacker News submission](https://news.ycombinator.com/item?id=28771931) explains how this works in Python and other languages. The gist of this feature is that everything inside the "try" block (the "happy path" of the exception) will now be faster - almost as fast as if there was no try/except block at all.
 
 Let's see this in action!
 
@@ -345,7 +345,7 @@ def for_loop_with_try_except():
     return output
 ```
 
-With zero cost exceptions handling, Python 3.11 should run those code examples faster that Python 3.10 or 3.9.
+With zero cost exceptions handling, Python 3.11 should run those code examples faster than Python 3.10 or 3.9.
 
 Let's see the results by running the [exceptions_benchmark.sh](https://github.com/switowski/blog-resources/blob/master/writing-faster-python/benchmarks/exceptions_benchmark.sh) script:
 
@@ -355,20 +355,14 @@ Let's see the results by running the [exceptions_benchmark.sh](https://github.co
 | Pi      [sec] | 18.4 (19.2) | 17.3 (17.5) | 14.1 (14.3) |
 | Bubble  [sec] | 8.26 (8.46) | 7.96 (8.06) | 4.72 (4.75) |
 
-First number in each column is how long it takes to run the original version (**without** try/except blocks). The number in parenthesis is how long it takes to run the same function **with** the try/except blocks called multiple times.
+The first number in each column is how long it takes to run the original version (**without** try/except blocks). The number in parenthesis is how long it takes to run the same function **with** the try/except blocks called multiple times.
 
 The differences between both variants are tiny for all 3 Python versions. But for Python 3.11 they are even smaller! Take this simple benchmark with a grain of salt, but I hope it helped illustrate what's the benefit of "zero cost" exception handling.
 
 ## Conclusions
 
-Upgrading Python version is one of a few ways of making your code a bit faster without changing it. And no matter if you upgrade from Python 3.7. to 3.8 or from Python 3.9 to Python 3.10, you will always get some improvements for a large codebase. But it's the Python 3.11 where a dedicated effort was made to really speed it up. According to the [release notes](https://docs.python.org/3/whatsnew/3.11.html#summary-release-highlights), it should speed up your code by around 10-60%. So now is a good time to think about upgrading your Python projects.
+Upgrading Python version is one of a few ways to make your code a bit faster without changing it. And no matter if you upgrade from Python 3.7. to 3.8 or from Python 3.9 to Python 3.10, you will always get some improvements for a large codebase. But it's Python 3.11 where a dedicated effort was made to really speed it up. According to the [release notes](https://docs.python.org/3/whatsnew/3.11.html#summary-release-highlights), it should speed up your code by around 10-60%. So now is a good time to think about upgrading your Python projects.
 
-If you want to run your own benchmarks, with more advanced code examples, the [Python Performance Benchmark Suite](https://pyperformance.readthedocs.io/) is a good place to look for some inspiration.
-
----
+If you want to run your own benchmarks with more advanced code examples, the [Python Performance Benchmark Suite](https://pyperformance.readthedocs.io/) is a good place to look for some inspiration.
 
 [^1]: Completely free if you have good tests coverage (in case of some subtle bugs between minor Python versions), all the libraries you are using work with newer Python version, and you have a few moments to install new Python version.
-
-## TODO: todo
-
-* update date
