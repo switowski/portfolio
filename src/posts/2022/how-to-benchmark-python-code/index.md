@@ -50,7 +50,7 @@ The above code will:
 2. Mount the current folder inside the Docker container (so we can access the files we want to benchmark).
 3. Run the same timeit command as before.
 
-And the results were more consistent than without using Docker. Rerunning benchmarks multiple times, I was getting results with smaller deviations. I still had a deviation - some runs were slightly slower, and some were slightly faster. But the difference was smaller than without using Docker.
+And the results *seemed* more consistent than without using Docker. Rerunning benchmarks multiple times, I was getting results with smaller deviations. I still had a deviation - some runs were slightly slower, and some were slightly faster. However, that was the case for short code examples (running under 1 second). For longer code examples (running at least a few seconds), the difference between runs was even around 5% (I've tested docker with my bubble sort example from [Upgrade Your Python Version](blog/upgrade-your-python-version/) article). So, as one vigilant commenter suggested, Docker doesn't really help much here.
 
 ## Python benchmarking libraries
 
@@ -150,7 +150,7 @@ Depending on your use case, you might reach for a different tool to benchmark yo
 
 - `python -m timeit "some code"` for the simplest, easiest-to-run benchmarks where you just want to get *"a number"*.
 - `python -m timeit -s "setup code" "some code"` is a much more useful version if you want to separate some setup code from the actual benchmarks.
-- `docker` is a good alternative if you want a better separation of your benchmark process from other processes on your computer.
+- `docker` - while it looked like it did a better job separating my benchmarks from other processes, thus lowering the deviation between runs, after thorough testing, that seemed to be the case for very short examples. For longer ones it didn't really change much.
 - `rich-bench` looks like a nice solution if you need a dedicated tool with additional statistics like min, max, median, and nice output formatting. But you will need to set up your benchmarks in a specific structure that rich-bench requires.
 - `pyperf` gives you the most advanced set of statistics about your code. And it's used by the official Python benchmarks, so it's an excellent tool for advanced benchmarks.
 - `hyperfine` is a great tool to benchmark any command, not only Python code. Or to compare two different commands.
