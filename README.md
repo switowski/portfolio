@@ -40,6 +40,8 @@ Run production server locally: `npm run staging` or `npm run build && npx serve 
 
 ### Assets
 
+Take screenshots on retina display (Macbook's screen) and cut it there as well (strangely, editing image in Preview app *seems to* lower the quality of the image and results in artifacts when taking screenshots of the terminal).
+
 Optimizing GIFs (this is probably obsolete now since I'm converting GIFs to WebP with eleventy-img):
 
 ```bash

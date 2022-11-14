@@ -35,6 +35,7 @@ module.exports = {
       outputDir: 'dist/img/',
       urlPath: '/img/',
       sharpOptions: sharpOptions,
+      sharpWebpOptions: { lossless: true },
     });
 
     let imageAttributes = {
