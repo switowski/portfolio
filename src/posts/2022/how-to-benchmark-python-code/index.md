@@ -5,7 +5,7 @@ tags: ['Python']
 date: 2022-11-17
 ---
 
-While preparing to write the "Writing Faster Python" series, the first problem I faced was "How do I benchmark a piece of code in an objective yet uncomplicated way".
+While preparing to write the [Writing Faster Python]({% postUrl "writing-faster-python-intro" %}) series, the first problem I faced was *"How do I benchmark a piece of code in an objective yet uncomplicated way"*.
 
 I could run `python -m timeit <piece of code>`, which is probably the simplest way of measuring how long it takes to execute some code[^1]. But maybe it's too simple, and I owe my readers some way of benchmarking that won't be interfered by sudden CPU spikes on my computer?
 
@@ -50,7 +50,7 @@ The above code will:
 2. Mount the current folder inside the Docker container (so we can access the files we want to benchmark).
 3. Run the same timeit command as before.
 
-And the results *seemed* more consistent than without using Docker. Rerunning benchmarks multiple times, I was getting results with smaller deviations. I still had a deviation - some runs were slightly slower, and some were slightly faster. However, that was the case for short code examples (running under 1 second). For longer code examples (running at least a few seconds), the difference between runs was even around 5% (I've tested docker with my bubble sort example from [Upgrade Your Python Version](blog/upgrade-your-python-version/) article). So, as one vigilant commenter suggested, Docker doesn't really help much here.
+And the results *seemed* more consistent than without using Docker. Rerunning benchmarks multiple times, I was getting results with smaller deviations. I still had a deviation - some runs were slightly slower, and some were slightly faster. However, that was the case for short code examples (running under 1 second). For longer code examples (running at least a few seconds), the difference between runs was even around 5% (I've tested docker with my bubble sort example from [Upgrade Your Python Version]({% postUrl "upgrade-your-python-version" %}) article). So, as one vigilant commenter suggested, Docker doesn't really help much here.
 
 ## Python benchmarking libraries
 
@@ -128,7 +128,6 @@ And in case you want to benchmark some code that is not Python code, there is al
 You can run it for one command, and it will return the usual information like the mean, min, and max time, standard deviation, number of runs, etc. But you can also pass multiple commands, and you will get a comparison of which one was faster:
 
 {% postImage "hyperfine.jpg", "hyperfine in action" %}
-{% postImage "hyperfine2.jpg", "hyperfine in action" %}
 
 ## timeit is just fine...for me
 
@@ -142,7 +141,7 @@ Much more important thing than the most accurate tool is how you set up your ben
 
 ## Beware of how you structure your code
 
-Running benchmarks is the easy part. The tricky part is to remember to write your code in a way that won't "cheat". When I first wrote [Sorting Lists](/blog/sorting-lists/) article, I was so happy to find that `sort()` was so much faster than `sorted()`. "OMG, I found the holy grail of sorting in Python" - I thought. Then someone pointed out that `list.sort()` sorts the list in place. So if I run my benchmarks, the first iteration will sort the list (which is slow), and each next iteration will sort an already sorted list (which is much faster). I had to update my article and start paying more attention to how I organize my benchmarks.
+Running benchmarks is the easy part. The tricky part is to remember to write your code in a way that won't "cheat". When I first wrote [Sorting Lists]({% postUrl "sorting-lists" %}) article, I was so happy to find that `sort()` was so much faster than `sorted()`. "OMG, I found the holy grail of sorting in Python" - I thought. Then someone pointed out that `list.sort()` sorts the list in place. So if I run my benchmarks, the first iteration will sort the list (which is slow), and each next iteration will sort an already sorted list (which is much faster). I had to update my article and start paying more attention to how I organize my benchmarks.
 
 ## Conclusion
 

@@ -35,9 +35,8 @@ module.exports = {
       outputDir: 'dist/img/',
       urlPath: '/img/',
       sharpOptions: sharpOptions,
-      // We can enable lossless and near_lossless compression for WebP, but it will double the size of images.
-      // The lossy conversion is only slightly lower quality, so let's not do that
-      // sharpWebpOptions: { nearLossless: true },
+      // Use better quality of WebP images (at the price of 2x bigger size)
+      sharpWebpOptions: { nearLossless: true },
     });
 
     let imageAttributes = {

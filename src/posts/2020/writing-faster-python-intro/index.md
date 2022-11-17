@@ -7,9 +7,9 @@ date: 2020-08-18
 
 :::callout-warning
 
-**2022 Update**: I've started writing these articles in 2020 using Python 3.8 on a 2017 MacBook Pro with Intel CPU. In 2022, I switched to a new MacBook Pro with M1 CPU and decided to also switch to the latest Python 3.11 version as it offers some nice speed up improvements.
+**2022 Update**: I started writing these articles in 2020 using Python 3.8 on a 2017 MacBook Pro with Intel CPU. In 2022, I switched to a new MacBook Pro with M1 CPU and decided to also switch to the latest Python 3.11 version as it offers some nice speed-up improvements.
 
-So all the articles written after 2021 are using much faster CPython version and laptop than the initial ones.
+So all the articles written after 2021 use a much faster CPython version and newer laptop than the initial ones.
 :::
 
 ## Writing Faster Python
