@@ -1,6 +1,6 @@
 ---
 title: dict() vs. {}
-description: 
+description: Is using {} faster than dict()? If yes, then why? And when would you use one version over the other?
 tags: ['Python', 'Writing Faster Python']
 date: 2030-01-04
 similar:
@@ -88,7 +88,7 @@ Take a look at this example:
 {'a': 1, 'b': 2, 'c': 3}  # Much better
 ```
 
-We can't use the literal syntax to create a dictionary. We would have to use a dictionary comprehension: `{k: v for k, v in iter}`. But a simple `dict(iter)` looks much much cleaner.
+We can't use the literal syntax to create a dictionary. We would have to use a dictionary comprehension: `{k: v for k, v in iter}`. But a simple `dict(iter)` looks much cleaner.
 
 Apart from this use-case, I think it's mostly up to your personal preference which version you use. There are also some interesting quirks that I found, for example, in CPython 3.6 and below if you wanted to pass more than 255 arguments to a function, [you would get a SyntaxError](https://stackoverflow.com/questions/6610606/is-there-a-difference-between-using-a-dict-literal-and-a-dict-constructor/35156174#35156174). So `dict()` was a no-go, but `{}` should work. But if you're passing over 255 parameters to a function, you probably have bigger problems in your code than wondering if literal syntax is faster by a few nanoseconds.
 

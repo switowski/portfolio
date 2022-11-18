@@ -1,21 +1,20 @@
 ---
 title: How I Organize My Notes With Obsidian
-description: Summary goes here
+description: After years of using Evernote, I finally found a worthy replacement for it. And not only for Evernote, but for 2 other tools as well. Let me show you how I organize my notes, mind maps, task and long-term goals in Obsidian.
 tags: ['Obsidian', 'Productivity']
 date: 2030-01-01
 ---
 
-A few months ago, I moved from Evernote to [Obsidian](https://obsidian.md/). I have been using Evernote as long as I can remember. And every now and then I was checking some alternatives. I tried Notion, but its first version was excruciatingly slow on mobile (waiting for 10+ seconds each time I wanted to take a quick note was a no-go for me). I remember trying some other apps like the Bear App, but in the end I was always coming back to Evernote. Evernote felt a bit clunky and the constant nagging about upgrading was annoying, but even with all that, it worked fine for me for many years. I was fine with the limitation of the devices, and I was not uploading more than 50MB of pictures every month, so I could stay on the free plan. So I wasn't looking for a replacement *very hard*.
+A few months ago, I moved from Evernote to [Obsidian](https://obsidian.md/). I have been using Evernote as long as I can remember. And every now and then I was checking some alternatives. I tried Notion, but its first version was excruciatingly slow on mobile (waiting for 10+ seconds each time I wanted to take a quick note was a no-go for me). I remember trying some other apps like the Bear App, but in the end I was always coming back to Evernote. Evernote felt a bit clunky and the constant nagging about upgrading was annoying, but even with all that, it worked fine for me for many years. I stayed within the device limit and I wasn't uploading more than 50MB of pictures every month, so I didn't have to upgrade from the free plan. So I wasn't looking for a replacement *very hard*.
 
-Then I saw a [TIL: using hammerspoon to launch any app with a hotkey](https://patrick.wtf/posts/til-hammerspoon-logseq-hotkey) article from my friend Patrick where he described how he uses [Logseq](https://logseq.com/) and this idea of a note taking app that sits on top of a folder containing just a bunch of Markdown files looked really promising.
-So I gave Logseq a quick try and while it looked nice, I started looking if there are other similar tools. That's how I found about Obsidian.
+Then I saw a [TIL: using hammerspoon to launch any app with a hotkey](https://patrick.wtf/posts/til-hammerspoon-logseq-hotkey) article from my friend Patrick where he described how he uses [Logseq](https://logseq.com/) and this idea of a note taking app that sits on top of a folder with Markdown files looked really promising! So I gave Logseq a quick try and while it looked nice, I started looking if there are other similar tools. That's how I found about Obsidian.
 
-Two things convinced me to Obsidian instead of the Logseq:
+Two things convinced me to use Obsidian instead of Logseq:
 
 - The interface was more appealing to me - I wanted something that resembles the interface of Evernote - a bunch of nested folders where I could categorize my notes. Obsidian delivers exactly that. But if you're used to a different interface, Logseq might actually look better for you (it looks more like [Workflowy](https://workflowy.com/) that I also used).
 - Obsidian has more plugins. I spent a few minutes installing a few popular plugins and found them very useful.
 
-To start with Obsidian, you need to create a folder (called Vault) somewhere on your computer and point Obsidian to that folder. And then you can create new notes that will be stored in Markdown format, install some plugins, themes, customize keyboard bindings, etc. There are plenty of good tutorials on how to get started. I watched a few from Danny Hatcher, like [this one](https://www.youtube.com/watch?v=njibNuFQwjw) and I enjoyed them. The main benefit from those tutorials was to see how people customize their Obsidian installations and what plugins are worth to use (I will share mine below).
+To start with Obsidian, you need to create a folder (called a vault) somewhere on your computer and point Obsidian to that folder. Then you can create new notes that will be stored in a Markdown format, install some plugins, themes, customize keyboard bindings, etc. There are plenty of good tutorials on how to get started. I watched a few from Danny Hatcher, like [this one](https://www.youtube.com/watch?v=njibNuFQwjw) and I enjoyed them. The main benefit from those tutorials was to see how people customize their Obsidian installations and what plugins are worth to use (I will share mine below).
 
 Using Obsidian on my computer is cool, but it would be great to have access to my notes on my phone or other devices. Let's talk about synchronization.
 
@@ -37,18 +36,18 @@ This problem probably affects less than 0.01% of the users. But what if this hap
 
 I solved this problem by setting up a cronjob to backup my vault to GitHub every 1 hour following [this](https://medium.com/analytics-vidhya/how-i-put-my-mind-under-version-control-24caea37b8a5) tutorial:
 
-1. Create a git repository inside your vault and link it to GitHub private repository.
-2. Add a bash script that will check for changes and if there are any, it will create a new commit with the current timestamp and push it to GitHub. Here is the [source code](https://github.com/switowski/dotfiles/blob/master/scripts/backupObsidian.sh).
+1. Create a git repository inside your vault and link it to private repository on GitHub.
+2. Add a bash script that checks for changes and if there are any, it will create a new commit with the current timestamp and push it to GitHub. Here is the [source code](https://github.com/switowski/dotfiles/blob/master/scripts/backupObsidian.sh).
 3. Add a cronjob to execute that bash script every 1 hour (or less if you want).
 
-With this, all my notes are backed up every hour. Of course, this doesn't solve the problem of backing up notes from the mobile, but this is the risk I can live with, given that I mostly use my phone to read my notes, not to edit them.
+With this, all my notes are backed up every hour. Of course, this doesn't solve the problem of backing up notes from the mobile. But this is the risk I can live with, because I mostly use my phone to read my notes, not to edit them.
 :::
 
 ## Folder structure
 
 One thing that I do completely different from all those tutorials for Obsidian or other [PKM](https://en.wikipedia.org/wiki/Personal_knowledge_management) tools is that I don't link my notes like crazy. I don't get why people get so proud showing their graphs of connected notes containing hundreds of nodes. That looks like a complete mess. I like to keep all the relevant information in the note and only link to external resources for additional reference.
 
-I mostly rely on the folders structure to organize my notes. I came up with this structure back in the Evernote's days and so far I'm quite happy. Here is my current setup (in the parenthesis next to each folder I've put what type of notes go inside):
+I mostly rely on the folders structure to organize my notes. I came up with this structure back in the Evernote's days and so far I'm quite happy. Here is my current setup (I explain in the parenthesis what type of notes I put inside a given folder):
 
 ```plaintext
 .
@@ -62,14 +61,13 @@ I mostly rely on the folders structure to organize my notes. I came up with this
 │   └── Archival
 │       └── Writing Faster Python.md
 ├── Notes
-│   ├── Archival (notes and plans for investments)
+│   ├── Archival (stuff I no longer need)
 │   ├── Blog
 │   │   ├── Ideas
 │   │   │   ├── Big Bag Of Ideas.md
 │   │   │   ├── Drafts
 │   │   │   │   ├── How I organize my notes with Obsidian.md
-│   │   │   │   └── Trash
-│   │   │   │   │   └── <graveyard for unused posts>
+│   │   │   │   └── Trash (graveyard for unused posts)
 │   │   └── Publishing workflow.md
 │   ├── Books (notes from books I have read)
 │   ├── Conferences (notes from conferences)
@@ -79,7 +77,7 @@ I mostly rely on the folders structure to organize my notes. I came up with this
 │   ├── KB (knowledge bases on various topics)
 │   │   ├── Estimations.md
 │   │   └── Presentations.md
-│   ├── Misc (completely random stuff without separate category)
+│   ├── Misc (completely random stuff without a separate category)
 │   │   ├── T-shirt sizes.md
 │   │   ├── Bucket lists.md
 │   │   ├── What is in the basement.md
@@ -106,7 +104,7 @@ I mostly rely on the folders structure to organize my notes. I came up with this
 │       ├── Freelancing (general notes for freelancing)
 │       │   ├── Contracts.md
 │       │   ├── LinkedIn profile changelog.md
-│       │   └── Preparing to an interview.md
+│       │   └── Preparing for an interview.md
 │       ├── Projects (notes on specific projects)
 │       │   ├── Project A
 │       │   └── Project B
@@ -121,11 +119,11 @@ I mostly rely on the folders structure to organize my notes. I came up with this
 
 ### Inbox
 
-The topmost folder of Obsidian is my Inbox. Here I keep important notes (prefixed with one or more exclamation marks). But this is also the place where I create new notes when I don't know immediately where to put them. If I want to take a quick note, I don't want to think "hmm, which folder would be the best". I just drop it here and later when are too many notes in my inbox, I categorize them and move to subfolders.
+The topmost folder of Obsidian is my Inbox. Here I keep important notes (prefixed with one or more exclamation marks). But this is also the place where I create new notes when I don't know immediately where to put them. If I want to take a quick note, I don't want to think *"hmm, which folder would be the best?"* I just drop it here and later when are too many notes in my inbox, I categorize them and move to subfolders.
 
 #### !!Planner.md
 
-Here I store my short-, mid- and long-term goals. Here is how it looks like:
+Here I store my short-, mid-, and long-term goals. Here is how it looks like:
 
 ```plaintext
 - LONGTERM GOALS:
@@ -147,20 +145,25 @@ Here I store my short-, mid- and long-term goals. Here is how it looks like:
 - 2020:
 ```
 
-I usually have 2-4 yearly goals, then try to split them into months and finally, I assign more specific goals ("redesign blog", "write proposal for conference", etc.) into each week. Weekly goals can still be split into actionable tasks (e.g. "redesign blog" can be split into "find a template", "write base layout", etc.) and those end up in Todoist where I prioritize them and assign to specific days.
-I use checkboxes to track if I managed to achieve my. If I don't, I put a note why. With the Outliner plugin I can easily fold/unfold nested lists and move items around (more on plugins later).
+I usually have 2-4 yearly goals that I try to split into months and finally, I assign more specific goals ("redesign blog", "write proposal for conference", etc.) to each week. Weekly goals can still be split into actionable tasks (e.g. "redesign blog" can be split into "find a template", "write base layout", etc.) and those end up in Todoist where I prioritize them and assign to specific days.
+
+I use checkboxes to track if I managed to achieve my goals. If I don't, I put a note why I didn't (90% of time it's the *"lack of time"*). With the Outliner plugin I can easily fold/unfold nested lists and move items around (more on plugins later) just like in Workflowy.
 
 ### Subfolders
 
 #### Journal
 
-Some people write a daily journal (some even create a separate note for each day). I never had time to do that. But when I work on my own projects (e.g. when building online courses) it's hard for me to keep track of what I did every day. I'm getting stressed that I don't do enough. So I started writing down what I want to achieve on a given day (1-2 important things and maybe some "stretch goals" if there is time left) and then at the end I write down what I actually did. This worked really well and helped me to see all those additional things I did that weren't planned but had to be done.
+Some people write a daily journal (some even create a separate note for each day). I never had time to do that. But when I work on my own projects (e.g. when building online courses) it's hard for me to keep track of what I did every day. I'm getting stressed that I don't do enough. So I started writing down what I want to achieve on a given day (1-2 important things and maybe some "stretch goals" if there is time left). Then, at the end of the day, I write down what I actually did. This worked really well and helped me to see all those additional things I did that weren't planned but had to be done.
+
+I sometimes change the structure of the daily entry in the journal. For example, when I had some serious troubles with sleeping, I've started adding a "sleep score" for every day (how long it took me to fall asleep, how many time I woke up during the night, etc.), noting what I tried to improve sleep the previous day (i.e. sunlight in the morning, magnesium before sleep, blue light filter, etc.).
+
+Sometimes I will forget to update the journal for weeks. And that's ok. No one is going to publish it, so it should be a tool that helps you, not some chore that you have to do every day because of the bullet journal hype or some other fade.
 
 #### Mindmaps
 
-With [Obsidian Mind Map](https://github.com/lynchjames/obsidian-mind-map) plugin I can make mind maps directly in Obsidian (before I was using [SimpleMind](https://simplemind.eu/)). So I keep my mind maps in a separate folder.
+With the [Obsidian Mind Map](https://github.com/lynchjames/obsidian-mind-map) plugin, I can make mind maps directly in Obsidian (before I was using [SimpleMind](https://simplemind.eu/)). So I keep my mind maps in a separate folder.
 
-I have one main mind map where I keep track of mid- to long-term goals like "Finish XXX book", "Do YYY course", "Prepare ZZZ talk", "Learn Japanese", "Update family blog", "Reorganize portfolio", etc. So it's a bit different than what I put in the `Planner` note, because it lets me track goals that don't have specific steps (like learning a new language - I don't split that goal into actionable steps like "learn xxx words per week"). I try to review those goals every month to make sure I stay focused on the right things (otherwise I tend to start too many things at once).
+I have one main mind map where I keep track of mid- to long-term goals like "Finish XXX book", "Do YYY course", "Prepare ZZZ talk", "Learn Japanese", "Update family blog", "Reorganize portfolio", etc. So it's a bit different than what I put in the `Planner` note, because it lets me track goals that don't have specific steps. For example - learning a new language. I don't have to split that goal into actionable steps like "learn xxx words per week", but I still want to keep track that this is currently my goal. I try to review those goals every month to make sure I stay focused on the right things. Otherwise I tend to start too many things at once.
 
 I also use mind maps to plan the outline of my talks, for example here is one from the "Writing Faster Python 3" talk:
 
@@ -173,7 +176,7 @@ Some more interesting folders are:
 
 ##### KB
 
-I have a folder for personal "knowledge bases". For example, when I prepare a talk for a conference, I like to write down everything I want to say. It feels very natural and when I'm in a flow with all the outline and notes prepared I can just write the whole talk in one sitting. But at the beginning I was just writing everything that came to my mind without knowing how long it will take to say it. It always resulted in having way too much content for my time slot. So I measured how fast I usually talk during a presentation (it's 150 words/minute for a normal talk and 180 words/minute for a lightning talk) and now I know that for a 30 minute-long-talk I need around 4000 words.
+I have a folder for personal "knowledge bases". For example, when I prepare a talk for a conference, I like to write down everything I want to say. It feels very natural for me and when I'm in a flow with the outline and all the notes prepared, I can just write the whole talk in one sitting. But at the beginning I was writing everything that came to my mind without knowing how long it will take to say it. It always resulted in having way too much content for my time slot. So I measured how fast I usually talk during a presentation (it's 150 words/minute for a normal talk and 180 words/minute for a lightning talk) and now I know that for a 30 minute-long-talk I need around 4000 words.
 
 ##### People
 
@@ -188,10 +191,11 @@ Here I store everything related to my talks. Ideas for future talks, drafts for 
 Here I store 3 categories of notes:
 
 - General, programming notes, categorized by the topic (e.g. "Django" or "Docker")
-- Notes related to specific project I'm working on (e.g. new video course or a side-project)
+- Notes related to a specific project I'm working on (e.g. new video course or a side-project)
 - Notes related to a specific client I'm working with (e.g. how to log in to their system, glossary of terms they use, programming notes related to their tools, etc.)
 
 #### Templates
+
 Finally I have a folder called templates that is used by the "Templates" core plugin. Basically it lets you create some templates with placeholders like a current date and then you can run command "Insert template", choose a template from the list and this will prefill the current note with that template. Here is an example of my "Talk" template that I use when I start working on a new conference talk:
 
 ```md
@@ -203,11 +207,11 @@ Finally I have a folder called templates that is used by the "Templates" core pl
 ### Outline:
 * Introduction [2 min]
 * Topic A [3 min]
-	* Subtopic
+    * Subtopic
 
 ### Agenda:
 * Topic A
-	* ...
+    * ...
 * ...
 
 ### Resources:
@@ -215,13 +219,13 @@ Finally I have a folder called templates that is used by the "Templates" core pl
 - Link 2
 ```
 
-## Tips
+## Tips for using Obsidian
 
 ### ! and !! prefixes
 
 I prefix important notes with "!" and "!!".
 
-"!!" is reserved for globally important notes, like the daily journal, planner, standup notes that I want to report, etc. That way, I can easily reach them by opening the "Quick open menu" and typing *!!*:
+"!!" is reserved for globally important notes, like the daily journal, planner, standup notes that I want to report, etc. That way, I can easily reach them by opening the "Quick open menu" and typing !!:
 
 {% postImage "prefixes.jpg", "! and !! prefixes" %}
 
@@ -239,21 +243,21 @@ I've solved this problem with [BetterTouchTool](https://folivora.ai/) - which is
 
 ## Plugins
 
-Obsidian has a few core plugins that allows you to toggle different features. For example you can enable or disable audio files, link previews on hover, slides, templates, workspaces and more.
+Obsidian has a few core plugins that allows you to toggle different features. For example you can enable or disable audio files, link previews on hover, slides, templates, workspaces, and more.
 
-But where Obsidian really shines is the catalog of community plugins with almost 700 plugins. The first thing you should do once you install Obsidian is to take a look at the most popular plugins (based on the number of downloads) because I can guarantee you will want to add some of those.
+But where Obsidian really shines is the catalog of community plugins with over 700 plugins. The first thing you should do once you install Obsidian is to take a look at the most popular plugins (based on the number of downloads) because I can guarantee you will want to add some of those.
 
 Here is a list of the community plugins that I've installed:
 
 - Better Command Palette - adds multiple improvements to the Command Palette. Most recent commands are moved to the top of the list, you can pin some commands, search by tags, hide some commands, etc.
 - Better Word Count - replacement for the builtin Word Count core plugin. This one additionally shows you word and character count when you select some text.
 - DataView - allows you to write SQL-like queries to retrieve data and do data wrangling with JavaScript. It's a very powerful plugin and [here](https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847/2) are some examples how others are using it.
-- Kanban - let's you create Kanban boards in your notes.
+- Kanban - lets you create Kanban boards in your notes.
 - Mind Map - plugin for creating mind maps.
 - Natural Language Dates - transforms expressions like @Today or @Next Wednesday into actual dates. Quite useful if you're writing a daily journal and you want to quickly link previous/next days together.
 - Omnisearch - better search for your notes. Displays search results immediately, with most relevant ones at the top.
 - Outliner - basically a [Workflowy](https://workflowy.com/) plugin for Obsidian that makes working with long, nested lists much easier. You can fold/unfold elements with keyboard shortcuts and when you move a nested list it moves all the items together.
-- Style settings - allows you to edit settings of Obsidian themes. To customize the look of Obsidian you can install a custom theme or write your own. But if you want to use an existing theme and only slightly modify some parts, you can install Style settings plugin and - if the theme supports it - you will get a separate setting panel to modify style of your themes like the font family, header's sizes, colors, etc. I used this at the beginning to make small changes to the [Things 2](https://github.com/colineckert/obsidian-things) theme, but later I switched to using my [custom CSS](https://help.obsidian.md/Advanced+topics/Customizing+CSS) snippet to apply CSS modifications (so I can keep my changes under version control and add comments).
+- Style settings - allows you to edit settings of Obsidian themes. To customize the look of Obsidian you can install a custom theme or write your own. But if you want to use an existing theme and only slightly modify some parts, you can install "Style settings "plugin and - if the theme supports it - you will get a separate setting panel to modify style of your themes like the font family, header's sizes, colors, etc. I used this at the beginning to make small changes to the [Things 2](https://github.com/colineckert/obsidian-things) theme, but later I switched to using my [custom CSS](https://help.obsidian.md/Advanced+topics/Customizing+CSS) snippet to apply CSS modifications (so I can keep my changes under version control and add comments).
 - Tag wrangler - if you're using a lot of tags, this plugin makes working with them much easier. You can see all your tags in one place, easily rename a tag, etc.
 - Todoist plugin - if you're using Todoist, you can install this plugin and include all your task inside a note.
 
@@ -271,4 +275,4 @@ Plugins like Kanban or Mind Map are *good enough* replacements for dedicated too
 
 One thing that I'm missing from Obsidian is a possibility to customize ALL the shortcuts. I'm spoiled by VS Code where basically any command can be assigned to a keyboard shortcut. With Obsidian some commands have different mapping than VS Code, so I wish I could edit them and use the exact same keyboard commands in both tools.
 
-Let me know if you some other plugins worth checking out or Obsidian tricks you want to share!
+Let me know if you have some other plugins worth checking out or some really cool Obsidian tricks you want to share!
