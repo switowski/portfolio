@@ -29,13 +29,13 @@ There is already version 4 of Alfred, but I still haven't upgraded from version 
 Here are some of the workflows that I'm using with Alfred:
 
 * [Alfred Workflow Todoist](https://github.com/moranje/alfred-workflow-todoist) - lets me quickly add tasks to Todoist
-* [Convert](http://www.packal.org/workflow/convert) - convert from one unit to another. I use it mostly for currencies.
+* [Convert](https://www.packal.org/workflow/convert) - convert from one unit to another. I use it mostly for currencies.
 * [EggTimer](https://github.com/ihowson/EggTimer2) - a bit outdated workflow, but the only one that lets me easily create timers (I want to take a short break every 60 minutes of work)
 * [Emoji search](https://github.com/jsumners/alfred-emoji) - much faster emoji search than the default emoji icon panel on Mac.
 * [Reminders for Alfred 3](https://github.com/surrealroad/alfred-reminders) - typing "r do stuff in 20 minutes" will create a reminder "do stuff" 20 minutes from now. It lets me quickly set reminders without getting distracted from the current task.
 * [TemporaryEmail](https://www.packal.org/workflow/temporaryemail) - create a disposable temporary email when I need to register in some spammy service.
 * [Toggl](https://github.com/jason0x43/alfred-toggl) - interact with [Toggl](https://toggl.com/) time tracker
-* [Unicode Symbol Search](http://www.packal.org/workflow/symbols-search) - quickly find and copy any Unicode symbol.
+* [Unicode Symbol Search](https://www.packal.org/workflow/symbols-search) - quickly find and copy any Unicode symbol.
 
 ### [Magnet](https://magnet.crowdcafe.com/)
 
@@ -71,7 +71,7 @@ Dozer is a small application that keeps my menu bar manageable. It lets me hide 
 
 BetterTouchTool (or BTT for short) lets you customize any input device for your Mac. You can create custom Trackpad or Magic Mouse gestures, custom keyboard shortcuts, and macros (sequences of keys). It comes with a clipboard manager and window manager. It could replace a bunch of other tools that I'm using.
 
-But none of those features are the reason why I decided to pay $10 for this app. I bought it so I can customize my Macbook's touch bar. In its original form, the touch bar was unusable for me. Buttons that change depending on which application you are using is one of the worst ideas ever. I don't want to rediscover what's on the touch bar each time I change the currently used app. And half of the buttons are useless anyway. I don't want a slider for the volume or brightness! 99% of the time, I only need to increase or decrease it by a notch. I should be able to do this with one press of a button. So, as most of the people that I know, I didn't even use the touch bar. And one day, I stumbled upon an article on HackerNews that was explaining [how to make the touch bar actually useful](http://vas3k.com/blog/touchbar/). After reading this article, I immediately bought the BTT.
+But none of those features are the reason why I decided to pay $10 for this app. I bought it so I can customize my Macbook's touch bar. In its original form, the touch bar was unusable for me. Buttons that change depending on which application you are using is one of the worst ideas ever. I don't want to rediscover what's on the touch bar each time I change the currently used app. And half of the buttons are useless anyway. I don't want a slider for the volume or brightness! 99% of the time, I only need to increase or decrease it by a notch. I should be able to do this with one press of a button. So, as most of the people that I know, I didn't even use the touch bar. And one day, I stumbled upon an article on HackerNews that was explaining [how to make the touch bar actually useful](https://vas3k.com/blog/touchbar/). After reading this article, I immediately bought the BTT.
 
 {% postImage "my-touchbar.jpg", "My touch bar", "", "This is how my touch bar looks like today" %}
 
@@ -117,7 +117,7 @@ Karabiner-Elements is a free app to customize your keyboard (it has a lot of dup
 
 When I first started using Linux, I used Bash. Then I switched to Z shell. With oh-my-zsh. Then I realized that it's becoming a bit sluggish, mostly during the startup time. I decided that I don't have time to sit down and stare at my screen for almost 2 seconds waiting for it to load. So I switched to prezto when it was a cool, new thing (and not an [abandoned package as it is today](https://github.com/sorin-ionescu/prezto/issues/1239)). In 2017 I switched to a Macbook. Which was a great opportunity to try something new! Some of my colleagues at work were using fish at that time, and it looked interesting. It had some neat features out of the box, like the autosuggestions, syntax highlighting, or switching between directories using ⌥+→ and ⌥+←. So I tried it. And I liked it, so I'm still using it today. I use [fisher](https://github.com/jorgebucaran/fisher) package manager with a few plugins (there is also oh-my-fish, but fisher was supposed to be faster, so I stick to it). I try to avoid adding too many plugins to make the terminal startup faster (I'm starting a bunch of terminal sessions on an average day, so those seconds add up).
 
-### [Captin](http://captin.mystrikingly.com/)
+### [Captin](https://captin.mystrikingly.com/)
 
 {% postImage "captin.jpg", "Captin" %}
 

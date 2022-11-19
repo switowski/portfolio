@@ -40,7 +40,11 @@ module.exports = function (config) {
   config.addPlugin(timeToRead);
   config.addPlugin(eleventyPluginFeathericons);
   config.addPlugin(pluginRss);
-  // config.addPlugin(brokenLinksPlugin); // This doesn't work well for now
+  config.addPlugin(brokenLinksPlugin, {
+    cacheDuration: '1w', // Cache checked links for 1 week instead of 1 day
+    loggingLevel: 1, // Only report broken links, ignore redirects
+    excludeUrls: ['https://www.pexels.com/*', 'https://pixabay.com/*'], // Some websites block robots, so links seems broken
+  });
   config.addPlugin(svgSprite, {
     path: './src/_assets/icons', // relative path to SVG directory
   });
