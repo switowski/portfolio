@@ -1,7 +1,6 @@
 TODO:
 
 -------- Next -----------
-* Ugly image (http://localhost:8080/blog/how-to-benchmark-python-code/ - richbench)
 
 -------- Later ----------
 * Umami is throwing 401 error when running lighthouse check. No idea why, wait for new versions of the library, so maybe it will be fixed one day?
@@ -15,6 +14,8 @@ TODO:
 
 ------- After deployment --------
 
+------ Regular checkups ---------
+* Make sure that the latest posts have "similar" tag in the font matter
 
 
 ------------ Someday --------------------

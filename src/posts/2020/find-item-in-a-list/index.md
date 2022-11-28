@@ -6,7 +6,6 @@ similar:
   - remove-duplicates
   - sorting-lists
   - easy-speedup-wins-with-numba
-
 date: 2020-08-27
 ---
 

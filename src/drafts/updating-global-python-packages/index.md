@@ -1,7 +1,9 @@
 ---
 title: Updating Global Python Packages
-description: How to update all global Python packages after you update Python version?
+description: How to update all the global Python packages after you update your Python version?
 tags: ['Python', 'pipx']
+date: 2030-01-06
+
 ---
 
 I'm pretty happy with my setup for local Python development using pyenv, virtualfish, and pipx.

@@ -1,11 +1,11 @@
 ---
-title: f-strings
-categories: ["Python", "Writing Faster Python"]
+title: Different Ways of String Formatting
+tags: ["Python", "Writing Faster Python"]
 ---
 
 One of the most well-received features introduced in Python 3.6 was the f-strings formatting. Unlike with the walrus operator (introduced in Python 3.8), it's hard to find someone who doesn't love the f-strings. Officially named "literal string interpolation", f-strings are much more readable and faster to write. And if you come from a language like JavaScript, you will feel like home using them, because they work the same like the [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) introduced in ES6.
 
-If you follow the landscape of string formatting in Python (and I don't blame you if you don't 😉), you probably noticed that this brings us a total of **four different ways** to format strings. Why so many? Let's quickly review all of them.
+If you follow the landscape of string formatting in Python, you probably noticed that this brings us a total of **four different ways** to format strings. Why so many? Let's quickly review all of them.
 
 ## The "old" style of string formatting with % operator
 
@@ -37,7 +37,7 @@ TypeError: not all arguments converted during string formatting
 
 ## Template strings
 
-In Python 2.4 a "template strings" formatting was introduced with [PEP 292](https://www.python.org/dev/peps/pep-0292/). It was introduced as a way to solve some shortcomings of the "old" style - template strings were supposed to be simpler and less error-prone.
+In Python 2.4, [PEP 292](https://www.python.org/dev/peps/pep-0292/) introduced the "template strings" formatting. It was introduced as a way to solve some shortcomings of the "old" style - template strings were supposed to be simpler and less error-prone.
 
 With template strings, you first create a template and then you substitute placeholders with variables:
 
@@ -59,7 +59,7 @@ KeyError: 'last'
 
 ## The "new" style with str.format()
 
-In Python 3, a "new" style of formatting was introduced (and later it was back-ported to Python 2.7) with [PEP 3101](https://www.python.org/dev/peps/pep-3101/). This new style was simply the `format()` function added to the `str` type. Since it was a function call, there was no difference in how you write your code, no matter if you want to display a string, a tuple:
+In Python 3, a "new" style of formatting was introduced (and later it was backported to Python 2.7) with [PEP 3101](https://www.python.org/dev/peps/pep-3101/). This new style was simply the `format()` function added to the `str` type. Since it was a function call, there was no difference in how you write your code, no matter if you want to format a string or a tuple:
 
 ```python
 name = "Sebastian"
@@ -78,20 +78,20 @@ fullname = ('Sebastian', 'Witowski')
 "Hello Witowski Sebastian"
 ```
 
-Similarly to the old style, you could also pass the conversion types or some additional flags. For example, if you wanted to convert argument to an integer and pad it to four digits, you could write it like that:
+Similarly to the old style, you could also pass the conversion types or some additional flags. For example, if you wanted to print an integer and pad it to four digits, you could write it like this:
 
 ```python
 >>> "The answer is: {answer:04d}".format(answer=42)
 "The answer is: 0042"
 ```
 
-The new style of formatting is much more robust, but it's a bit more verbose. Even for the simplest situation, you always have to write the ".format". And why do we have to append what we want to print at the very end of a string? Why can we just put this variable or an expression exactly where it belongs in a string?
+The new style of formatting is much more robust, but it's also a bit more verbose. Even for the simplest situation, you always have to write the ".format". And why do we have to repeat ourselves by typing "answer" twice in the above example? Why can we just put this variable or an expression exactly where it belongs in a string and let Python figure out the rest?
 
-So, similarly to what exist in other programming languages, the f-strings or the *"literal string interpolation"* was introduced in Python 3.6.
+So, similarly to what exists in other programming languages, the f-strings or the *"literal string interpolation"* was introduced in Python 3.6.
 
 ## f-strings (literal string interpolation)
 
-The latest way of formatting strings in Python is the most convenient to use. Just prefix a string with a letter 'f' (thus the name "f-strings") and whatever code you put inside curly braces, gets evaluated. It can be a variable or any kind of a Python expression:
+The latest way of formatting strings in Python is the most convenient to use. Just prefix a string with a letter 'f' (thus the name "f-strings") and whatever code you put inside the curly braces, gets evaluated. It can be a variable or any kind of Python expression:
 
 ```python
 name = Sebastian
@@ -107,9 +107,12 @@ name = Sebastian
 
 import datetime
 >>> f"Current year: {datetime.datetime.now():%Y}"
-"Current year: 2020"
+"Current year: 2023"
 ```
 
+## Which string formatting method is the fastest?
+
+Let's run some benchmarks to see which method is the fastest one.
 
 
 
@@ -119,6 +122,9 @@ import datetime
 ## Conclusions
 
 If you want to learn more about the "old style" vs. the "new style", there is a great website called [pyformat.info](https://pyformat.info/) that shows what can be done with each style.
+
+Of course, here we are only talking about formatting strings, that is, putting a variable or an expression into a string. But there are way more ways to construct a string. You can add strings together (`"answer is " + "42"`), join a list (`"".join(['answer', ' is', ' 42']`)) or probably come up with some even more creative solution. But creating strings in an effective way is a store for another article.
+
 
 
 ## TODO:
