@@ -1,5 +1,5 @@
 ---
-title: Formatting Strings
+title: String Formatting
 description: With 4 different ways of formatting strings in Python 3.6 and above, it's time to look at which one is the fastest.
 tags: ["Python", "Writing Faster Python"]
 date: 2030-02-01
@@ -36,6 +36,8 @@ TypeError: not all arguments converted during string formatting
 >>> "Hello %s" % (fullname,)
 "Hello ('Sebastian', 'Witowski')"
 ```
+
+However, there is one interesting *feature* of the old style formatting that the following other methods don't have. It allows you to do some "[lazy logging](https://stackoverflow.com/a/52012660)" by only evaluating the string formatting expression when needed. If you write your logging statement like this: `log.debug("Some message: a=%s", a)` and your logging module is configured to **not** log out the debug messages, `a` will never be converted to a string. If for some reason `a` takes very long time to convert to a string, this might save you some time. But honestly, I can't think of any example when this might happen. So think of this as a curiosity.
 
 ## Template strings
 
