@@ -2,7 +2,7 @@
 title: dict() vs. {}
 description: Is using {} faster than dict()? If yes, then why? And when would you use one version over the other?
 tags: ['Python', 'Writing Faster Python']
-date: 2022-01-12
+date: 2022-12-01
 similar:
     - find-item-in-a-list
     - for-loop-vs-list-comprehension
