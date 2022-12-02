@@ -105,7 +105,7 @@ That’s a very good point. If we take all the code improvements together and ap
 
 Every time I'm coding, I keep thinking: *"how can I make it better?"*. I have to stop comparing different code patterns because I could easily waste a few hours every day doing just that. Luckily, at some point, you get a feeling of what will work better. In general, more *"Pythonic"* solutions will often be faster, so if you come to Python from a different programming language, you might need to adjust the way you write or think about the code.
 
-The whole point of these articles is to learn something new. So if you know any cool tricks to improve Python code, I would love to take them for a spin and share with others! Just leave a comment, drop me [an email](/about#contact), or message me on [Twitter](https://twitter.com/SebaWitowski).
+The whole point of these articles is to learn something new. So if you know any cool tricks to improve Python code, I would love to take them for a spin and share with others! Just leave a comment, drop me [an email](/about#contact-me), or message me on [Twitter](https://twitter.com/SebaWitowski).
 
 ### *"If function A is 25% faster, then function B is 25% slower, right?"*
 

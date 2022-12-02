@@ -128,7 +128,7 @@ As I said in the beginning, magic functions are usually helper functions. Their 
 
 ## Conclusion
 
-I hope you enjoyed this short tutorial and if you have questions or if you have a cool magic function that you would like to share - drop me [an email](/about#contact) or ping me on [Twitter](https://twitter.com/SebaWitowski)!
+I hope you enjoyed this short tutorial and if you have questions or if you have a cool magic function that you would like to share - drop me [an email](/about#contact-me) or ping me on [Twitter](https://twitter.com/SebaWitowski)!
 
 Stay tuned for the next parts. We still need to cover the **cell magic** functions, **line AND cell magic** functions and **Magic** classes.
 
