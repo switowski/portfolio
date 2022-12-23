@@ -3,8 +3,6 @@ TODO:
 -------- Next -----------
 
 -------- Later ----------
-* Umami is throwing 401 error when running lighthouse check. No idea why, wait for new versions of the library, so maybe it will be fixed one day?
-
 
 -------- Small ----------
 
