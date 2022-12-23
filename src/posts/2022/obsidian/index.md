@@ -2,7 +2,7 @@
 title: How I Organize My Notes With Obsidian
 description: After years of using Evernote, I finally found a worthy replacement. And not only for Evernote but for two other tools as well. Let me show you how I organize my notes, mind maps, tasks, and long-term goals in Obsidian.
 tags: ['Obsidian', 'Productivity']
-date: 2030-12-23
+date: 2022-12-23
 ---
 
 A few months ago, I moved from Evernote to [Obsidian](https://obsidian.md/). I have been using Evernote for as long as I can remember. And every now and then, I checked some alternative solutions. I tried Notion, but its first version was excruciatingly slow on mobile (waiting for 10+ seconds each time I wanted to take a quick note was a no-go for me). I remember trying other apps like Bear, but in the end, I was always coming back to Evernote. Evernote felt a bit clunky, and the constant nagging about upgrading to a paid version was annoying, but even with all that, it worked fine for me for many years. I stayed within the device limit, and I wasn't uploading more than 50MB of pictures every month, so I didn't have to upgrade from the free plan. Therefore, I wasn't looking *very hard* for a replacement.
