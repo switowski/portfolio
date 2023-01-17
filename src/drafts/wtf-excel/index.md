@@ -1,6 +1,6 @@
 ---
-title: "WTF Excel?!"
-description: For a tool that underlies probably most of the financial system in the world, Excel has some incredibly weird limitations and quirks. Let me share with you a few WTFs I got when working with it.
+title: WTF Excel?!
+description: For a tool that probably underlies most of the financial systems in the world, Excel has some incredibly weird limitations and quirks. Let me share a few WTFs I encountered when working with it.
 tags: ['Excel', 'Software - Y U so hard?!']
 date: 2030-01-02
 ---
@@ -22,8 +22,8 @@ It took a good chunk of time (and my sanity) to figure out what's going on. Sinc
 
 Here is a pop quiz. If you see a number 941 in a cell, how do you think Excel actually stores it?
 
-* A) 941
-* B) 940.99999999999989
+A) 941  
+B) 940.99999999999989
 
 Don't rush with your answer! Take your time to think carefully. I will give you a hint - this is a screenshot of a file that I received from one of the users. You can see that the field is numeric and you can see both the value in the cell and it's representation in the formula field.
 

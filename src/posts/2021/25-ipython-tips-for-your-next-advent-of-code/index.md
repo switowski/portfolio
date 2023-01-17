@@ -585,7 +585,3 @@ You can execute files containing IPython-specific code (shell commands prefixed 
 ## Conclusions
 
 If you have been reading my blog for a bit, you probably already realize that IPython is one of my favorite Python tools. It's an excellent choice for solving code challenges like the Advent of Code, and it has a lot of cool tricks that can help you. Leave a comment if you know some other cool tricks that you want to share!
-
-&nbsp;
-
-Image by Valeria Vinnik from: [Pexels](https://www.pexels.com/photo/ball-blur-branch-celebration-246351/)
