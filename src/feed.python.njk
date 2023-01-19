@@ -2,5 +2,5 @@
 permalink: python.feed.xml
 eleventyExcludeFromCollections: true
 ---
-{%- set items = collections['Python'] -%}
+{%- set items = collections['Python'] | filterLivePosts -%}
 {%- include "components/rss.njk" -%}
