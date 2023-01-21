@@ -17,7 +17,9 @@
       <link href="{{ absolutePostUrl }}"/>
       <updated>{{ post.date | dateToRfc3339 }}</updated>
       <id>{{ absolutePostUrl }}</id>
-      <content xml:lang="{{ site.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+      <content xml:lang="{{ site.language }}" type="html">
+        <img alt="{{post.data.title}}" src="{{ post.inputPath | replace('./src/', '') | absoluteUrl(site.url) | replace('index.md', 'cover.jpg')}}"/>
+        {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
     </entry>
   {%- endfor %}
 </feed>

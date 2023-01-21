@@ -141,7 +141,7 @@ Much more important thing than the most accurate tool is how you set up your ben
 
 ## Beware of how you structure your code
 
-Running benchmarks is the easy part. The tricky part is to remember to write your code in a way that won't "cheat". When I first wrote [Sorting Lists]({% postUrl "sorting-lists" %}) article, I was so happy to find that `sort()` was so much faster than `sorted()`. "OMG, I found the holy grail of sorting in Python" - I thought. Then someone pointed out that `list.sort()` sorts the list in place. So if I run my benchmarks, the first iteration will sort the list (which is slow), and each next iteration will sort an already sorted list (which is much faster). I had to update my article and start paying more attention to how I organize my benchmarks.
+Running benchmarks is the easy part. The tricky part is to remember to write your code in a way that won't "cheat". When I first wrote [Sorting Lists]({% postUrl "sorting-lists" %}) article, I was so happy to find that `sort()` was so much faster than `sorted()`. "*OMG, I found the holy grail of sorting in Python*" - I thought. Then someone pointed out that `list.sort()` sorts the list in place. So if I run my benchmarks, the first iteration will sort the list (which is slow), and each next iteration will sort an already sorted list (which is much faster). I had to update my article and start paying more attention to how I organize my benchmarks.
 
 ## Conclusion
 
