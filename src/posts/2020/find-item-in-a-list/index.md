@@ -34,6 +34,18 @@ It's pretty straightforward:
   * If yes, return it (this stops the loop)
 * Otherwise, check the next number
 
+:::callout-success
+
+### Least Common Multiple
+
+The examples in this article are intentionally iterating over a list so I can compare the speed of different code constructs. But if you really want to find the least common multiple of two numbers (that is, the smallest number that can be divided by both of them), you're better off:
+
+* using the [math.lcm()](https://docs.python.org/3/library/math.html#math.lcm) function directly: `math.lcm(42, 43)` (Python 3.9 and above)
+* dividing their product by their greatest common divisor: `42 * 43 // math.gcd(42, 43)` (Python 3.5 and above)
+
+Both versions will be an order of magnitude faster than my silly examples. Thanks to Dmitry for [pointing this out](https://github.com/switowski/writing-faster-python3/issues/2)!
+:::
+
 ## Find a number in a list
 
 If we have a list of items that we want to check, we will use a "for loop" instead. I know that the number I'm looking for is smaller than 10 000, so let's use that as the upper limit:
