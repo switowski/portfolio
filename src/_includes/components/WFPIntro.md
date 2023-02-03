@@ -6,5 +6,6 @@
 Are those recommendations going to make your code much faster? Not really.  
 Is knowing those small differences going to make a slightly better Python programmer? Hopefully!
 
-You can read more about some assumptions I made, the benchmarking setup, and answers to some common questions in the [Introduction]({% postUrl "writing-faster-python-intro" %}) article.
+You can read more about some assumptions I made, the benchmarking setup, and answers to some common questions in the [Introduction]({% postUrl "writing-faster-python-intro" %}) article. And you can find most of the code examples in [this](https://github.com/switowski/blog-resources/tree/master/writing-faster-python) repository.
+
 :::
