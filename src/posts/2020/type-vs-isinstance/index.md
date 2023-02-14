@@ -32,23 +32,34 @@ True
 Let's compare both methods' performance:
 
 ```shell
-$ python -m timeit -s "variable = 'hello'" "type(variable) is int"
-2000000 loops, best of 5: 102 nsec per loop
+$ python -m timeit -s "variable = 'hello'" "type(variable) is str"
+5000000 loops, best of 5: 52.1 nsec per loop
 
 $ python -m timeit -s "variable = 'hello'" "isinstance(variable, str)"
-5000000 loops, best of 5: 72.8 nsec per loop
+10000000 loops, best of 5: 35.5 nsec per loop
 ```
 
-`type` is 40% slower (102/72.8 = 1.40).
+`type` is around 40% slower (52.1/35.5≈1.47).
 
-We could use `type(variable) == str` instead. It would work, but it's a bad idea:
+We could use `type(variable) == str` instead, but it's a bad idea. `==` should be used when you want to check the value of a variable. We would use it to see if the value of `variable` is equal to `"hello"`. But when we want to check if `variable` **is** a string, `is` operator is more appropriate. For a more detailed explanation of when to use one or the other, check [this article]({% postUrl "checking-for-true-or-false" %}).
 
-* `==` should be used when you want to check the value of a variable. We would use it to see if the value of `variable` is equal to `"hello"`. But when we want to check if `variable` is a string, `is` operator is more appropriate. For a more detailed explanation of when to use one or the other, check [this article]({% postUrl "checking-for-true-or-false" %}).
-* `==` is slower:
-    ```shell
-    $ python -m timeit -s "variable = 'hello'" "type(variable) == str"
-    2000000 loops, best of 5: 114 nsec per loop
-    ```
+:::callout-info
+**Python 3.11 update**
+
+In Python 3.11, the difference between the two above code snippets becomes almost negligible:
+
+```shell
+# Python 3.11.0
+
+$ python -m timeit -s "variable = 'hello'" "type(variable) is str"
+20000000 loops, best of 5: 12.3 nsec per loop
+
+$ python -m timeit -s "variable = 'hello'" "isinstance(variable, str)"
+20000000 loops, best of 5: 12.7 nsec per loop
+```
+
+That's around a 3% difference. But the following recommendations are still valid no matter which version of Python you are using.
+:::
 
 ## Difference between `isinstance` and `type`
 
