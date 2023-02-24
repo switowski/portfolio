@@ -55,7 +55,7 @@ $ python -m timeit -s "from filter_list import list_comprehension" "list_compreh
 
 Can we make it better?
 
-## Filter a list with the "filter" function
+## Filter a list with the `filter` function
 
 Python has a built-in [filter](https://docs.python.org/3/library/functions.html#filter) function for filtering collections of elements. This sounds like a perfect use case for our problem, so let's see how fast it will be.
 
