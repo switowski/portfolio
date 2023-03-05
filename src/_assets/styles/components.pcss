@@ -274,8 +274,23 @@
 .littlefoot-footnote__content {
   background-color: var(--color-bg);
   opacity: 0.98;
+  line-height: 1.25;
 }
-
+/* By default the footnotes have white shadow inside a scrollable popup.
+Change its color to match the background */
+.littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::before {
+  background-image: linear-gradient(to bottom, var(--color-bg) 50%, rgba(250, 250, 250, 0) 100%);
+}
+.littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::after {
+  background-image: linear-gradient(to top, var(--color-bg) 50%, rgba(250, 250, 250, 0) 100%);
+}
+/* With littlefoot.js plugin we can hide the <hr> separator added by markdown-it-footnote
+and only display it in print */
+@media not print {
+  .footnotes-sep {
+    display: none !important;
+  }
+}
 /********************************* Misc  *************************************/
 .divider {
   @apply divide-y;
