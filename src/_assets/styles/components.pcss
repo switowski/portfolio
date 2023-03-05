@@ -260,11 +260,20 @@
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check-circle'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpath d='M22 4 12 14.01l-3-3'/%3E%3C/svg%3E");
 }
 
-/**************************** Littlefoot plugin  *****************************/
-.littlefoot {
-  --popover-background-color: var(--color-bg);
-  --button-active-background-color: #f00;
-  --button-text-color: #fff;
+/*********************** Littlefoot plugin overrides *************************/
+.littlefoot-footnote__button {
+  background-color: var(--color-footnote-btn);
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-active {
+    background-color: var(--color-footnote-btn-active);
+  }
+}
+.littlefoot-footnote__content {
+  background-color: var(--color-bg);
+  opacity: 0.98;
 }
 
 /********************************* Misc  *************************************/

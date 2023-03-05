@@ -28,28 +28,12 @@ html[data-theme='dark'] .alternatebg {
   @apply from-dark-indigo bg-gradient-to-b;
 }
 
-/* Add spaces between paragraphs, headers, code blocks, quotes, lists, etc. (in posts, about page, etc.) */
-/* Custom "prose" class equivalent that makes blocks of text look nice by default */
+/* Add spaces between paragraphs, headers, code blocks, quotes, lists, etc. (in posts, about page, etc.)
+Kudos to Andy Bell for this snippet: https://andy-bell.co.uk/my-favourite-3-lines-of-css/ */
+.article > * + * {
+  margin-block-start: 1.25rem;
+}
 .article {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  p,
-  ul,
-  ol,
-  pre,
-  figure,
-  table,
-  div {
-    @apply mb-5;
-  }
-  ul ul,
-  ol ol {
-    /* Nested lists should not have bottom margin */
-    @apply mb-0;
-  }
   /*
   h2 gets more margin top because it's used to separate different main sections of the article.
   All the other headers continue the though of the same section, so there is no need for that much visual divide.
