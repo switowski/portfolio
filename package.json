@@ -15,7 +15,7 @@
     "dev:11ty": "eleventy --serve --quiet",
     "dev:css": "tailwindcss -i src/_assets/styles/main.pcss -o dist/assets/main.bundle.css --watch --postcss",
     "dev:js": "esbuild src/_assets/scripts/main.js --outfile=dist/assets/main.bundle.js --bundle --watch",
-    "test": "npx percy snapshot snapshots.yml"
+    "test": "npx percy snapshot snapshots.local.yml"
   },
   "repository": {
     "type": "git",
