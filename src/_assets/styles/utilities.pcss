@@ -30,7 +30,10 @@ html[data-theme='dark'] .alternatebg {
 
 /* Add spaces between paragraphs, headers, code blocks, quotes, lists, etc. (in posts, about page, etc.)
 Kudos to Andy Bell for this snippet: https://andy-bell.co.uk/my-favourite-3-lines-of-css/ */
-.article > * + * {
+.article > * + *,
+.article > .callout-info > * + *,
+.article > .callout-success > * + *,
+.article > .callout-warning > * + * {
   margin-block-start: 1.25rem;
 }
 .article {
