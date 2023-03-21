@@ -26,12 +26,13 @@ You can jump directly to the part that interests you the most:
 - [Day of the presentation](#day-of-the-presentation)
 - [Q&A](#q-and-a)
 
-I could also turn it into a 1-hour presentation for your conference.  
-If that sounds interesting - let's [get in touch](/about#contact-me).
+<!-- I could also turn it into a 1-hour presentation for your conference.  
+If that sounds interesting - let's [get in touch](/about#contact-me). -->
 :::
 
 I try to keep my suggestions as open as possible, including things that don't work for me but may work for you. Just because I do something in a specific way doesn't mean everyone else does it too. I will also try to keep my advice brief instead of supporting each with a story from my life.
 
+<!-- TODO: add link to "how i make presentations" below once I have that blog post ready -->
 Later on, I will write another article focusing on how *I* make presentations, collect ideas, and prepare my slides. There, I will go into more detail on *why* I do things a certain way.
 
 First of all, why would you even want to spend time preparing a talk for free?
