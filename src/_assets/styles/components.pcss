@@ -276,6 +276,10 @@
   opacity: 0.98;
   line-height: 1.25;
 }
+/* For footnotes on mobile, move them from the bottom as IPhones have that annoying white bar that overflows text  */
+.littlefoot-footnote.is-positioned-bottom .littlefoot-footnote__content {
+  padding-bottom: 1.25rem;
+}
 /* By default the footnotes have white shadow inside a scrollable popup.
 Change its color to match the background */
 .littlefoot-footnote.is-scrollable .littlefoot-footnote__wrapper::before {
