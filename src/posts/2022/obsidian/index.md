@@ -279,6 +279,6 @@ When I have an idea for a blog post, I can immediately start writing in Markdown
 
 Plugins like Kanban or Mind Map are *good enough* replacements for dedicated tools like Trello or SimpleMind. They might be missing some advanced features, but I have everything in one place, accessible from my laptop or smartphone. For me, that convenience is great.
 
-One thing I'd welcome in Obsidian is the possibility of customizing ALL the shortcuts. I'm spoiled by VS Code, where any command can be assigned to a keyboard shortcut. ~~With Obsidian, some commands have a different mapping than VS Code, so I wish I could edit them and use the exact same keyboard commands in both tools.~~ **Update:** Luckily, I found the [Code Editor Shortcuts](https://github.com/timhor/obsidian-editor-shortcuts) plugin that mostly solves this problem for me.
+One thing I'd welcome in Obsidian is the possibility of customizing ALL the shortcuts. I'm spoiled by VS Code, where any command can be assigned to a keyboard shortcut. ~~With Obsidian, some commands have a different mapping than VS Code, so I wish I could edit them and use the exact same keyboard commands in both tools.~~ **Update:** Luckily, I found the [Code Editor Shortcuts](https://github.com/timhor/obsidian-editor-shortcuts) plugin that mostly solves this problem.
 
 Let me know if you have some other plugins worth checking out or some really cool Obsidian tricks you want to share!
