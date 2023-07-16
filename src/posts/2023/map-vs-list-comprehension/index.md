@@ -6,7 +6,7 @@ similar:
   - for-loop-vs-list-comprehension
   - upgrade-your-python-version
   - type-vs-isinstance
-date: 2023-07-20
+date: 2023-07-31
 ---
 
 From *[For Loop vs. List Comprehension]({% postUrl 'for-loop-vs-list-comprehension' %})*, we already know that list comprehension is usually faster than the equivalent `for` loop. In the article, I also compared list comprehension with the `filter()` function. I concluded that, while `filter()` has some justified use cases where it's better than list comprehension (for example, when you want the more memory-efficient generator object that the `filter()` function returns), list comprehension is usually the faster choice.

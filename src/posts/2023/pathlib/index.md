@@ -6,7 +6,7 @@ similar:
   - string-formatting
   - upgrade-your-python-version
   - membership-testing
-date: 2023-07-06
+date: 2023-07-17
 ---
 
 If I were to name my top ten modules from the standard library, `pathlib` would be high on that list. It could even make it to the top three.

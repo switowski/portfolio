@@ -6,7 +6,7 @@ similar:
   - easy-speedup-wins-with-numba
   - for-loop-vs-list-comprehension
   - dictionary-comprehension
-date: 2023-07-13
+date: 2023-07-24
 ---
 
 In this episode of [Writing Faster Python]({% postUrl "writing-faster-python-intro" %}), we will check if we can make the code faster by doing exactly the opposite of what every good programming book suggests – that is, keeping all the code in one, massive function instead of smaller, more manageable functions.
