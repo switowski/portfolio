@@ -12,7 +12,7 @@ date: 2023-07-24
 In this episode of [Writing Faster Python]({% postUrl "writing-faster-python-intro" %}), we will check if we can make the code faster by doing exactly the opposite of what every good programming book suggests – that is, keeping all the code in one, massive function instead of smaller, more manageable functions.
 
 :::callout-warning
-Inlining a function just to make it faster is usually a **bad idea** and will make your code harder to understand.
+Inlining a function just to make it faster is usually a **bad idea** and will make your code harder to understand. And for applications that process large amounts of data, it can actually bring the performance down by increasing the memory consumption (thanks Harvey for pointing out this downside!)
 
 I don't recommend doing that unless this small speed improvement of the inlined function is somehow more important to you than a well-designed, readable, and testable code. Proceed with caution.
 :::
