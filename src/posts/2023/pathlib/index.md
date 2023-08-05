@@ -73,7 +73,44 @@ $ python -m timeit -s "from pathlib_benchmarks import pathlib_join" "pathlib_joi
 50000 loops, best of 5: 5.74 usec per loop
 ```
 
-Using `Path` is over four times as slow as using `os.path.join` (5.74/1.22 ≈ 4.70). And no matter if I create a path from 2 or 20 folders, `Path` is always around four or five times as slow as `os.path.join`. So the length of the path that we are constructing doesn't matter.
+In a scenario where I initialize `Path()` instance and then append multiple folders using the `/` operator, `Path` can be over four times as slow as using `os.path.join` (5.74/1.22 ≈ 4.70). And no matter if I create a path from 2 or 20 folders, `Path` is always around four or five times as slow as `os.path.join`:
+
+```python
+def os_path_join_short():
+    return os.path.join("/", "file.txt")
+
+def pathlib_join_short():
+    return Path("/") / "file.txt"
+
+
+def os_path_join_long():
+    return os.path.join("/", "an", "even", "longer", "path", "to", "some",
+        "nested", "folder", "of", "a", "nested", "and", "nested", "and",
+        "nested", "and", "nested", "path", "to", "file.txt",
+    )
+
+
+def pathlib_join_long():
+    return (
+        Path("/") / "an" / "even" / "longer" / "path" / "to" / "some" / "nested"
+        / "folder" / "of" / "a" / "nested" / "and" / "nested" / "and" / "nested"
+        / "and" / "nested" / "path" / "to" / "file.txt"
+    )
+```
+
+```bash
+$ python -m timeit -s "from pathlib_benchmarks import os_path_join_short" "os_path_join_short()"
+1000000 loops, best of 5: 345 nsec per loop
+
+$ python -m timeit -s "from pathlib_benchmarks import pathlib_join_short" "pathlib_join_short()"
+200000 loops, best of 5: 1.69 usec per loop
+
+$ python -m timeit -s "from pathlib_benchmarks import os_path_join_long" "os_path_join_long()"
+100000 loops, best of 5: 3.57 usec per loop
+
+$ python -m timeit -s "from pathlib_benchmarks import pathlib_join_long" "pathlib_join_long()"
+20000 loops, best of 5: 17.3 usec per loop
+```
 
 #### Using an existing `Path()` object
 
@@ -91,7 +128,28 @@ $ python -m timeit -s "from pathlib_benchmarks import pathlib_join_existing_obje
 50000 loops, best of 5: 4.85 usec per loop
 ```
 
-`pathlib_join_existing_object()` is slightly faster than `pathlib_join` (featured in previous benchmarks), but still much slower than using `os.path.join` (4.85/1.22≈3.98).
+`pathlib_join_existing_object()` is slightly faster than `pathlib_join` (featured in initial benchmarks), but still much slower than using `os.path.join` (4.85/1.22≈3.98).
+
+As @randallpittman pointed out in the comments, it seems that it's actually the concatenation of paths that makes `Path` slower in my benchmarks. If I pass all the paths directly as parameters, then it gets faster. Take a look at those two scenarios and their benchmarks:
+
+```python
+def pathlib_multiple_args():
+    return Path("/", "some", "nested", "path", "to", "a", "file.txt")
+
+
+def pathlib_full_path():
+    return Path("/some/nested/path/to/a/file.txt")
+```
+
+```bash
+$ python -m timeit -s "from pathlib_benchmarks import pathlib_multiple_args" "pathlib_multiple_args()"
+100000 loops, best of 5: 2.21 usec per loop
+
+$ python -m timeit -s "from pathlib_benchmarks import pathlib_full_path" "pathlib_full_path()"
+200000 loops, best of 5: 1.4 usec per loop
+```
+
+Both `pathlib_multiple_args` and `pathlib_full_path` are now much faster. `pathlib_full_path` is only 15% slower than `os.path` (1.4/1.22≈1.15).
 
 #### Starting from the home folder
 
