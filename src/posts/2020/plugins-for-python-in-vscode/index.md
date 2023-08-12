@@ -103,7 +103,7 @@ It requires installing one of the additional tool to provide the documentation:
 
 Once you download the documentation, you can access it offline.
 
-I'm not using it very often, but it's a great tool if you need to work without access to the Internet.
+I'm not using it very often, but it's a great tool if you need to work without access to the internet.
 
 ## [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 
