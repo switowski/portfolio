@@ -106,3 +106,21 @@ td {
 [x-cloak] {
   @apply hidden;
 }
+
+/* Line numbers in syntax highlight - just suffix the language with front slash to enable line numbers */
+pre {
+  counter-reset: lineNumber;
+}
+code .highlight-line:before {
+  -webkit-user-select: none;
+  border-right: 1px solid #404040;
+  color: #858585;
+  content: counter(lineNumber);
+  counter-increment: lineNumber;
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  margin-right: 1.2em;
+  padding-right: 1.2em;
+  text-align: right;
+  width: 2.4em;
+}
