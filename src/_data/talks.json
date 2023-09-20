@@ -1,13 +1,35 @@
 [
   {
     "featured": true,
+    "url": "https://www.youtube.com/watch?v=goWcDalv_FQ",
+    "title": "Optimizing Your CI Pipelines",
+    "date": "2023-07-19",
+    "description": "Take your Continuous Integration to the next level! Learn how to optimize your pipelines for faster and more efficient builds by making things start faster (caching, smaller containers), finish faster (failing early, splitting tests), and making more things run at the same time (parallelization).",
+    "img": "optimizing-CI",
+    "duration": "PT30M",
+    "slides": "https://speakerdeck.com/switowski/optimizing-your-ci-pipelines",
+    "conferences": ["EuroPython 2023", "PyCon Italia 2023", "PyConPL 2023"]
+  },
+  {
+    "featured": true,
+    "url": "https://www.youtube.com/watch?v=AjdCiGjFAqA",
+    "title": "Python CI 101: A Beginner's Guide to Continuous Integration",
+    "date": "2023-06-29",
+    "description": "Streamline your Python development process with Continuous Integration. From choosing the right CI tool to implementing it in your project, this presentation will cover all the basics and best practices of CI, leaving you with a working setup that you can reuse in the future.",
+    "img": "CI-101",
+    "duration": "PT30M",
+    "slides": "https://speakerdeck.com/switowski/ci-101",
+    "conferences": ["PyConPL 2023"]
+  },
+  {
+    "featured": true,
     "url": "https://www.youtube.com/watch?v=6P68IBou_cg",
     "title": "Writing Faster Python 3",
     "date": "2022-07-14",
     "description": "A talk about source code optimization. How some common problems can be solved with different code structures, together with benchmarks and explanations why one way is usually better (and often faster) than the other.<br>This is a revised version of my very first talk that I created in 2016 - adjusted for Python 3 with new code examples.",
     "img": "writing-faster-python3",
     "duration": "PT45M",
-    "conferences": ["EuroPython 2022", "PyCon Italia 2022"]
+    "conferences": ["EuroPython 2022", "PyCon Italia 2022", "PyConPL 2022"]
   },
   {
     "url": "https://www.youtube.com/watch?v=ZF4BARKBRjc",
@@ -27,7 +49,6 @@
     ]
   },
   {
-    "featured": true,
     "url": "https://youtu.be/2JtDL43OqHk",
     "title": "9 Jupyter Tricks For Your Next Advent of Code",
     "date": "2021-07-31",
