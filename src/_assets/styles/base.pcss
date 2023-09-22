@@ -127,6 +127,16 @@ code .highlight-line:before {
 }
 
 /* Add language badge to the code blocks */
+pre[class*='language-'] {
+  overflow: hidden; /* This makes the language badge stay in the left, right corner */
+  padding: 0; /* Move padding to the code block for nicer scroll bars */
+}
+code[class*='language-'] {
+  overflow-x: scroll; /* This makes the code block scroll when needed */
+  display: block; /* Required to make the code scrollable */
+  padding: 1em; /* Move padding to the code block for nicer scroll bars */
+}
+
 pre[class*='language-']::before {
   content: attr(data-language);
   position: absolute;
