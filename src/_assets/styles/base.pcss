@@ -110,6 +110,7 @@ td {
 /* Line numbers in syntax highlight - just suffix the language with front slash to enable line numbers */
 pre {
   counter-reset: lineNumber;
+  position: relative;
 }
 code .highlight-line:before {
   -webkit-user-select: none;
@@ -123,4 +124,17 @@ code .highlight-line:before {
   padding-right: 1.2em;
   text-align: right;
   width: 2.4em;
+}
+
+/* Add language badge to the code blocks */
+pre[class*='language-']::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  font-size: 0.6em;
+  color: var(--color-text-light);
+  opacity: 0.6;
+  text-align: right;
+  text-transform: uppercase;
 }

@@ -35,7 +35,15 @@ module.exports = function (config) {
 
   // Plugins
   config.addPlugin(pluginNavigation);
-  config.addPlugin(syntaxHighlight);
+  config.addPlugin(syntaxHighlight, {
+    // Added in 3.1.1, add HTML attributes to the <pre> or <code> tags
+    preAttributes: {
+      // Added in 4.1.0 you can use callback functions too
+      'data-language': function ({ language, content, options }) {
+        return language;
+      },
+    },
+  });
   config.addPlugin(ErrorOverlay);
   config.addPlugin(timeToRead);
   config.addPlugin(eleventyPluginFeathericons);
