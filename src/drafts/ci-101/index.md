@@ -1,6 +1,6 @@
 ---
-title: A beginners guide to Continuous Integration in Python
-description: 'If you want to learn how to implement a Continuous Integration in your project, then here is my "CI 101: A Beginners Guide to Continuous Integration" talk in a written form.'
+title: A Beginners Guide to Continuous Integration in Python
+description: 'If you want to learn how to implement a continuous integration in your project, then here is my "CI 101: A Beginners Guide to Continuous Integration" talk in a written form.'
 tags: ["CI", "DevOps"]
 date: 2024-09-02
 ---
@@ -17,7 +17,7 @@ This is a written guide from a [CI 101: A Beginner's Guide to Continuous Integra
 
 ## What is continuous integration?
 
-{% postImage "ci-1.jpg", "What is Continuous Integration?" %}
+{% postImage "ci-1.jpg", "What is continuous integration?" %}
 
 Continuous integration is a process of merging developer's code into the main repository. Each time you write a new feature, your code has to be added to the existing code and combined with the code from your colleagues.
 
@@ -58,7 +58,7 @@ Look, your code reviews should focus on the high level feedback like discussing 
 
 ## Choosing a CI platform
 
-I hope I convinced you that CI is a useful tool to have. But which one to choose? Luckily, nowadays both Gitlab and Github comes with a Continuous Integration tool built-in. Plus there are other commercial solutions if you want something specific. And of course there are open source solutions like Jenkins.
+I hope I convinced you that CI is a useful tool to have. But which one to choose? Luckily, nowadays both Gitlab and Github comes with a continuous integration tool built-in. Plus there are other commercial solutions if you want something specific. And of course there are open source solutions like Jenkins.
 
 So there are plenty of options and if you don't know where to start, I suggest to use this simple decision tree:
 
@@ -267,9 +267,11 @@ Just like with black, we can click the failed flake8 job and see the full log:
 
 flake8 is not happy about missing whitespaces and lines that are too long. Luckily those errors will be fixed when we run black on our codebase. But before we do that, I want to increase the maximum line length to 120 characters. That's totally a personal preference, but I (and I bet you too) have a screen large enough to display more than the 79 characters in one row that black enforces by default.
 
-Unfortunately, both black and flake8 use separate configuration files. Even though they accept multiple configuration formats like `tox.ini`, `setup.cfg`, `pyproject.toml`, etc. as of today there is no one, single configuration file that works for both. So to change the maximum line length in black and flake8, I need to write two configuration files:
+Unfortunately, both black and flake8 use separate configuration files. Even though they accept multiple configuration formats like `tox.ini`, `setup.cfg`, `pyproject.toml`, etc. as of today there is no one, single configuration file that works for both. To change the maximum line length in black and flake8, I need to write two configuration files:
 
-```toml
+{# TODO: Check this in the future if the TOML formatting is fixed (right now it breaks the line on [ and ] characters) #}
+
+```shell
 # pyproject.toml
 [tool.black]
 line-length = 120
@@ -283,42 +285,41 @@ max-line-length = 120
 
 And if we add those two files to the repository, run black on our code and [push all that](https://gitlab.com/switowski/python-ci-101/-/tree/fixed-pipeline) to our repository, we can see that the pipeline is now passing and all the jobs are green:
 
-![[Screenshot 2023-08-29 at 15.56.00 (2).jpg]]
+{% postImage "pipeline-passing.jpg", "GitLab CI pipeline passing" %}
 
 Great! We now have a simple GitLab CI pipeline that runs tests, checks code formatting and even reports static code violations. This pipeline is really all you need for many small Python projects.
 
 ## Extending our CI pipeline
+
 What else can we put into our CI?
 
 Honestly, sky (and a common sense) is the limit:
-* If you like type hints, we can add type checkers like [mypy](https://mypy-lang.org/). That way we get a notification if the declared types of our variables are not matching the types that are actually used in the code.
-* We can add tools like [bandit](https://github.com/PyCQA/bandit) that will check our code for some common security vulnerabilities.
-* We can add tools like [vulture](https://github.com/jendrikseipp/vulture) that will try to detect unused code, so we can remove it.
-* If it turns out that maintaining all those separate tools is too much work, we can just plug something like [prospector](https://github.com/landscapeio/prospector) that combines various different linters together.
-* Notifications? Checked. Deployment? Checked. Automated bots? Checked.
-* Finally, let's not forget about a whole separate world of commercial tools that will give you even more feedback on your code.
 
-Many of those tools can be further enhanced by installing additional plugins. A good example here can be `flake8` that is often installed with plugins that add additional checks. Or `pytest`, where additional plugins can add new functionality like displaying test coverage of your code, running tests in parallel and more.
+- If you like type hints, we can add type checkers like [mypy](https://mypy-lang.org/). It will notify us if the declared types of variables are not matching the types that are actually used in the code.
+- We can add tools like [bandit](https://github.com/PyCQA/bandit) that will check our code for some common security vulnerabilities.
+- We can add tools like [vulture](https://github.com/jendrikseipp/vulture) that will try to detect unused code, so we can remove it.
+- If it turns out that maintaining all those separate tools is too much work, we can just plug something like [prospector](https://github.com/landscapeio/prospector) that combines various different linters together.
+- Slack notifications about failed pipelines? Sure. Deployment to a test server? Why not? Automated bots? Go for it!
+- Finally, let's not forget about a whole separate world of commercial tools that will give you even more feedback about your code.
 
-If that's still not enough, we can go beyond software that is packaged as ready-to-use tools. In the end what the CI jobs do is to execute shell commands. And they can execute any type of a command. So any piece of software that you can install on your computer and incorporate in your shell scripts, can also be installed and executed in CI.
+Many of those tools can be further enhanced by installing additional plugins. A good example here can be flake8 that is often installed with plugins that add additional checks. Or pytest, where additional plugins can add new functionality like displaying test coverage of your code, running tests in parallel and more.
 
-We're not going to implement all those different tools in our CI setup, but let me show you another very useful feature. We will display test coverage of our code. This will make it easier to see if merge request increases and decreases the total test coverage in our project. It's also a good way to show you some more advanced topics like using artifacts to preserve files between jobs.
+We're not going to implement all those different tools in our CI, but let me show you another very useful feature. We will display test coverage of our code. This will make it easier to see if a merge request increases and decreases the total test coverage in our project. It's also a good way to show you some more advanced topics like using artifacts to preserve files between jobs.
 
-### Display test coverage
+## Displaying test coverage
+
 Here is how our test job currently looks like:
 
 ```yaml
-
 test:
   script:
     - pip install pytest  
     - pytest .
 ```
 
-We will extend this to also include the pytest-cov plugin and to display the tests coverage:
+We will extend it to also include the pytest-cov plugin and to display the test coverage:
 
 ```yaml
-
 # Source: https://docs.gitlab.com/ee/ci/testing/test_coverage_visualization.html#python-example
 test:
   script:
@@ -332,22 +333,21 @@ test:
         path: coverage.xml
 ```
 
-That's definitely not a trivial change! First, we installed [pytest-cov](https://github.com/pytest-dev/pytest-cov) package. Then we defined the "coverage" key with some complex regular expression to extract the total test coverage percentage from the "test" job. Finally, we defined an artifact that will create a coverage report in a specific format that GitLab can use ("cobertura"). This coverage.xml file contains a report with annotations for every line of your code. GitLab can then use it to display which lines of your code are covered by tests and which are not.
+That was definitely not a trivial change! First, we installed [pytest-cov](https://github.com/pytest-dev/pytest-cov) package. Then we defined the `coverage` key with some complex regular expression to extract the total test coverage percentage from the "test" job. Finally, we defined an artifact that will create a coverage report in a specific format that GitLab can use ("cobertura"). This `coverage.xml` file contains a report with annotations for every line of your code. GitLab can then use it to display which lines of your code are covered by tests and which are not.
 
-![[Screenshot 2023-08-30 at 09.31.24 (2).jpg]]
-*Each line of the code in a new MR contains a green or red line indicating if it's covered by tests or not.*
+{% postImage "test-coverage.jpg", "Test coverage displayed in GitLab", "", "Each line of the code in a new merge request contains a green or red border indicating if it's covered by tests or not." %}
 
-Artifacts are one of they way to share some files between jobs. By default, every job runs in a separate container and that container is destroyed when the job is done. So any files that are created in a job - like the coverage.xml report file in this case - will also be deleted once the test job is done. However, when we define an artifact, GitLab will preserve that file and make it available for other jobs or for downloading in case you need it. In our case, we want to keep the coverage.xml file after the test job is done, so that gitlab can use this file to annotate which lines in our code are covered by tests.
+Artifacts are one of the ways to share some files between jobs. By default, every job runs in a separate container and that container is destroyed when the job is finished. So any files that are created in a job - like the `coverage.xml` report file in this case - will also be deleted once the test job is completed. However, when we define an artifact, GitLab preserves that file and makes it available for other jobs or for downloading. In our case, we want to keep the `coverage.xml` file after the test job is completed, so that GitLab can use this file to annotate which lines in our code are covered by tests.
 
-![[coverage-report.jpeg]]
-*Each merge request now shows how the test coverage has changed. We can also download the coverage report if we want.*
+{% postImage "coverage-report.jpg", "Coverage report", "", "Merge requests now show how the test coverage has changed. We can also download the coverage report." %}
 
-In case you're wondering how did I know how to write all those lines in the `.gitlab-ci.yaml` file to display the tests coverage - I just googled that. If you type "gitlab pytest coverage", the first result contains the documentation page from where I just copied all that code. Unless you work as DevOps and write CI configuration files all the time, your experience will probably be the same as mine - you will google different things, apply them, and hope they will work. And quite often, they will. At least for Gitlab, the documentation is pretty good and all the code examples are up to date.
+In case you're wondering how did I know how to write all those lines in the `.gitlab-ci.yaml` file to display the test coverage - I just googled that. If you type "gitlab pytest coverage", the first result contains the documentation page from where I just copied all that code. Unless you work as DevOps and write CI configuration files all the time, your experience will probably be the same as mine - you will look up different things, apply them, and hope they will work. And quite often, they will. At least for GitLab, the documentation is pretty good and all the code examples are usually up to date.
 
-That concludes our GitLab CI setup. You can find all the code in the [test-coverage](https://gitlab.com/switowski/python-ci-101/-/tree/test-coverage) branch on GitLab. You can take it and extend it with other tools that you want to use in your project. Just keep in mind that with each new tool you add, your pipelines will get slower and slower. So you always need to find a balance between having enough feedback from your tools so you detect most of the potential issues and having your pipelines finish in a reasonable amount of time. Sometimes you can get away with a much simpler setup.
+That concludes our GitLab CI setup. You can find all the code in the [test-coverage](https://gitlab.com/switowski/python-ci-101/-/tree/test-coverage) branch on GitLab. You can take it and extend it with other tools that you want to use in your project. Just keep in mind that with each new tool you add, your pipelines will get slower. You need to find a balance between having enough feedback from your tools so you detect most of the potential issues and having your pipelines finish in a reasonable amount of time. Sometimes you can get away with a much simpler setup.
 
 ## Do I always need a CI?
-If that was the first time you were setting up Continuous Integration, you may feel overwhelmed. Writing this YAML configuration file was so much different than writing Python code. And if something goes wrong, debugging it can also be hard.
+
+If that was the first time you were setting up continuous integration, you may feel overwhelmed. Writing this YAML configuration file was so much different than writing Python code. And if something goes wrong, debugging can also be hard.
 
 Sometimes running linters on your computer is enough. For example - when you're working on your own project without a need to collaborate with anyone else, but you still want to write nice, consistent code and get feedback from the linters.
 
@@ -355,9 +355,9 @@ In this case you have two main choices. First one is to configure all those lint
 
 ### pre-commit
 
-![[Screenshot 2023-08-30 at 10.39.41 (2).jpg]]
+{% postImage "pre-commit.jpg", "pre-commit website" %}
 
-pre-commit is a tool that installs a git hook. Or more specifically it installs a "pre-commit" git hook, that's why the tool is named like that. A "pre-commit" hook is a script that will be executed before you create a new commit. So each time you try to create a new commit, git will run this script and if it fails, git will prevent you from creating a commit.
+pre-commit is a tool that installs a git hook. Or more specifically it installs a **pre-commit** git hook, that's why the tool is named like that. A pre-commit hook is a script that will be executed before you create a new commit. So each time you try to create a new commit, git will run this script and if it fails, git will prevent you from creating the commit.
 
 All the configuration happens through the `.pre-commit-config.yaml` file, where we can define different checks and linters we want to run. Let's see an example:
 
@@ -387,47 +387,46 @@ repos:
     -   id: flake8
 ```
 
-We start be enabling some checks that come directly with the pre-commit tool. They will check for leftovers from resolving merge conflicts (e.g. "<<<<<<<" left in your code), validate TOML and YAML files, ensure that files end with new line and remove any trailing whitespaces. We also specify two external plugins - "black" and "flake8", so the same plugins as we have in our CI.
+We start be enabling some checks that come directly with the pre-commit tool. They will check for leftovers from resolving merge conflicts (e.g. "<<<<<<<" left in your code), validate TOML and YAML files, ensure that files end with new line and remove any trailing whitespaces. We also specify two external plugins - black and flake8, so the same plugins as we have in our CI.
 
 Now we need to [install](https://pre-commit.com/#1-install-pre-commit) the pre-commit tool (using pip, brew or whatever other tool you prefer) and enable git hook with `pre-commit install` command. If everything worked fine, when we try to create a new commit, pre-commit will automatically run all the checks on the modified code:
 
-![[Screenshot 2023-08-30 at 11.00.38 (2).jpg]]
-*pre-commit checked our code, fixed missing new line at the end of the test_dice.py file and reformatted it with black*
+{% postImage "pre-commit-failing.jpg", "pre-commit command failing", "", "pre-commit failed because it had to fix a missing new line and reformat the code" %}
 
 The nice thing about pre-commit is that it will try to fix whatever can be fixed automatically. So most of the time if there are some easy to fix errors, the first time you try to run "git commit" pre-commit will complain, but also fix the errors and the second time you try to run "git commit" it should work fine:
 
-![[Screenshot 2023-08-30 at 11.04.37 (2).jpg]]
+{% postImage "pre-commit-passing.jpg", "pre-commit command passing" %}
 
 ### Pros and cons of local checks
+
 Using pre-commit (or any other tool that runs checks locally) means that you can move some checks from CI to your computer.  This will **reduce the cost of your CI** and it will also be **faster**. Running black or flake8 in the CI takes at least a couple of seconds because we need to install those tools in a CI container or download the correct Docker image. But running all those pre-commit hooks in my example project takes less than 1 second. And even for large projects if you use a tool like [ruff](https://beta.ruff.rs/docs/) you can easily keep your pre-commit checks under a second.
 
-So it's a great tool **if you can get everyone in your project to install it and use it**. And sometimes this will be a problem. Some people might run into problems setting up pre-commit on their computers or even can't be bothered to install it at all. If you work alone or you have a small team, that's usually not an issue. But if you have to chase people over and over again and ask them to use pre-commit, just don't bother and use the CI.
+So it's a great tool *if* you can get everyone in your project to install it and use it. And sometimes this will be a problem. Some people might run into problems setting up pre-commit on their computers or even can't be bothered to install it at all. If you work alone or in a small team, that's usually not an issue. But if you have to chase people over and over again and ask them to use pre-commit, just don't bother and use the CI.
 
-If you need more help choosing between pre-commit and CI, I wrote a separate article about that: "pre-commit vs. CI server" ( #todo add link).
+{# If you need more help choosing between pre-commit and CI, I wrote a separate article about that: [pre-commit vs. CI]({% postUrl "pre-commit-vs-ci" %}). #}
 
-Does it mean that you should choose between using pre-commit and setting up a CI? No. Quite often the best results can be obtained by combining all those tools together.
+Do we have to choose between using pre-commit and setting up a CI? No. Quite often the best results can be obtained by combining both tools together.
 
 ## 3 steps for a solid CI setup
 
-Here is a setup that I would suggest to use. 
+Here is a setup that I would suggest to use.
 
-![[CI 101.071.jpeg]]
+{% postImage "ci-7.jpg", "3 steps for a solid CI setup slide" %}
 
-First, if you know how to do this, configure your IDE to run all the possible checks and formatters either in real time or when you save a file. This should run asynchronously so it won't block you from typing and at the same time you will see errors and warnings as you write your code so you can fix them right away.
+First, if you know how to do this, configure your IDE to run all the possible checks and formatters either in real time or when you save a file. This should run *asynchronously*, so it won't block you from typing and, at the same time, you will see errors and warnings as you write your code so you can fix them right away.
 
-If some plugins can't be used in your IDE or just to make it easier to share the configuration with our teammates, set up pre-commit hooks. It will give you feedback before you push your code to the CI, so you won't be unnecessarily running pipelines that will fail with very obvious problems like a badly formatted code.
+If some plugins can't be used in your IDE or just to make it easier to share the configuration with your teammates, set up pre-commit hooks. They will give you feedback before you push your code to the CI, so you won't be unnecessarily running pipelines that will fail with very obvious problems like a unformatted code.
 
-And finally use CI to have an automated way of checking everyone's code. That way you don't have to chase people to fix their pre-commit setup. If their code doesn't match the standards you have established in your project, that's their problem to go and fix it.
-I would also suggest to run linters and formatters in parallel to running tests for a faster feedback %%TODO: in the future link to advanced talk about other optimizations saying something like "running things faster is one of the topics I cover in my 'Optimizing CI' talk"%%.
+Finally, use CI to have an automated way of checking everyone's code. That way you don't have to chase people to fix their pre-commit setup. If their code doesn't match the standards you have established in your project, that's their problem to go and fix it. For a faster feedback, I would suggest to run linters and formatters in parallel to running tests (but optimizing your existing pipelines is a topic for another article).
 
 ---
 
-I hope this article managed go convince at least some of you that Continuous Integration can be a great way to automate some boring and repetitive tasks and help you focus on the important stuff. In the future I will publish another one covering some ways you can optimize and speed up your CI pipelines, so stay tuned.
+I hope this article managed to convince at least some of you that continuous integration can be a great tool to automate some boring and repetitive tasks and help you focus on the important stuff. What I showed you in this article should help you build your first CI pipelines.
 
-
-### TODO
-- check consistency in usage of `black` and "black" when talking about jobs' names
+In the future I will publish another article covering topics from my [Optimizing Your CI Pipelines](https://www.youtube.com/watch?v=goWcDalv_FQ) presentation, where I will explain what to do when our pipelines get slow and complex, so stay tuned.
 
 [^1]: I know that I should switch to ruff as everyone else already did, but I have a bunch of old projects where flake8 is good enough.
 [^2]: Please note that 0.11.2 doesn't mean that we are using version 0.11.2 of flake8. It means we are using version 0.11.2 of pipeline-components/flake8 image and flake8 version defined there is actually version 6.0.0. So versions of images in pipelines-components don't correspond 1-to-1 with the versions of their underlying static analysis packages.
 [^3]: Having a CI setup that *just works* and not changing it for months is another trap that you can fall into. If you don't upgrade versions of your packages, you're not taking the advantage of new features or performance improvements. Not to mention all the security patches and bug fixes that were added in new versions. Of course, it's much better to use old tools that cause you no problems than to use the "latest" version and have to constantly adjust tests and your configuration to accommodate changes in those packages. But the best solution lies somewhere in the middle as a combination of updating your tools from time to time but in a controlled manner.
+
+<!-- TODO: Add link to the mailing list of the future course -->
