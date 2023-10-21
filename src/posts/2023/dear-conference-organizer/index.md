@@ -5,7 +5,7 @@ tags: ["Conference"]
 similar:
   - how-to-make-a-great-conference-talk
   - obsidian
-date: 2024-09-01
+date: 2023-10-22
 ---
 
 Dear Conference Organizer,
