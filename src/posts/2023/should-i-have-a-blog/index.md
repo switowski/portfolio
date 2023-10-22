@@ -2,7 +2,7 @@
 title: Should I Have a Blog?
 description: Is starting a blog in times of withering attention span still worth it?
 tags: ['Writing']
-date: 2024-08-17
+date: 2023-10-30
 ---
 
 Yes.
