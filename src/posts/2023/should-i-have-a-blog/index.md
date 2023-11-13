@@ -6,7 +6,7 @@ similar:
   - new-blog-who-dis
   - obsidian
   - favorite-mac-tools
-date: 2023-10-30
+date: 2023-11-14
 ---
 
 Yes.
