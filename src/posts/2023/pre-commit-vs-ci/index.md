@@ -186,9 +186,9 @@ That's why you sometimes can't avoid using a CI server. You must ask yourself wh
 
 ## Combining it all together
 
-Let me close this article with a 3-step recommendation from my [Python CI for Beginners](https://www.youtube.com/watch?v=AjdCiGjFAqA) presentation.
+Let me close this article with a three-step recommendation from my [Python CI for Beginners](https://www.youtube.com/watch?v=AjdCiGjFAqA) presentation.
 
-{% postImage "run-linters-in.jpg", "A 3-step recommendation for static analysis in your project" %}
+{% postImage "run-linters-in.jpg", "A three-step recommendation for static analysis in your project" %}
 
 Configuring a code formatter or enabling options like "sort imports on save" in your IDE is usually a one-off operation that, once done, should *just work*. And installing plugins for linters will give you instant feedback so you can fix violations when writing the code. Once you spend some time configuring your code editor properly, it should drastically cut the number of issues you have to fix during the code reviews or after running your code through pre-commit/CI.
 
