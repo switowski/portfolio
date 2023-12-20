@@ -3,6 +3,7 @@ TODO:
 -------- Next -----------
 
 -------- Later ----------
+* Change hero image on the main page to webp format - there is really no need to keep png anymore.
 
 -------- Small ----------
 
