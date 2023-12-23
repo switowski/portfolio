@@ -198,6 +198,6 @@ Unfortunately, pre-commit also has some limitations. It's unsuitable for running
 
 That's why, for projects where you need to collaborate with others, I recommend also using a continuous integration, even if you have plugins in your code editor and use pre-commit. Setting up a simple pipeline and adding more tools as your project grows is easy. CI will make sure the exact same checks run on everyone's code and will let you focus on important parts during code reviews (by automatically pointing out all those silly mistakes like unused variables or wrongly formatted code). You can also use CI to automate boring, repetitive tasks like building and publishing Docker images of your package or documentation pages.
 
-<!-- If you want to learn more about continuous integration, check out my [beginners guide to continuous integration in Python] article.(#TODO: add link once the article is ready) article. -->
+If you want to learn more about continuous integration, check out my [Beginner's Guide to Continuous Integration in Python]({% postUrl "ci-101" %}) article.
 
 [^1]: Angry comments from people who don't write tests incoming in 3..2..1.. Look, I also don't write tests for all my projects, but I won't deny their usefulness.
