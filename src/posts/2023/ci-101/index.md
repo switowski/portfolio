@@ -1,9 +1,9 @@
 ---
 title: A Beginner's Guide to Continuous Integration in Python
 description: >
-  If you want to learn how to implement continuous integration in your project, here is my "CI 101: A Beginner's Guide to Continuous Integration" talk in writing.'
+  If you want to learn how to implement continuous integration in your project, here is my "CI 101: A Beginner's Guide to Continuous Integration" talk in writing.
 tags: ["CI", "DevOps"]
-date: 2023-12-22
+date: 2023-12-23
 ---
 
 Imagine this: you're working on a Python project, and you're annoyed that each time you create a new merge (or pull) request, you must remember to run tests. Or maybe you configured your code editor to run [black](https://github.com/psf/black) each time you save a file, but your colleagues didn't. Every time you touch a file after them, you end up formatting random parts of the code. This makes code reviews harder because the reviewer doesn't know which lines of code you actually changed and which were only automatically reformatted.

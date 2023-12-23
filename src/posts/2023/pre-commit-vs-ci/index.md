@@ -1,13 +1,13 @@
 ---
 title: pre-commit vs. CI
-description: Should I use pre-commit? Or should I set up a Continuous Integration in my GitLab/GitHub repository?
+description: Should I use pre-commit? Or should I set up a continuous integration in my GitLab/GitHub repository?
 tags: ["CI", "DevOps"]
 date: 2023-11-28
 ---
 
 There is one question I get asked when people sit down to automate some checks in their project for the first time:
 
-> Should I use [pre-commit](https://pre-commit.com/)? Or should I set up a Continuous Integration in my GitLab/GitHub repository?
+> Should I use [pre-commit](https://pre-commit.com/)? Or should I set up a continuous integration in my GitLab/GitHub repository?
 
 The answer is "yes". You should use one or the other. Or even both. Whichever solution you choose, that's already an improvement for your project. Code formatting, running tests, or linting should happen automatically without you needing to remember to run them all the time.
 
@@ -182,7 +182,7 @@ But an even faster way to fix a problem is when you get an error notification **
 
 A CI server solves the problem of working with someone who doesn't know how or doesn't want to configure pre-commit or any other tools on their computer. Hopefully, those who "can't be bothered to install a linter" can be convinced otherwise by a short conversation with their team leader. But for some people, especially those not very tech-savvy or working on a company laptop that doesn't allow you to install *anything* that was not blessed by a very strict system administrator (which is often equivalent to "can't install anything at all"), it might be a problem to set up pre-commit. And even if they do, sometimes the configuration/versions of packages can mysteriously diverge between team members. No one wants to waste time fixing versions of some linters when they just want to finish writing their code and go home.
 
-That's why you sometimes can't avoid using a CI server. You must ask yourself what will cause more frustration and cost you more time - making sure everyone in your projects installs and uses pre-commit or setting up and maintaining a CI server (and maybe paying some money for the build minutes). Quite often, a project started by a small team can use pre-commit at the beginning, but at some point, as the project and team grow in size, it's time to introduce a proper Continuous Integration solution.
+That's why you sometimes can't avoid using a CI server. You must ask yourself what will cause more frustration and cost you more time - making sure everyone in your projects installs and uses pre-commit or setting up and maintaining a CI server (and maybe paying some money for the build minutes). Quite often, a project started by a small team can use pre-commit at the beginning, but at some point, as the project and team grow in size, it's time to introduce a proper continuous integration solution.
 
 ## Combining it all together
 
@@ -196,8 +196,8 @@ Configuring all the necessary checks in your code editor can work fine when you 
 
 Unfortunately, pre-commit also has some limitations. It's unsuitable for running slow tasks (slower than a second or two), as it blocks you from creating a new commit until all checks are done. No one wants to wait a few minutes each time they create a new commit. And while it's easier to share a pre-commit configuration between all team members, you still rely on their "good will" to install and use this tool. For a particularly large/stubborn team, making sure everyone is running all the necessary checks can become more time-consuming than maintaining a CI server.
 
-That's why, for projects where you need to collaborate with others, I recommend also using a Continuous Integration, even if you have plugins in your code editor and use pre-commit. Setting up a simple pipeline and adding more tools as your project grows is easy. CI will make sure the exact same checks run on everyone's code and will let you focus on important parts during code reviews (by automatically pointing out all those silly mistakes like unused variables or wrongly formatted code). You can also use CI to automate boring, repetitive tasks like building and publishing Docker images of your package or documentation pages.
+That's why, for projects where you need to collaborate with others, I recommend also using a continuous integration, even if you have plugins in your code editor and use pre-commit. Setting up a simple pipeline and adding more tools as your project grows is easy. CI will make sure the exact same checks run on everyone's code and will let you focus on important parts during code reviews (by automatically pointing out all those silly mistakes like unused variables or wrongly formatted code). You can also use CI to automate boring, repetitive tasks like building and publishing Docker images of your package or documentation pages.
 
-<!-- If you want to learn more about Continuous Integration, check out my [beginners guide to Continuous Integration in Python] article.(#TODO: add link once the article is ready) article. -->
+<!-- If you want to learn more about continuous integration, check out my [beginners guide to continuous integration in Python] article.(#TODO: add link once the article is ready) article. -->
 
 [^1]: Angry comments from people who don't write tests incoming in 3..2..1.. Look, I also don't write tests for all my projects, but I won't deny their usefulness.
