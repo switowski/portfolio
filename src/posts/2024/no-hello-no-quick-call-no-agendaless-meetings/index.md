@@ -1,6 +1,6 @@
 ---
 title: No "Hello", No "Quick Call", and no Meetings Without an Agenda
-description: When working remotely, asking for help is often just a few keystrokes away. So it's tempting to "quickly" ask someone for support when you get stuck. But to get the best answer, you should remember a few "netiquette" rules.
+description: When working remotely, asking for help is often just a few keystrokes away. So it's tempting to "quickly" ask someone for support when you get stuck.
 tags: ["Productivity"]
 date: 2024-02-11
 ---
