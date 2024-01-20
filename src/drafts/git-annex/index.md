@@ -3,7 +3,7 @@ title: How I’m Using git-annex to Manage Thousands of Images in a git Reposito
 # title: How to Manage Gigabytes of Images in a git Repository with git-annex
 description: Or "how to win friends (without influencing people) at a conference".
 tags: ['git', 'Tools']
-date: 2024-01-03
+date: 2025-02-06
 ---
 
 Earlier this year I've hit [GitLab's 10GB storage limit](https://docs.gitlab.com/ee/user/usage_quotas.html#:~:text=All%20projects%20on%20GitLab%20SaaS,to%20a%20read%2Donly%20project.) with one of my git repositories. I'm writing a family blog where I document various trips and activities we do, hoping that in 20 years it will be a great memento (like a photo-album combined with a journal in a digital form, with search functionality, videos, GIFs, etc.) It started as a simple git repository that I hosted on GitLab, but after adding hundreds of pictures, I've hit the maximum repository size and it was time to move images and movies somewhere else. Looking for a possible solution, I wanted to choose something that integrates seamlessly with my existing git workflow so the final choice was between [git LFS](https://git-lfs.com/) and [git-annex](https://git-annex.branchable.com/). The reviews were mixed, but git-annex was more favored by the audience. And the deal breaker was the fact that if in the future I decide to stop using it, I just need to run `git annex uninit` to get all the images back in place. That means loosing history of images' changes, but I don't care about that anyway - I only care about not losing the most recent version of each file. So I've decided to go with git-annex.
