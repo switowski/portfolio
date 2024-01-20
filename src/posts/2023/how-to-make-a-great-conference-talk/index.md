@@ -196,7 +196,7 @@ Now that you've submitted your proposal, you can either wait for the results or 
 
 You will be surprised how many ideas and topics will come to your mind! You will suddenly find that many random articles are related to your talk. Save links to those articles. If you think of something that could be included, write that down or add a "todo" to research it further.
 
-I use Obsidian to collect my notes, and I have a template that helps me write the proposal and later expand it into a full talk:
+[I use Obsidian to collect my notes]({% postUrl "obsidian" %}), and I have a template that helps me write the proposal and later expand it into a full talk:
 
 :::callout-success
 
@@ -248,7 +248,7 @@ Congratulations! Now the real work starts.
 
 First, you need to gather all your random thoughts and organize them. An excellent way to do this is to build a mind map. It lets you group similar topics and see the big picture of your presentation's main points. Combined with the timings from the proposal, it makes it easy to see in which areas you have too much content and where you have too little. Your new, detailed outline in the form of a mind map should match the outline from the proposal. But sometimes, as you do more research, you might slightly diverge from the initial outline.
 
-There are plenty of mind-mapping software options available. I'm not an advanced mind *cartographer*, so I use simple tools. In the past, I used [SimpleMind](https://apps.apple.com/app/id305727658). Later, I switched to the [Mind map](https://github.com/lynchjames/obsidian-mind-map) plugin for Obsidian since I [use Obsidian all the time]({% postUrl "obsidian" %}). It's a simple tool where I can write ideas as Markdown headers, and the plugin will visualize them as a mind map.
+There are plenty of mind-mapping software options available. I'm not an advanced mind *cartographer*, so I use simple tools. In the past, I used [SimpleMind](https://apps.apple.com/app/id305727658). Later, I switched to the [Mind map](https://github.com/lynchjames/obsidian-mind-map) plugin for Obsidian. It's a simple tool where I can write ideas as Markdown headers, and the plugin will visualize them as a mind map.
 
 {% postImage "mindmap.jpg", "An example of a mind map created with Obsidian plugin", "", "Mind mapping plugin for Obsidian" %}
 
