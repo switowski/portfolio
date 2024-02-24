@@ -1,7 +1,7 @@
 ---
 title: How I’m Using git-annex to Manage Thousands of Images in a git Repository
 # title: How to Manage Gigabytes of Images in a git Repository with git-annex
-description: Or "how to win friends (without influencing people) at a conference".
+description: What is git-annex, how to set it up to store large files in Google Drive or NAS, and how I'm using it to seamlessly manage a git repository of 20GB (and counting).
 tags: ['git', 'Tools']
 date: 2025-02-06
 ---
