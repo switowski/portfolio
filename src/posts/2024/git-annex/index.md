@@ -304,6 +304,4 @@ Would I use git-annex for important projects where being able to retrieve old ve
 
 What else would I use instead? Surprisingly, there are not that many great options - probably because version control of large files is not a common problem (except for the game dev industry, where you need to version your assets that can take hundreds of GBs). For many years, the main alternative has been a commercial tool called Perforce (no matter if you asked that question [8 years ago](https://www.reddit.com/r/gamedev/comments/3cildb/version_control_for_large_assets_whats_the_best/) or [last year](https://www.reddit.com/r/unrealengine/comments/16r8lhm/best_version_control_for_large_projects/)).
 
----
-
 [^1]: But if you do want to relinquish the control and let git-annex take the wheel, you can stop reading here and check out this article on how to set up git-annex with two commands: <https://bryan-murdock.blogspot.com/2020/03/git-annex-is-great.html>.
