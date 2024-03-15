@@ -32,7 +32,7 @@ eleventyNavigation:
   {# Recent posts #}
   <div class="md:my-12 my-10">
     <h2 class="mb-8">Latest posts</h2>
-    {% asyncEach post in collections.posts | reverse | limit(3) %}
+    {% asyncEach post in collections.posts | reverse | limit(4) %}
     {% include "components/postBrief.njk" %}
     {% endeach %}
     <div class="text-right">
