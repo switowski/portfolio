@@ -2,7 +2,7 @@
 title: My Stream Deck Setup
 description: My setup and some tips and tricks for other MacOS users who want to make the most of their Stream Decks.
 tags: ['Productivity', 'Tools']
-date: 2024-05-10
+date: 2024-05-13
 ---
 
 Stream Deck has been on my shopping list for a very long time. First, I was waiting for Black Friday to get a good deal (and you can find some good discounts, so I suggest waiting for a sale if you can). But in the meantime, I thought, "Do I really need Stream Deck for those few things I want to use it for?" So, I've decided to [write some macros]({% postUrl "you-dont-need-stream-deck-you-need-macros" %}) that can be triggered with keyboard shortcuts. That worked, but as the number of shortcuts grew, it became harder to quickly remember which shortcut triggered which macro. So, finally, during last year's Black Friday sale, I bought the standard Stream Deck MK.2 with 15 buttons. The idea was to give it a try for a couple of days and see if I could find enough use cases to justify keeping it.
