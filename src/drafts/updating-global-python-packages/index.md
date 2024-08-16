@@ -45,7 +45,7 @@ Luckily, since this is just one package, fixing this problem is easy. All I need
 
 I wrote the draft of this article on my old laptop. But a few months ago, when reinstalling everything on a new MacBook, I decided to install pipx using Homebrew. The main benefit of this approach is that now pipx is completely independent from the current Python version set by pyenv. No matter what's my current Python version, pipx still works, using whatever Python version Homebrew provided during the installation. Plus, now I really have 0 packages installed globally outside of pip (`pip freeze` returns nothing on my laptop).
 
-Unfortunately, if you're on Windows or Linux, you probably still have to use pip to install pipx (at least according to [the documentation](https://pypa.github.io/pipx/installation/)). This isn't really that much of a problem, so I decided to not change the whole article but just mention Homebrew as an option here.
+Unfortunately, if you're on Windows or Linux, you probably still have to use pip to install pipx (at least according to [the documentation](https://pipx.pypa.io/stable/)). This isn't really that much of a problem, so I decided to not change the whole article but just mention Homebrew as an option here.
 :::
 
 Global packages installed with pipx handle the change of the Python version very well. No matter what version I'm currently using, they will use whatever Python version they were installed with. Let's say you used Python 3.8.6 to install a bunch of Python packages:
