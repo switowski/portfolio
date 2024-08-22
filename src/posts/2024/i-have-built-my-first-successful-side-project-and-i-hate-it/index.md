@@ -203,6 +203,6 @@ And that's the story of my first side project. It was fun at the beginning, frus
 
 Was it worth the money? Not really. Spending equal time working for a client would probably earn me more. But the experience I gained from this side project will be invaluable when I build the next one.
 
-Stay tuned for the next article, where I describe the technical setup I used to automate most of this project.
+If you're interested in the technical setup I used to automate most of this project, check out my [Web Automation With n8n, Telegram, Online Forms, and a Bit of Python]({% postUrl "web-automation" %}) article.
 
 [^1]: It was always the crypto or forex crowd that was asking for weird stuff.
