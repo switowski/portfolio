@@ -23,14 +23,14 @@ And that's really it. Sometimes, I include additional tasks like `watch` to auto
 
 This blog that you're reading right now has a simple makefile with just one target:
 
-```Makefile
+```makefile
 dev:
 	npm run dev
 ```
 
 And a more advanced project of mine uses the following makefile to run the dev server, watch for changes, build, encrypt and deploy the website:
 
-```Makefile
+```makefile
 # Run dev server
 dev:
 	bundle exec jekyll serve --unpublished -w --config _config.yml,_config-dev.yml --livereload
