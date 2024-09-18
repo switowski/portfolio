@@ -5,7 +5,7 @@ tags: ['CLI', 'Tools']
 date: 2024-09-18
 ---
 
-I like makefiles. I first used a makefile more than ten years ago. Even back then, it looked like some ancient technology used by the graybeard Linux wizards. Years passed, and new build tools came and went, but I kept seeing makefiles still used here and there. I got used to them because they were part of some projects that I joined. At some point, I started to like them. Today, they are often the first automation tool I use when I start a new project.
+I like makefiles. I first used a makefile more than ten years ago. Even back then, it looked like some ancient technology used by the graybeard Linux wizards. Years passed, and new build tools came and went, but I kept seeing makefiles still used here and there. I got used to them because they were part of some projects I joined. At some point, I started to like them. Today, they are often the first automation tool I use when I start a new project.
 
 The reason I like makefiles is that they often follow an unwritten convention of implementing the same set of commands to get you up and running. When I find a project I know nothing about, and I see a `Makefile` file inside, chances are that I can run `make` or `make build` followed by `make install`, and I will get this project built and set up on my computer. Or at least I will get information on other steps I need to include.
 
