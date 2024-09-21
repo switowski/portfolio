@@ -54,6 +54,8 @@ encrypt:
 	npx staticrypt _site/*.html -r -d _site
 ```
 
+In both of the above examples, I'm ignoring the existence of [phony targets](https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html), which you might want to add if you have a file called dev, build, watch, deploy, or encrypt, as [many kind readers on Hacker News](https://news.ycombinator.com/item?id=41607059) suggested. Otherwise, this Makefile won't work as expected.
+
 [GNU Make](https://www.gnu.org/software/make/) (the software that runs makefiles) is quite ubiquitous. If you're on Linux, you probably already have it installed. Even on my MacBook, I don't remember installing it explicitly. It must have come with some other tools that I installed in the past. Make is simple and doesn't require as many additional dependencies as some other build tools. This can be useful if you need a tool that will work in a restricted environment where installing additional packages is difficult or impossible for security reasons. Make will probably be already present in that environment. And if not, you can just take the commands from the makefile and run them manually in the shell. If gulp is not available on your server, you can't really take the JavaScript code and paste that into the terminal.
 
 I'm not against other build tools. I like other build tools too. I'm excited when I find a new one that is better and faster than the one I was using before. But I will still use Make to orchestrate them because it gives me a set of familiar commands to manage all sorts of different setups with different tools.
