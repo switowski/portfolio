@@ -210,6 +210,6 @@ There is only one thing that could make this even better - an **automatic** type
 
 This the end of our short journey with IPython magic functions. As you can see, there is nothing *magical* about them, all it takes is to add a decorator or inherit from a specific class. Magic functions can further extend the already amazing capabilities of IPython. So, don't hesitate to create your own, if you find yourself doing something over and over again. For example, when I was working a lot with [SQLAlchemy](https://www.sqlalchemy.org/), I made a magic function that [converts an sqlalchemy row object to Python dictionary](https://stackoverflow.com/a/1960546). It didn't do much, except for presenting the results in a nice way, but boy, what a convenience that was, when playing with data!
 
-Do you know any cool magic functions that you love and would like to share with others? If so, you can always send me [an email](/#contact-me) or find me on [Twitter](https://twitter.com/SebaWitowski)!
+Do you know any cool magic functions that you love and would like to share with others? If so, you can always send me [an email](/about#contact-me) or find me on [Twitter](https://twitter.com/SebaWitowski)!
 
 Image from: [pixabay](https://pixabay.com/photos/magic-conjure-conjurer-cylinder-2034146/)
