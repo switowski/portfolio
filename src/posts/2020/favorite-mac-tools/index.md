@@ -10,6 +10,11 @@ date: 2020-01-09
 featured: true
 ---
 
+::: callout-error
+
+This list is outdated. For a list of macOS apps that I'm currently using, [click here]({% postUrl "my-favorite-macos-apps-2024" %}).
+
+:::
 I could spend days just tweaking things on my computer. Actually, I do. Whenever I see something annoying, I want to drop everything and try to fix it right away. It can be anything. From a minor: *"Hey, I just run the same command twice, I should create an alias!"* to installing random tools (*"Hmm, I'm wondering if there is a way to get notifications when a long-running job in a terminal finishes, so I can do other stuff in the meantime?"*). I also love to read what tools other people are using. This time, I've decided to share mine.
 
 Since this is a very long post, I've to split it into two parts: the Mac apps and the [CLI stuff]({% postUrl "favorite-cli-tools" %}).
