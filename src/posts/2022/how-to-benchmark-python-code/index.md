@@ -154,4 +154,4 @@ Depending on your use case, you might reach for a different tool to benchmark yo
 - `pyperf` gives you the most advanced set of statistics about your code. And it's used by the official Python benchmarks, so it's an excellent tool for advanced benchmarks.
 - `hyperfine` is a great tool to benchmark any command, not only Python code. Or to compare two different commands.
 
-[^1]: Ok, technically, I could print the current time with `time.time()`, run my code, print `time.time()` again, and subtract those two values. But, come on, that't not simple, that's rudimentary.
+[^1]: Ok, technically, I could print the current time with `time.time()`, run my code, print `time.time()` again, and subtract those two values. But, come on, that's not simple, that's rudimentary.
