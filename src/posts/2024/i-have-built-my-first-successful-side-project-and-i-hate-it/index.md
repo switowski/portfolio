@@ -143,7 +143,7 @@ I checked my options and decided to automate the following parts of my work:
 - A chatbot to manage subscriptions so that I could do all the manual work (removing access from people who cancelled subscriptions, extending trial access, etc.) with simple commands from my phone without logging in to TradingView.
 - Finally, I could create an online form where people could request trial access by leaving their TradingView username. This form would then trigger a Python script granting them one week's access to the selected TradingView script.
 
-I implemented all those features using [n8n](https://n8n.io/) to connect various services together - webhooks, a Telegram bot, Python scripts, sending emails, etc. I will write a separate article describing this setup's technical details.
+I implemented all those features using [n8n](https://n8n.io/) to connect various services together - webhooks, a Telegram bot, Python scripts, sending emails, etc. [Here's an article]({% postUrl "web-automation" %}) describing how I did this.
 
 Once I had the automation in place, users could request free trial access through an online form or buy a subscription on Gumroad, and everything would be handled automatically. From time to time, when they cancelled their subscription, I had to send a short message to my Telegram bot to set an expiration date for their access.
 
