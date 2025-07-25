@@ -1,10 +1,3 @@
-{# Course launch banner #}
-<div class="px-4 py-3 w-full text-center text-white bg-gradient-to-r from-blue-600 to-violet-800">
-  <div class="mx-auto max-w-4xl">
-    <span class="font-semibold">🎉 I'm working on an new course about <a href="https://automatingpythonprojects.com">automating Python projects with CI/CD</a>.</span>
-  </div>
-</div>
-
 {# add link to home page and navigation section #}
 <nav class="w-full" x-data>
   <div class="nav" @keyup.escape.window="$store.nav.close()">
@@ -14,7 +7,7 @@
     </div>
 
     {# Mobile navigation toggle button #}
-    <div class="lg:hidden pr-7" @click="$store.nav.toggle()">
+    <div class="pr-7 lg:hidden" @click="$store.nav.toggle()">
       <div :class="$store.nav.isOpen && 'active'" class="hamburger">
         <span class="hamburger__line"></span>
         <span class="hamburger__line"></span>
@@ -33,5 +26,5 @@
     </div>
   </div>
   {# Mobile nav overlay #}
-  <div @click="$store.nav.close()" :class="!$store.nav.isOpen && 'hidden'" class="fixed inset-0 z-10 w-screen h-screen bg-black bg-opacity-40"></div>
+  <div @click="$store.nav.close()" :class="!$store.nav.isOpen && 'hidden'" class="bg-opacity-40 fixed inset-0 z-10 w-screen h-screen bg-black"></div>
 </nav>
