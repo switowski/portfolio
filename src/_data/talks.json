@@ -1,6 +1,17 @@
 [
   {
     "featured": true,
+    "url": "https://www.youtube.com/watch?v=y0tMMNWwnZ0",
+    "title": "Automating myself out of an unloved project with Python, n8n and Telegram",
+    "date": "2025-07-17",
+    "description": "In 2020, I built my first side project. I 'scratched my own itch' and started selling it, and since then, the project has earned me over $15,000. However, just a few months after its release, I was so overwhelmed by maintenance work that I considered shutting it down. Instead of killing the goose that lays (small) golden eggs, I decided to automate the project.",
+    "img": "2025-automating-myself-out",
+    "duration": "PT30M",
+    "slides": "https://speakerdeck.com/switowski/automating-myself-out-of-an-unloved-project-with-python-n8n-and-telegram",
+    "conferences": ["EuroPython 2025"]
+  },
+  {
+    "featured": true,
     "url": "https://www.youtube.com/watch?v=goWcDalv_FQ",
     "title": "Optimizing Your CI Pipelines",
     "date": "2023-07-19",
@@ -75,7 +86,6 @@
     "conferences": ["PyOhio 2020"]
   },
   {
-    "featured": true,
     "url": "https://www.youtube.com/watch?v=WkUBx3g2QfQ",
     "title": "Modern Python Developer's Toolkit workshop",
     "date": "2020-04-29",
