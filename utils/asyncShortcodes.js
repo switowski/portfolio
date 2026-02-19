@@ -29,15 +29,15 @@ module.exports = {
     };
 
     let metadata = await Image(srcPath, {
-      // Single width for GIFs (animated WebP is expensive), 3 widths for other images
-      widths: isGif(src) ? [600] : [250, 600, 920],
+      // Single width for GIFs (animated WebP is expensive), all widths including original for images
+      widths: isGif(src) ? [920] : [250, 600, 920, null],
       // WebP only - supported by all modern browsers (Safari 14+, 2020)
       formats: ['webp'],
       outputDir: 'dist/img/',
       urlPath: '/img/',
       sharpOptions: sharpOptions,
-      // Lossy WebP with good quality (much smaller than nearLossless)
-      sharpWebpOptions: { quality: 80 },
+      // Use better quality of WebP images (at the price of 2x bigger size)
+      sharpWebpOptions: { nearLossless: true },
     });
 
     let imageAttributes = {
