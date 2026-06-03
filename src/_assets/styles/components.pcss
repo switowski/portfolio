@@ -276,6 +276,27 @@
   opacity: 0.98;
   line-height: 1.25;
 }
+/* Keep desktop/tablet footnotes readable. Littlefoot's default 22em popover is narrow,
+especially in the 721-767px range where its mobile layout no longer applies. */
+@media (min-width: 721px) {
+  .littlefoot-footnote__wrapper {
+    width: min(32rem, calc(100vw - 2rem));
+  }
+  .littlefoot-footnote__content {
+    max-height: min(24rem, calc(100vh - 8rem));
+  }
+  .littlefoot-footnote.is-scrollable .littlefoot-footnote__content {
+    scrollbar-width: thin;
+  }
+  .littlefoot-footnote.is-scrollable .littlefoot-footnote__content::-webkit-scrollbar {
+    display: block;
+    width: 0.5rem;
+  }
+  .littlefoot-footnote.is-scrollable .littlefoot-footnote__content::-webkit-scrollbar-thumb {
+    background-color: var(--color-footnote-btn-active);
+    border-radius: 999px;
+  }
+}
 /* For footnotes on mobile, move them from the bottom as IPhones have that annoying white bar that overflows text  */
 .littlefoot-footnote.is-positioned-bottom .littlefoot-footnote__content {
   padding-bottom: 1.25rem;
